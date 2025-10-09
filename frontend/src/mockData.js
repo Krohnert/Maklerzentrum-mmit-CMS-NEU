@@ -149,7 +149,7 @@ export const team = [
     name: 'Olivier Parenteau',
     role: 'Geschäftsleitung',
     description: 'Maklerzentrum Schweiz AG',
-    image: 'https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/3upmlpy0_Stefan.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/1i8tpotp_Olivier%20%282%29.jpeg'
   },
   {
     name: 'Stefan Olivier',
