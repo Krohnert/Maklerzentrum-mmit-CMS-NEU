@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /danke/
+Disallow: /danke-firmenklasse/
+
+Sitemap: https://maklerzentrum.ch/sitemap.xml
