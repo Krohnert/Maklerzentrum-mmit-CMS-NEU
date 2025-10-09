@@ -12,6 +12,130 @@ const Schulung = () => {
       {"@type": "ListItem", "position": 2, "name": "Schulung", "item": "https://maklerzentrum.ch/schulung/"}
     ]
   };
+
+  const jsonLdEvents = [
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin Januar 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-01-12",
+      "endDate": "2026-02-27",
+      "description": "Ablauf Jan-Start: Generelle Fähigkeiten (online): 12.01., 13.01., 19.01., 20.01. · Krankenzusatz (online): 26.01., 27.01. · Nichtleben (vor Ort): 05.02., 06.02., 12.02. · Leben (vor Ort): 19.02., 20.02., 26.02., 27.02.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin Februar 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-02-09",
+      "endDate": "2026-03-27",
+      "description": "Ablauf Feb-Start: Generelle Fähigkeiten (online): 09.02., 10.02., 11.02., 16.02. · Krankenzusatz (online): 23.02., 24.02. · Nichtleben (vor Ort): 05.03., 06.03., 12.03. · Leben (vor Ort): 19.03., 20.03., 26.03., 27.03.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin März 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-03-09",
+      "endDate": "2026-04-24",
+      "description": "Ablauf März-Start: Generelle Fähigkeiten (online): 09.03., 10.03., 16.03., 17.03. · Krankenzusatz (online): 23.03., 24.03. · Nichtleben (vor Ort): 02.04., 03.04., 09.04. · Leben (vor Ort): 16.04., 17.04., 23.04., 24.04.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin April 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-04-08",
+      "endDate": "2026-05-28",
+      "description": "Ablauf April-Start: Generelle Fähigkeiten (online): 08.04., 13.04., 15.04., 20.04. · Krankenzusatz (online): 22.04., 27.04. · Nichtleben (vor Ort): 01.05., 07.05., 08.05. · Leben (vor Ort): 15.05., 21.05., 22.05., 28.05.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin Mai 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-05-11",
+      "endDate": "2026-06-26",
+      "description": "Ablauf Mai-Start: Generelle Fähigkeiten (online): 11.05., 12.05., 18.05., 19.05. · Krankenzusatz (online): 26.05., 27.05. · Nichtleben (vor Ort): 04.06., 05.06., 11.06. · Leben (vor Ort): 18.06., 19.06., 25.06., 26.06.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "VBV Ausbildung – Starttermin Juni 2026 (DE)",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "2026-06-08",
+      "endDate": "2026-07-24",
+      "description": "Ablauf Juni-Start: Generelle Fähigkeiten (online): 08.06., 09.06., 10.06., 15.06. · Krankenzusatz (online): 22.06., 23.06. · Nichtleben (vor Ort): 02.07., 03.07., 09.07. · Leben (vor Ort): 16.07., 17.07., 23.07., 24.07.",
+      "location": [
+        {"@type": "VirtualLocation", "url": "https://maklerzentrum.ch/schulung/"},
+        {"@type": "Place", "name": "Basel", "address": {"@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Bern", "address": {"@type": "PostalAddress", "addressLocality": "Bern", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Zürich", "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lausanne", "address": {"@type": "PostalAddress", "addressLocality": "Lausanne", "addressCountry": "CH"}},
+        {"@type": "Place", "name": "Lugano", "address": {"@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH"}}
+      ],
+      "organizer": {"@type": "Organization", "name": "Maklerzentrum Schweiz AG", "url": "https://maklerzentrum.ch/"},
+      "offers": {"@type": "Offer", "price": "150", "priceCurrency": "CHF", "url": "https://maklerzentrum.ch/#booking", "availability": "https://schema.org/InStock"}
+    }
+  ];
+
   const [filterMonth, setFilterMonth] = useState('');
   const [filterModule, setFilterModule] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
