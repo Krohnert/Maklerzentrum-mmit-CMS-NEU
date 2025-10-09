@@ -24,6 +24,13 @@ const iconMap = {
 const Services = () => {
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>MZ-Infrastruktur für Vermittler – Administration bis CRM | Maklerzentrum</title>
+        <meta name="description" content="Wir entlasten freie Vermittler: Kundendienst (8 Sprachen), Administration, CRM, Buchhaltung, Qualität & Recht. Beratung anfragen." />
+        <link rel="canonical" href="https://maklerzentrum.ch/services/" />
+        <meta property="og:title" content="MZ-Infrastruktur für Vermittler" />
+        <meta property="og:url" content="https://maklerzentrum.ch/services/" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
