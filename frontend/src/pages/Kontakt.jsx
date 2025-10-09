@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react';
 import CompanyForm from '../components/CompanyForm';
 
