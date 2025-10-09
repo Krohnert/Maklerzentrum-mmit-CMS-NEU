@@ -150,7 +150,7 @@ const Schulung = () => {
       </section>
 
       {/* Termin-Matrix */}
-      <section id="schedule" className="section-padding bg-[#F6F6F6]">
+      <section id="schedule" className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-center mb-8">Termin-Matrix 2026</h2>
           
