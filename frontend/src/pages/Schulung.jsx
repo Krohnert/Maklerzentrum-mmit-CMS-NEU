@@ -247,7 +247,7 @@ const Schulung = () => {
                           onClick={() => handlePlatzSichern(item)}
                           className="bg-[#D81C1C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#b81717] transition-colors"
                         >
-                          Platz sichern
+                          Reservieren
                         </button>
                       </td>
                     </tr>
