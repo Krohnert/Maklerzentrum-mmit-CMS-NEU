@@ -77,17 +77,25 @@ const About = () => {
       <section className="section-padding bg-[#F9F9F9]">
         <div className="container-custom">
           <h2 className="text-center mb-12">Unser Team</h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="text-center">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center bg-[#D81C1C]/10 text-[#D81C1C] font-bold text-2xl">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
+                <div className="w-40 h-40 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-[#D81C1C]/10 text-[#D81C1C] font-bold text-2xl">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-lg mb-1">{member.name}</h3>
+                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
                 <p className="text-sm font-medium text-[#D81C1C] mb-2">{member.role}</p>
-                <p className="text-sm text-gray-600">{member.description}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{member.description}</p>
               </div>
             ))}
           </div>
