@@ -14,7 +14,7 @@ import {
 const Home = () => {
   const jsonLdOrganization = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "EducationalOrganization",
     "name": "Maklerzentrum Schweiz AG",
     "url": "https://maklerzentrum.ch/",
     "logo": "https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/65e6rt5r_Logo_def_normal.jpg",
@@ -27,7 +27,46 @@ const Home = () => {
       "addressLocality": "Basel",
       "addressCountry": "CH"
     },
-    "areaServed": ["CH"]
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "47.5596",
+      "longitude": "7.5886"
+    },
+    "areaServed": ["CH"],
+    "priceRange": "CHF 150-2200",
+    "review": [
+      {
+        "@type": "Review",
+        "reviewBody": "VBV in der Probezeit geschafft – dank Monatsstart und klarer Struktur.",
+        "author": {
+          "@type": "Person",
+          "name": "Leitung Vertrieb, Bern"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "Preis/Leistung top. Die Podcasts sparen Zeit.",
+        "author": {
+          "@type": "Person",
+          "name": "HR-Leiterin, Zürich"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "2"
+    }
   };
 
   const jsonLdCourse = {
