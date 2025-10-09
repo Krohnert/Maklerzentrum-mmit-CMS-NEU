@@ -130,17 +130,23 @@ const Kontakt = () => {
               <div className="inline-flex bg-gray-100 rounded-full p-1">
                 <button
                   onClick={() => setShowCompanyForm(false)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-colors ${
-                    !showCompanyForm ? 'bg-[#D81C1C] text-white' : 'text-gray-600 hover:text-gray-800'
+                  className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                    !showCompanyForm ? 'bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white shadow-md hover:shadow-lg' : 'text-gray-600 hover:text-gray-800'
                   }`}
+                  style={!showCompanyForm ? {
+                    boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  } : {}}
                 >
                   Reservieren
                 </button>
                 <button
                   onClick={() => setShowCompanyForm(true)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-colors ${
-                    showCompanyForm ? 'bg-[#D81C1C] text-white' : 'text-gray-600 hover:text-gray-800'
+                  className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                    showCompanyForm ? 'bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white shadow-md hover:shadow-lg' : 'text-gray-600 hover:text-gray-800'
                   }`}
+                  style={showCompanyForm ? {
+                    boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  } : {}}
                 >
                   Firmenklasse anfragen
                 </button>
