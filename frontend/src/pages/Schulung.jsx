@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { scheduleData, modules, modulesList, locations, cohorts } from '../mockData';
-import { BookOpen, Heart, Home as HomeIcon, Users, Search } from 'lucide-react';
-
-const iconMap = {
-  BookOpen: BookOpen,
-  Heart: Heart,
-  Home: HomeIcon,
-  Users: Users
-};
+import { Search } from 'lucide-react';
 
 const Schulung = () => {
   const [filterMonth, setFilterMonth] = useState('');
@@ -39,19 +32,32 @@ const Schulung = () => {
   return (
     <div className="pb-20 lg:pb-0">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">VBV-Ausbildung mit monatlichem Start</h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Online (Teams) für Grundlagen. Präsenz für Praxis. Standorte: <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>.<br />
-              Ziel: <strong>sicher zum VBV</strong>, in etwa <strong>3 Monaten</strong>.
-            </p>
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=500&fit=crop" 
+            alt="VBV Schulung" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">VBV-Ausbildung mit monatlichem Start</h1>
+              <p className="text-xl mb-8 text-white/90">
+                Online (Teams) für Grundlagen. Präsenz für Praxis. Standorte: <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>.<br />
+                Ziel: <strong>sicher zum VBV</strong>, in etwa <strong>3 Monaten</strong>.
+              </p>
+              <a href="#schedule" className="btn-primary">
+                Termine ansehen
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3 Schritte (kompakt) */}
+      {/* 3 Schritte */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
@@ -103,36 +109,33 @@ const Schulung = () => {
         </div>
       </section>
 
-      {/* Module */}
+      {/* Module - Kompakt */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Die 4 Module im Detail</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {modules.map((module, index) => {
-              const Icon = iconMap[module.icon];
-              return (
-                <div key={index} className="card-custom">
-                  <div className="flex items-start mb-4">
-                    <div className="w-14 h-14 bg-[#D81C1C]/10 text-[#D81C1C] rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <Icon size={28} />
-                    </div>
-                    <div>
-                      <h3 className="mb-2">{module.title}</h3>
-                      <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
-                        {module.format}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600">{module.description}</p>
+          <h2 className="text-center mb-8">Die 4 Module im Detail</h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {modules.map((module, index) => (
+              <div key={index} className="flex items-center p-4 bg-[#F6F6F6] rounded-lg">
+                <div className="w-10 h-10 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                  {index + 1}
                 </div>
-              );
-            })}
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-1">{module.title}</h3>
+                  <p className="text-sm text-gray-600">{module.description}</p>
+                </div>
+                <div className="ml-4">
+                  <span className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border border-gray-300">
+                    {module.format}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Termin-Matrix */}
-      <section className="section-padding bg-[#F6F6F6]">
+      <section id="schedule" className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <h2 className="text-center mb-8">Termin-Matrix 2026</h2>
           
