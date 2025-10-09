@@ -16,8 +16,8 @@ const About = () => {
         <meta property="og:url" content="https://maklerzentrum.ch/about/" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      {/* Hero Section - 350px desktop, 250px mobile */}
+      <section className="relative h-[250px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=350&fit=crop" 
