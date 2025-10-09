@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { Check, ExternalLink } from 'lucide-react';
 
 const Danke = () => {
