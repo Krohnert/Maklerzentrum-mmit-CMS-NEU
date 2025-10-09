@@ -70,7 +70,10 @@ const Navigation = () => {
             <div className="hidden lg:flex items-center space-x-3">
               <button 
                 onClick={scrollToBooking} 
-                className="bg-[#D81C1C] text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#b81717] transition-colors"
+                className="bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white px-5 py-2 rounded-full font-semibold text-sm hover:shadow-lg transition-all shadow-md hover:-translate-y-0.5"
+                style={{
+                  boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                }}
               >
                 Reservieren
               </button>
@@ -78,7 +81,10 @@ const Navigation = () => {
                 href="https://maklerzentrum-academy.reteach.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-5 py-2 bg-white text-[#D81C1C] border-2 border-[#D81C1C] rounded-full font-semibold text-sm hover:bg-[#D81C1C] hover:text-white transition-colors"
+                className="px-5 py-2 bg-white text-[#D81C1C] border-2 border-[#D81C1C] rounded-full font-semibold text-sm hover:bg-[#D81C1C] hover:text-white transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                style={{
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8)'
+                }}
               >
                 Anmelden
               </a>
