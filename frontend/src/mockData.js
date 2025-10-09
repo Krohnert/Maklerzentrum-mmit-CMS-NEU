@@ -97,7 +97,7 @@ export const faqData = [
   },
   {
     question: 'Gibt es auch Firmenklassen?',
-    answer: 'Ja, Exklusivklassen für Firmen ab CHF 2'200/Tag pauschal. Individuell planbar nach eurem Zeitplan.'
+    answer: 'Ja, Exklusivklassen für Firmen ab CHF 2\'200/Tag pauschal. Individuell planbar nach eurem Zeitplan.'
   }
 ];
 
