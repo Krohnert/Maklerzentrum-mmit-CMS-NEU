@@ -15,8 +15,8 @@ const Kontakt = () => {
         <meta property="og:title" content="Kontakt – VBV Platz sichern" />
         <meta property="og:url" content="https://maklerzentrum.ch/kontakt/" />
       </Helmet>
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      {/* Hero Section - 350px desktop, 250px mobile */}
+      <section className="relative h-[250px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=500&fit=crop" 
