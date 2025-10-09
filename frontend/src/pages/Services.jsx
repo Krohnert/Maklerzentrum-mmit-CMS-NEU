@@ -31,8 +31,8 @@ const Services = () => {
         <meta property="og:title" content="MZ-Infrastruktur für Vermittler" />
         <meta property="og:url" content="https://maklerzentrum.ch/services/" />
       </Helmet>
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      {/* Hero Section - 350px desktop, 250px mobile */}
+      <section className="relative h-[250px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=500&fit=crop" 
