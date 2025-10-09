@@ -4,7 +4,7 @@ const Impressum = () => {
   return (
     <div className="pb-20 lg:pb-0">
       {/* Hero Section */}
-      <section className="relative h-[500px] overflow-hidden">
+      <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=500&fit=crop" 
