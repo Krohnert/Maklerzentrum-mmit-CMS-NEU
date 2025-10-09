@@ -102,10 +102,16 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "Wie lange dauert die VBV-Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel rund 3 Monate mit Starttermin jeden Monat."}},
-      {"@type": "Question", "name": "Welche Module sind online, welche vor Ort?", "acceptedAnswer": {"@type": "Answer", "text": "Generelle Fähigkeiten & Krankenzusatz online; Nichtleben & Leben vor Ort."}},
-      {"@type": "Question", "name": "Wo finden die Präsenztermine statt?", "acceptedAnswer": {"@type": "Answer", "text": "Basel, Bern, Zürich, Lausanne, Lugano."}},
-      {"@type": "Question", "name": "Was kostet die Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "Offene Klassen: CHF 150 pro Tag und Person; Exklusivklasse: CHF 2'200 pro Tag pauschal."}}
+      {"@type": "Question", "name": "Was ist die VBV-Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "Die anerkannte Vorbereitung auf die Zertifizierung als Versicherungsvermittler:in VBV – mit Praxisfokus."}},
+      {"@type": "Question", "name": "Wie lange dauert die Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "Rund 3 Monate – mit Start jeden Monat."}},
+      {"@type": "Question", "name": "Welche Module gibt es?", "acceptedAnswer": {"@type": "Answer", "text": "1) Generelle Fähigkeiten (online) · 2) Krankenzusatzversicherung (online) · 3) Nichtleben (vor Ort) · 4) Leben (vor Ort)."}},
+      {"@type": "Question", "name": "Wo finden Präsenz-Teile statt?", "acceptedAnswer": {"@type": "Answer", "text": "In Basel, Bern, Zürich, Lausanne, Lugano – standortnah je nach Teilnehmenden."}},
+      {"@type": "Question", "name": "Was kostet es?", "acceptedAnswer": {"@type": "Answer", "text": "CHF 150.– pro Schulungstag und Person. Exklusivschulungen: CHF 2'200.– pro Tag (pauschal)."}},
+      {"@type": "Question", "name": "Ist die Reservation verbindlich?", "acceptedAnswer": {"@type": "Answer", "text": "Unverbindlich. Du erhältst danach Testzugang und den Bezahlen-Link."}},
+      {"@type": "Question", "name": "Kann ich nur einzelne Module buchen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, gesamt oder modular – je nach Bedarf."}},
+      {"@type": "Question", "name": "Gibt es Lernmaterial?", "acceptedAnswer": {"@type": "Answer", "text": "Ja: Skripte, Präsentationen, Checklisten, Podcasts – via Lernplattform."}},
+      {"@type": "Question", "name": "Welche Technik brauche ich online?", "acceptedAnswer": {"@type": "Answer", "text": "PC/Laptop, stabile Internetverbindung, Microsoft Teams, Headset. Kamera empfohlen."}},
+      {"@type": "Question", "name": "Bekomme ich CICERO-Credits?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, Weiterbildungen zum Erwerb von CICERO-Credits sind vorgesehen (je nach Modul/Format)."}}
     ]
   };
 
