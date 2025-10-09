@@ -36,7 +36,7 @@ const Kontakt = () => {
                 <a href="mailto:academy@maklerzentrum.ch" className="btn-primary">
                   E-Mail schreiben
                 </a>
-                <a href="tel:+41799486986" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C' }}>
+                <a href="tel:+41799486986" className="btn-primary" style={{ background: 'white', color: '#D81C1C', border: '2px solid #D81C1C' }}>
                   079 948 69 86
                 </a>
               </div>
