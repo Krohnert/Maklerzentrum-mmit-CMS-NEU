@@ -58,7 +58,7 @@ const Schulung = () => {
       </section>
 
       {/* 3 Schritte */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#F9F9F9]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-center mb-8">So reservierst du – in 3 Schritten</h2>
