@@ -49,8 +49,8 @@ const Schulung = () => {
         <meta property="og:url" content="https://maklerzentrum.ch/schulung/" />
         <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>
       </Helmet>
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      {/* Hero Section - 350px desktop, 250px mobile */}
+      <section className="relative h-[250px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=500&fit=crop" 
