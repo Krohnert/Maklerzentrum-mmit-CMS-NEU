@@ -36,8 +36,9 @@ function App() {
         </Routes>
         <Footer />
         <MobileStickyCTA />
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
+    </HelmetProvider>
   );
 }
 
