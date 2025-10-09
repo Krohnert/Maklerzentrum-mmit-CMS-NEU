@@ -40,6 +40,15 @@ const Schulung = () => {
 
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>VBV Schulung Schweiz – Start jeden Monat | Maklerzentrum</title>
+        <meta name="description" content="4 Module (online & vor Ort), Termin-Matrix 2026, CHF 150/Tag. Reserve jetzt deinen Starttermin und sichere deinen Platz." />
+        <link rel="canonical" href="https://maklerzentrum.ch/schulung/" />
+        <meta property="og:title" content="VBV Schulung Schweiz – Start jeden Monat | Maklerzentrum" />
+        <meta property="og:description" content="4 Module (online & vor Ort), Termin-Matrix 2026, CHF 150/Tag." />
+        <meta property="og:url" content="https://maklerzentrum.ch/schulung/" />
+        <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
