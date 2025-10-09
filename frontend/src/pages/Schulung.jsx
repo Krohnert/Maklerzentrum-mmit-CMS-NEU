@@ -83,30 +83,42 @@ const Schulung = () => {
         </div>
       </section>
 
-      {/* Ablauf */}
-      <section className="section-padding bg-[#F6F6F6]">
+      {/* Ablauf - Heller Text auf dunklem Hintergrund mit weißen Trennern */}
+      <section className="section-padding bg-[#2c2c2c]">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Ablauf in 5 Schritten</h2>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <h2 className="text-center mb-12 text-white">Ablauf in 5 Schritten</h2>
+          <div className="max-w-4xl mx-auto">
             {[
               { num: 1, title: 'Buchung/Reservation', desc: 'Monat/Kohorte und Module wählen.' },
               { num: 2, title: 'Zugang', desc: 'Lernplattform, Skripte, Podcasts, .ics-Termine.' },
               { num: 3, title: 'Online', desc: 'Generelle Fähigkeiten & Krankenzusatz.' },
               { num: 4, title: 'Präsenz', desc: 'Nichtleben & Leben standortnah.' },
               { num: 5, title: 'Prüfung', desc: 'Wir bereiten dich gezielt vor.' }
-            ].map(step => (
-              <div key={step.num} className="card-custom flex items-start">
-                <div className="w-14 h-14 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">
-                  {step.num}
+            ].map((step, index) => (
+              <div key={step.num}>
+                <div className="flex items-start py-6">
+                  <div className="w-14 h-14 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">
+                    {step.num}
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-white">{step.title}</h3>
+                    <p className="text-white/80">{step.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.desc}</p>
-                </div>
+                {index < 4 && <div className="h-px bg-white/20"></div>}
               </div>
             ))}
           </div>
         </div>
+      </section>
+      
+      {/* Bild nach Ablauf */}
+      <section className="h-[300px] overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=300&fit=crop" 
+          alt="VBV Ausbildung" 
+          className="w-full h-full object-cover"
+        />
       </section>
 
       {/* Module - Kompakt */}
