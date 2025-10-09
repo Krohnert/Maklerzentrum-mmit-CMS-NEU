@@ -96,6 +96,36 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Video Platzhalter */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
+              {/* Video Platzhalter Bild */}
+              <img 
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=675&fit=crop" 
+                alt="VBV Ausbildung Erklärvideo" 
+                className="w-full h-full object-cover"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                {/* Play Button */}
+                <div className="w-20 h-20 bg-[#D81C1C] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-2xl">
+                  <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              {/* Video Titel Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-semibold mb-1">VBV Ausbildung erklärt</h3>
+                <p className="text-white/80 text-sm">Erfahre in 2 Minuten, wie die Ausbildung abläuft</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Module - Kompakt in 4 Zeilen */}
       <section className="section-padding bg-[#F9F9F9]">
         <div className="container-custom">
