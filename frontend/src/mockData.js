@@ -80,24 +80,210 @@ export const testimonials = [
 
 export const faqData = [
   {
-    question: 'Wie lange dauert die Ausbildung?',
-    answer: 'Ca. 3 Monate – je nach deinem Tempo und Modul-Auswahl.'
+    category: 'Allgemein',
+    questions: [
+      {
+        question: 'Was ist die VBV-Ausbildung?',
+        answer: 'Die anerkannte Vorbereitung auf die Zertifizierung als Versicherungsvermittler:in VBV – mit Praxisfokus.'
+      },
+      {
+        question: 'Brauche ich das wirklich?',
+        answer: 'Ja. Seit 2024 gilt das revidierte VAG; Vermittler:innen müssen Qualifikation und Standards nachweisen (FINMA-Kontext).'
+      },
+      {
+        question: 'Für wen ist das geeignet?',
+        answer: 'Einsteiger, Quereinsteiger, Mitarbeitende im Vertrieb/Innendienst, Broker – und Teams in der Probezeit.'
+      },
+      {
+        question: 'Gibt es Voraussetzungen?',
+        answer: 'Nein. Grundkenntnisse sind hilfreich, aber nicht Pflicht.'
+      },
+      {
+        question: 'In welcher Sprache?',
+        answer: 'Deutsch. Französische/italienische Durchgänge sind in Planung bzw. folgen standortbezogen.'
+      }
+    ]
   },
   {
-    question: 'Was ist online, was ist vor Ort?',
-    answer: 'Generelle Fähigkeiten & Krankenzusatz sind online (Microsoft Teams). Nichtleben & Leben finden vor Ort statt.'
+    category: 'Aufbau & Ablauf',
+    questions: [
+      {
+        question: 'Wie lange dauert die Ausbildung?',
+        answer: 'Rund 3 Monate – mit Start jeden Monat.'
+      },
+      {
+        question: 'Wie ist der Ablauf?',
+        answer: 'Online-Module zuerst, danach die Präsenz-Module. Alles ist im Terminplan ersichtlich.'
+      },
+      {
+        question: 'Welche Module gibt es?',
+        answer: '1) Generelle Fähigkeiten (online) · 2) Krankenzusatzversicherung (online) · 3) Nichtleben (vor Ort) · 4) Leben (vor Ort).'
+      },
+      {
+        question: 'Wo finden Präsenz-Teile statt?',
+        answer: 'In Basel, Bern, Zürich, Lausanne, Lugano – standortnah je nach Teilnehmenden.'
+      },
+      {
+        question: 'Wann starten die Seminare?',
+        answer: 'Start jeweils in der 2. Kalenderwoche des Monats (DE-Durchgänge).'
+      },
+      {
+        question: 'Kann ich nur einzelne Module buchen?',
+        answer: 'Ja, gesamt oder modular – je nach Bedarf.'
+      },
+      {
+        question: 'Gibt es Aufzeichnungen?',
+        answer: 'Online-Teile werden begleitet; Unterlagen/Podcasts stehen über die Lernplattform bereit.'
+      },
+      {
+        question: 'Wie gross sind die Klassen?',
+        answer: 'Kompakte Gruppen (ca. 15–20 Teilnehmende) für Austausch und Praxis.'
+      }
+    ]
   },
   {
-    question: 'Wo finden die Präsenzteile statt?',
-    answer: 'In Basel, Bern, Zürich, Lausanne und Lugano – wir planen den nächstgelegenen Standort zu deiner PLZ.'
+    category: 'Reservierung & Anmeldung',
+    questions: [
+      {
+        question: 'Wie reserviere ich einen Platz?',
+        answer: 'Auf der Seite "Platz sichern": Starttermin/Modul wählen, Daten senden – fertig.'
+      },
+      {
+        question: 'Ist die Reservation verbindlich?',
+        answer: 'Unverbindlich. Du erhältst danach Testzugang und den Bezahlen-Link.'
+      },
+      {
+        question: 'Ab wann ist mein Platz fix?',
+        answer: 'Nach Zahlungseingang bzw. schriftlicher Bestätigung.'
+      },
+      {
+        question: 'Worin unterscheidet sich „Anmelden" im Header?',
+        answer: '„Anmelden" ist nur für bereits zahlende Teilnehmende (Login zur Lernumgebung). Für neue Interessierte: „Platz sichern".'
+      },
+      {
+        question: 'Kann ich umbuchen oder stornieren?',
+        answer: 'Ja – gemäss AGB. Melde dich frühzeitig, wir finden eine Lösung.'
+      }
+    ]
   },
   {
-    question: 'Kann ich Module einzeln buchen?',
-    answer: 'Ja, du kannst die Ausbildung modular aufbauen und einzelne Module buchen.'
+    category: 'Inhalte & Prüfung',
+    questions: [
+      {
+        question: 'Deckt die Ausbildung die VBV-Prüfung ab?',
+        answer: 'Ja. Inhalte orientieren sich an den offiziellen VBV-Anforderungen.'
+      },
+      {
+        question: 'Nehmt ihr die Prüfung ab?',
+        answer: 'Wir bereiten vor. Die Prüfung wird gemäss VBV-Vorgaben abgenommen; Infos/Anmeldung erhältst du im Kurs.'
+      },
+      {
+        question: 'Gibt es Lernmaterial?',
+        answer: 'Ja: Skripte, Präsentationen, Checklisten, Podcasts – via Lernplattform.'
+      },
+      {
+        question: 'Bekomme ich CICERO-Credits?',
+        answer: 'Ja, Weiterbildungen zum Erwerb von CICERO-Credits sind vorgesehen (je nach Modul/Format).'
+      }
+    ]
   },
   {
-    question: 'Gibt es auch Firmenklassen?',
-    answer: 'Ja, Exklusivklassen für Firmen ab CHF 2\'200/Tag pauschal. Individuell planbar nach eurem Zeitplan.'
+    category: 'Technik & Teilnahme',
+    questions: [
+      {
+        question: 'Welche Technik brauche ich online?',
+        answer: 'PC/Laptop, stabile Internetverbindung, Microsoft Teams, Headset. Kamera empfohlen.'
+      },
+      {
+        question: 'Wie erhalte ich Zugänge/Links?',
+        answer: 'Per E-Mail nach Reservation. Inklusive .ics-Kalendereinladungen.'
+      },
+      {
+        question: 'Was, wenn ich einen Termin verpasse?',
+        answer: 'Melde dich kurz – wir prüfen Ersatztermine oder Inhalte zum Nacharbeiten.'
+      }
+    ]
+  },
+  {
+    category: 'Preise & Zahlung',
+    questions: [
+      {
+        question: 'Was kostet es?',
+        answer: 'CHF 150.– pro Schulungstag und Person. Exklusivschulungen: CHF 2\'200.– pro Tag (pauschal).'
+      },
+      {
+        question: 'Sind Lehrmittel/Prüfungsgebühren inklusive?',
+        answer: 'Offizielle VBV-Lehrmittel/Prüfungsgebühren sind separat.'
+      },
+      {
+        question: 'Wie kann ich bezahlen?',
+        answer: 'Per Bezahlen-Link (z. B. Karte) oder Rechnung – Details in der Bestätigungsmail.'
+      },
+      {
+        question: 'Gibt es Rabatte für Gruppen?',
+        answer: 'Bei Firmenklassen ergeben sich Skalenvorteile; sprich uns an.'
+      }
+    ]
+  },
+  {
+    category: 'Firmen & HR',
+    questions: [
+      {
+        question: 'Bietet ihr Exklusivschulungen für Unternehmen?',
+        answer: 'Ja, Firmenklasse (pauschal CHF 2\'200/Tag), standortnah oder in-house.'
+      },
+      {
+        question: 'Ab wie vielen Personen lohnt sich das?',
+        answer: 'Erfahrungsgemäss ab 10+ Personen – wir rechnen das gerne vor.'
+      },
+      {
+        question: 'Unterstützt ihr bei Planung/Reporting?',
+        answer: 'Ja: Terminplanung, Teilnehmerlisten, Teilnahmebestätigungen – auf Wunsch mit HR-Reporting.'
+      }
+    ]
+  },
+  {
+    category: 'Qualität & Support',
+    questions: [
+      {
+        question: 'Wer unterrichtet?',
+        answer: 'Dozierende aus der Praxis – mit viel Felderfahrung.'
+      },
+      {
+        question: 'Gibt es Support bei Fragen?',
+        answer: 'Ja. Kundendienst (DE/FR/IT, insgesamt bis zu 8 Sprachen) per Mail/Telefon.'
+      },
+      {
+        question: 'Wie stellt ihr Qualität sicher?',
+        answer: 'Standardisierte Inhalte, Feedback-Schleifen, QS-Checks – und konsequente Ausrichtung an VBV/Regulatorik.'
+      }
+    ]
+  },
+  {
+    category: 'Nach der Schulung',
+    questions: [
+      {
+        question: 'Bekomme ich eine Teilnahmebestätigung?',
+        answer: 'Ja, für absolvierte Module.'
+      },
+      {
+        question: 'Wie geht es nach dem VBV weiter?',
+        answer: 'Weiterbildungen: IAF (dipl. Finanz-/Vorsorgeberater), Versicherungsfachmann/-frau mit eidg. FA, Finanzplaner u. a. – inkl. CICERO-Credits.'
+      }
+    ]
+  },
+  {
+    category: 'Recht & Datenschutz',
+    questions: [
+      {
+        question: 'Seid ihr unabhängig?',
+        answer: 'Ja – unabhängige Marktführerin und Bindeglied zu wichtigen Versicherern.'
+      },
+      {
+        question: 'Wie geht ihr mit Daten um?',
+        answer: 'Gemäss Datenschutz/AGB. Wir verwenden deine Daten nur zur Abwicklung und Betreuung.'
+      }
+    ]
   }
 ];
 
