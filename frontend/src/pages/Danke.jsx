@@ -16,7 +16,29 @@ const Danke = () => {
 
   return (
     <div className="pb-20 lg:pb-0">
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white min-h-[70vh] flex items-center">
+      {/* Hero Section */}
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1920&h=500&fit=crop" 
+            alt="Danke" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">Danke – wir haben deine Reservation.</h1>
+              <p className="text-xl text-white/90">
+                Deine Buchung ist eingegangen. Wir melden uns in Kürze bei dir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white min-h-[50vh] flex items-center">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
