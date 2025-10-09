@@ -134,7 +134,7 @@ const Kontakt = () => {
                     !showCompanyForm ? 'bg-[#D81C1C] text-white' : 'text-gray-600 hover:text-gray-800'
                   }`}
                 >
-                  Platz sichern
+                  Reservieren
                 </button>
                 <button
                   onClick={() => setShowCompanyForm(true)}
@@ -149,7 +149,7 @@ const Kontakt = () => {
 
             {!showCompanyForm ? (
               <div>
-                <h2 className="text-center mb-4">Platz sichern</h2>
+                <h2 className="text-center mb-4">Reservieren</h2>
                 <p className="text-center text-gray-600 mb-8">
                   Wähle <strong>Monat/Kohorte</strong> und Modul. Nach Absenden kommt <strong>eine E-Mail</strong> mit <strong>Testzugang</strong> und <strong>Bezahlen-Link</strong>.
                 </p>

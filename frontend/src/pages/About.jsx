@@ -125,7 +125,7 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/#booking" className="btn-primary">
-                Platz sichern
+                Reservieren
               </a>
               <Link to="/kontakt" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C', border: '2px solid #D81C1C' }}>
                 Kontakt aufnehmen
