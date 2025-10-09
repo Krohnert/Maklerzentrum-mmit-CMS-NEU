@@ -106,7 +106,7 @@ const Home = () => {
                 <a href="#booking" className="btn-primary">
                   Reservieren
                 </a>
-                <Link to="/kontakt" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C', border: '2px solid white' }}>
+                <Link to="/kontakt" className="btn-primary" style={{ background: 'white', color: '#D81C1C', border: '2px solid white' }}>
                   Firmenklasse anfragen
                 </Link>
               </div>
