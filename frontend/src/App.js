@@ -18,8 +18,9 @@ import Impressum from './pages/Impressum';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
+    <HelmetProvider>
+      <div className="App">
+        <BrowserRouter>
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
