@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const DankeFirmenklasse = () => {
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>Danke – Firmenklasse Anfrage erhalten | Maklerzentrum</title>
+        <meta name="robots" content="noindex,follow" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
