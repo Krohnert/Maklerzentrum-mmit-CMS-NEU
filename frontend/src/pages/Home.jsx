@@ -12,7 +12,7 @@ const Home = () => {
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=350&fit=crop" 
-            alt="VBV Ausbildung" 
+            alt="VBV Ausbildung – Online und Präsenz in Basel, Bern, Zürich, Lausanne, Lugano" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
@@ -57,10 +57,10 @@ const Home = () => {
       </section>
 
       {/* 3-Schritte-Reservation */}
-      <section className="section-padding bg-[#F6F6F6]">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="card-custom">
+            <div className="card-custom bg-[#F6F6F6]">
               <h2 className="text-center mb-8">So einfach reservierst du deinen Platz – in 3 Schritten.</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -97,12 +97,12 @@ const Home = () => {
       </section>
 
       {/* Module - Kompakt in 4 Zeilen */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#F9F9F9]">
         <div className="container-custom">
           <h2 className="text-center mb-8">Die 4 Module – Dein Weg zum VBV</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {modules.map((module, index) => (
-              <div key={index} className="flex items-center p-4 bg-[#F6F6F6] rounded-lg hover:bg-gray-100 transition-colors">
+              <div key={index} className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow border border-[#CCCCCC]">
                 <div className="w-10 h-10 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
                   {index + 1}
                 </div>
@@ -111,7 +111,7 @@ const Home = () => {
                   <p className="text-sm text-gray-600">{module.description}</p>
                 </div>
                 <div className="ml-4">
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border border-gray-300">
+                  <span className="inline-block bg-[#F6F6F6] px-3 py-1 rounded-full text-xs font-medium text-gray-700 border border-[#CCCCCC]">
                     {module.format}
                   </span>
                 </div>
@@ -181,14 +181,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ - Dunkles Weiß Hintergrund */}
+      {/* FAQ - Heller Hintergrund */}
       <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-center mb-12">Häufige Fragen</h2>
             <div className="space-y-4">
               {faqData.map((faq, index) => (
-                <div key={index} className="card-custom bg-white">
+                <div key={index} className="card-custom bg-white border border-[#CCCCCC]">
                   <h3 className="mb-3 flex items-start">
                     <Check size={24} className="text-[#D81C1C] mr-3 flex-shrink-0 mt-1" />
                     {faq.question}
