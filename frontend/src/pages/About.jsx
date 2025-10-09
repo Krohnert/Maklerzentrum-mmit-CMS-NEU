@@ -1,7 +1,7 @@
 import React from 'react';
 import { team } from '../mockData';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (

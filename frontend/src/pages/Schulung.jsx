@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { scheduleData, modules, modulesList, locations, cohorts } from '../mockData';
 import { Search } from 'lucide-react';
 

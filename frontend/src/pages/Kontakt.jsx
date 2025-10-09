@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Clock, Globe } from 'lucide-react';
 import CompanyForm from '../components/CompanyForm';
 
