@@ -275,7 +275,7 @@ const BookingForm = () => {
           disabled={isSubmitting}
           className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Unverbindlich reservieren'}
+          {isSubmitting ? 'Wird gesendet...' : 'Reservieren'}
         </button>
       </div>
     </form>
