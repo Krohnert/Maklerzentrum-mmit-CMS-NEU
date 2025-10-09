@@ -1,12 +1,85 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { modules, testimonials, faqData } from '../mockData';
 import BookingForm from '../components/BookingForm';
 
 const Home = () => {
+  const jsonLdOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Maklerzentrum Schweiz AG",
+    "url": "https://maklerzentrum.ch/",
+    "logo": "https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/65e6rt5r_Logo_def_normal.jpg",
+    "telephone": "+41 79 948 69 86",
+    "email": "academy@maklerzentrum.ch",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Elisabethenanlage 11",
+      "postalCode": "4051",
+      "addressLocality": "Basel",
+      "addressCountry": "CH"
+    },
+    "areaServed": ["CH"]
+  };
+
+  const jsonLdCourse = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Ausbildung zum Versicherungsvermittler (VBV)",
+    "description": "Monatlicher Start. Blended Learning: Online (Teams) & Präsenz in Basel, Bern, Zürich, Lausanne, Lugano. Preis: CHF 150/Tag.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Maklerzentrum Schweiz AG",
+      "url": "https://maklerzentrum.ch/"
+    },
+    "hasCourseInstance": [{
+      "@type": "CourseInstance",
+      "courseMode": ["online", "inPerson"],
+      "location": [
+        {"@type": "Place", "name": "Basel"},
+        {"@type": "Place", "name": "Bern"},
+        {"@type": "Place", "name": "Zürich"},
+        {"@type": "Place", "name": "Lausanne"},
+        {"@type": "Place", "name": "Lugano"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "150",
+        "priceCurrency": "CHF",
+        "category": "perDay"
+      }
+    }]
+  };
+
+  const jsonLdFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Wie lange dauert die VBV-Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel rund 3 Monate mit Starttermin jeden Monat."}},
+      {"@type": "Question", "name": "Welche Module sind online, welche vor Ort?", "acceptedAnswer": {"@type": "Answer", "text": "Generelle Fähigkeiten & Krankenzusatz online; Nichtleben & Leben vor Ort."}},
+      {"@type": "Question", "name": "Wo finden die Präsenztermine statt?", "acceptedAnswer": {"@type": "Answer", "text": "Basel, Bern, Zürich, Lausanne, Lugano."}},
+      {"@type": "Question", "name": "Was kostet die Ausbildung?", "acceptedAnswer": {"@type": "Answer", "text": "Offene Klassen: CHF 150 pro Tag und Person; Exklusivklasse: CHF 2'200 pro Tag pauschal."}}
+    ]
+  };
+
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>VBV Ausbildung – monatlicher Start | Maklerzentrum Schweiz AG</title>
+        <meta name="description" content="Zum VBV in ~3 Monaten. Online (Teams) + Präsenz in Basel, Bern, Zürich, Lausanne, Lugano. CHF 150/Tag. Plätze begrenzt – jetzt reservieren." />
+        <link rel="canonical" href="https://maklerzentrum.ch/" />
+        <meta property="og:title" content="VBV Ausbildung – monatlicher Start | Maklerzentrum Schweiz AG" />
+        <meta property="og:description" content="Zum VBV in ~3 Monaten. Online (Teams) + Präsenz in Basel, Bern, Zürich, Lausanne, Lugano. CHF 150/Tag." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://maklerzentrum.ch/" />
+        <meta property="og:site_name" content="Maklerzentrum Schweiz AG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">{JSON.stringify(jsonLdOrganization)}</script>
+        <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>
+        <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
+      </Helmet>
       {/* Hero Section with Image - 350px */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
