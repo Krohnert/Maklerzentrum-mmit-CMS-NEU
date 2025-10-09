@@ -80,8 +80,8 @@ const Home = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
-      {/* Hero Section with Image - 350px desktop, 280px mobile */}
-      <section className="relative h-[280px] md:h-[350px] overflow-hidden">
+      {/* Hero Section with Image - 350px desktop, 220px mobile */}
+      <section className="relative h-[220px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=350&fit=crop" 
