@@ -245,7 +245,10 @@ const Schulung = () => {
                       <td className="px-4 py-3 text-center">
                         <button
                           onClick={() => handlePlatzSichern(item)}
-                          className="bg-[#D81C1C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#b81717] transition-colors"
+                          className="bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white px-4 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all hover:-translate-y-0.5"
+                          style={{
+                            boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                          }}
                         >
                           Reservieren
                         </button>
