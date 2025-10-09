@@ -20,9 +20,9 @@ const Home = () => {
         <div className="relative h-full flex items-center">
           <div className="container-custom">
             <div className="max-w-3xl text-white">
-              <div className="inline-block bg-[#D81C1C] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <p className="text-3xl font-bold text-white mb-6">
                 Keine halben Sachen.
-              </div>
+              </p>
               <h1 className="mb-6 text-white">
                 Zum VBV – planbar. praxisnah. produktiv.
               </h1>
