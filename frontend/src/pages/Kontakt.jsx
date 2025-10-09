@@ -8,6 +8,13 @@ const Kontakt = () => {
 
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>Kontakt – VBV Platz sichern & Firmenklasse anfragen | Maklerzentrum</title>
+        <meta name="description" content="Fragen oder reservieren? Schreib uns oder ruf an. Wir melden uns schnell." />
+        <link rel="canonical" href="https://maklerzentrum.ch/kontakt/" />
+        <meta property="og:title" content="Kontakt – VBV Platz sichern" />
+        <meta property="og:url" content="https://maklerzentrum.ch/kontakt/" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
