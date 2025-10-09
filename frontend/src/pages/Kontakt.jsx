@@ -8,13 +8,31 @@ const Kontakt = () => {
   return (
     <div className="pb-20 lg:pb-0">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">Wir sind für dich da.</h1>
-            <p className="text-xl text-gray-600">
-              Schreib uns kurz – oder ruf an. Wir melden uns schnell.
-            </p>
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=500&fit=crop" 
+            alt="Kontakt" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">Wir sind für dich da.</h1>
+              <p className="text-xl text-white/90 mb-6">
+                Schreib uns kurz – oder ruf an. Wir melden uns schnell.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="mailto:academy@maklerzentrum.ch" className="btn-primary">
+                  E-Mail schreiben
+                </a>
+                <a href="tel:+41799486986" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C' }}>
+                  079 948 69 86
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -93,9 +111,9 @@ const Kontakt = () => {
               <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong> (weitere Räume nach Bedarf).<br />
               Wir planen den <strong>nächstgelegenen Standort</strong> zu deiner Postleitzahl ein.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {['Basel', 'Bern', 'Zürich', 'Lausanne', 'Lugano'].map(city => (
-                <div key={city} className="card-custom text-center py-4">
+                <div key={city} className="px-6 py-3 bg-white border border-gray-200 rounded-full">
                   <p className="font-semibold text-gray-800">{city}</p>
                 </div>
               ))}

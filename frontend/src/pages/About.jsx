@@ -7,13 +7,23 @@ const About = () => {
   return (
     <div className="pb-20 lg:pb-0">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">Wir machen keine halben Sachen.</h1>
-            <p className="text-xl text-gray-600">
-              Seit über 25 Jahren bilden wir in der Schweiz Versicherungsvermittler aus. Unabhängig, praxisnah und planbar – mit monatlichen Starts, klaren Terminen und fairem Preis.
-            </p>
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=500&fit=crop" 
+            alt="Team Maklerzentrum" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">Wir machen keine halben Sachen.</h1>
+              <p className="text-xl text-white/90">
+                Seit über 25 Jahren bilden wir in der Schweiz Versicherungsvermittler aus. Unabhängig, praxisnah und planbar – mit monatlichen Starts, klaren Terminen und fairem Preis.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -69,28 +79,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Standorte */}
-      <section className="section-padding bg-[#F6F6F6]">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-center mb-6">Unsere Standorte</h2>
-            <p className="text-center text-lg text-gray-600 mb-8">
-              Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. Online auf <strong>Microsoft Teams</strong>.
-            </p>
-            <div className="grid md:grid-cols-5 gap-4">
-              {['Basel', 'Bern', 'Zürich', 'Lausanne', 'Lugano'].map(city => (
-                <div key={city} className="card-custom text-center">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full mx-auto mb-3"></div>
-                  <p className="font-semibold text-gray-800">{city}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <h2 className="text-center mb-12">Unser Team</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
@@ -107,11 +97,26 @@ const About = () => {
               </div>
             ))}
           </div>
+          
+          {/* Standorte - kompakt unter Team */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <h2 className="text-center mb-6">Unsere Standorte</h2>
+            <p className="text-center text-gray-600 mb-6">
+              Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. Online auf <strong>Microsoft Teams</strong>.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {['Basel', 'Bern', 'Zürich', 'Lausanne', 'Lugano'].map(city => (
+                <div key={city} className="px-6 py-3 bg-white border border-gray-200 rounded-full">
+                  <p className="font-semibold text-gray-800">{city}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#F6F6F6]">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-6">Bereit für deinen VBV?</h2>

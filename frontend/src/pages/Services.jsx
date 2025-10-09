@@ -24,16 +24,29 @@ const Services = () => {
   return (
     <div className="pb-20 lg:pb-0">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">Werde Teil der MZ-Infrastruktur.</h1>
-            <p className="text-xl text-gray-600 mb-6">
-              Für freie Versicherungsmakler macht die <strong>Power einer starken Infrastruktur</strong> den Unterschied.
-            </p>
-            <p className="text-lg text-gray-700">
-              Du verkaufst – wir halten dir den Rücken frei: Administration, Buchhaltung, Bestand, CRM, Helpdesk, Infrastruktur, Qualität, Recht, Kundendienst und Weiterbildung.
-            </p>
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=500&fit=crop" 
+            alt="Infrastruktur Services" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">Werde Teil der MZ-Infrastruktur.</h1>
+              <p className="text-xl mb-8 text-white/90">
+                Für freie Versicherungsmakler macht die <strong>Power einer starken Infrastruktur</strong> den Unterschied.
+              </p>
+              <p className="text-lg mb-8 text-white/80">
+                Du verkaufst – wir halten dir den Rücken frei: Administration, Buchhaltung, Bestand, CRM, Helpdesk, Infrastruktur, Qualität, Recht, Kundendienst und Weiterbildung.
+              </p>
+              <Link to="/kontakt" className="btn-primary">
+                Beratung anfragen
+              </Link>
+            </div>
           </div>
         </div>
       </section>
