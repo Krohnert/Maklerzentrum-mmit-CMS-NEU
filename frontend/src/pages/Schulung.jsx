@@ -293,7 +293,7 @@ const Schulung = () => {
       </section>
 
       {/* Preise */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="mb-8">Preise</h2>
