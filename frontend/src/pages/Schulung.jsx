@@ -280,6 +280,9 @@ const Schulung = () => {
                 <button
                   onClick={() => handlePlatzSichern(item)}
                   className="btn-primary w-full"
+                  style={{
+                    boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  }}
                 >
                   Reservieren
                 </button>
