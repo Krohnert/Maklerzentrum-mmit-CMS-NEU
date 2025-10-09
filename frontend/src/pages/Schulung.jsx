@@ -278,7 +278,7 @@ const Schulung = () => {
                   onClick={() => handlePlatzSichern(item)}
                   className="btn-primary w-full"
                 >
-                  Platz sichern
+                  Reservieren
                 </button>
               </div>
             ))}
