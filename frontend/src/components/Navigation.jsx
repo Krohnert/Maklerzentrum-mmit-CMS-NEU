@@ -132,7 +132,10 @@ const Navigation = () => {
                 <div className="h-px bg-gray-200 my-2"></div>
                 
                 {/* CTA Button (Bottom) */}
-                <button onClick={scrollToBooking} className="btn-primary w-full">
+                <button 
+                  onClick={scrollToBooking} 
+                  className="bg-[#D81C1C] text-white py-3 px-6 rounded-full font-semibold hover:bg-[#b81717] transition-colors w-full"
+                >
                   Reservieren
                 </button>
               </div>
