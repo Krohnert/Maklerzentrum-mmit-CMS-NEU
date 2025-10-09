@@ -50,7 +50,7 @@ const Schulung = () => {
                 Ziel: <strong>sicher zum VBV</strong>, in etwa <strong>3 Monaten</strong>.
               </p>
               <a href="#schedule" className="btn-primary">
-                Termine ansehen
+                Reservieren
               </a>
             </div>
           </div>
