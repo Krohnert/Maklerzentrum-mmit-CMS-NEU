@@ -3,6 +3,28 @@ import React from 'react';
 const Datenschutz = () => {
   return (
     <div className="pb-20 lg:pb-0">
+      {/* Hero Section */}
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=500&fit=crop" 
+            alt="Datenschutz" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <h1 className="mb-6 text-white">Datenschutzerklärung</h1>
+              <p className="text-xl text-white/90">
+                Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
