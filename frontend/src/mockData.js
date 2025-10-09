@@ -60,7 +60,7 @@ export const modules = [
   {
     title: 'Leben (Vorsorge/Risiko)',
     format: 'Präsenz',
-    description: 'Säule 3a/3b, Risiko, Rente, Kundengespräch – der wichtigste Teil. Praxisnah vor Ort.',
+    description: 'Säule 3a/3b, Risiko, Rente, Kundengespräch – der wichtigste Teil. Praxisnah vor Ort in Basel, Bern, Zürich, Lausanne, Lugano.',
     icon: 'Users'
   }
 ];
