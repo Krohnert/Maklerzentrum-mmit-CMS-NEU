@@ -69,7 +69,7 @@ const Navigation = () => {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <button onClick={scrollToBooking} className="btn-primary">
-                Platz sichern
+                Reservieren
               </button>
               <a 
                 href="https://maklerzentrum-academy.reteach.io/" 
@@ -130,7 +130,7 @@ const Navigation = () => {
                 
                 {/* CTA Button (Bottom) */}
                 <button onClick={scrollToBooking} className="btn-primary w-full">
-                  Platz sichern
+                  Reservieren
                 </button>
               </div>
             </div>

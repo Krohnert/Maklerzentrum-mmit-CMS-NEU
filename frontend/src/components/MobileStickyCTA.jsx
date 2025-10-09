@@ -20,7 +20,7 @@ const MobileStickyCTA = () => {
             onClick={scrollToBooking}
             className="flex-1 bg-[#D81C1C] text-white py-3 rounded-full font-semibold text-center hover:bg-[#b81717] transition-colors"
           >
-            Platz sichern
+            Reservieren
           </button>
           <a 
             href="tel:+41799486986"
