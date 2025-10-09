@@ -140,7 +140,10 @@ const Navigation = () => {
                 {/* CTA Button (Bottom) */}
                 <button 
                   onClick={scrollToBooking} 
-                  className="bg-[#D81C1C] text-white py-3 px-6 rounded-full font-semibold hover:bg-[#b81717] transition-colors w-full"
+                  className="bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white py-3 px-6 rounded-full font-semibold hover:shadow-lg transition-all w-full"
+                  style={{
+                    boxShadow: '0 4px 12px rgba(216, 28, 28, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  }}
                 >
                   Reservieren
                 </button>
