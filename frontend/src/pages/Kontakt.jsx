@@ -38,7 +38,7 @@ const Kontakt = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#F9F9F9]">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Sofortkontakt */}
