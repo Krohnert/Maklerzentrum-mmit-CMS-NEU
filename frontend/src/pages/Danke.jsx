@@ -17,6 +17,11 @@ const Danke = () => {
 
   return (
     <div className="pb-20 lg:pb-0">
+      <Helmet>
+        <title>Danke – Reservierung erhalten | Maklerzentrum</title>
+        <meta name="description" content="Wir haben deine Reservierung erhalten. Du erhältst Testzugang & Bezahlen-Link per E-Mail." />
+        <meta name="robots" content="noindex,follow" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
