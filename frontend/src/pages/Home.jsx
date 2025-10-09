@@ -7,11 +7,11 @@ import BookingForm from '../components/BookingForm';
 const Home = () => {
   return (
     <div className="pb-20 lg:pb-0">
-      {/* Hero Section with Image */}
-      <section className="relative h-[500px] overflow-hidden">
+      {/* Hero Section with Image - 350px */}
+      <section className="relative h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=500&fit=crop" 
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=350&fit=crop" 
             alt="VBV Ausbildung" 
             className="w-full h-full object-cover"
           />
@@ -31,7 +31,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#booking" className="btn-primary">
-                  Platz sichern
+                  Reservieren
                 </a>
                 <Link to="/kontakt" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C', border: '2px solid white' }}>
                   Firmenklasse anfragen
@@ -42,12 +42,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Kurz erklärt */}
-      <section className="section-padding bg-white">
+      {/* Kurz erklärt - Weiße Schrift auf Dunkelgrau */}
+      <section className="section-padding bg-[#2c2c2c]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="mb-6">Kurz erklärt</h2>
-            <div className="space-y-3 text-lg text-gray-700">
+            <h2 className="mb-6 text-white">Kurz erklärt</h2>
+            <div className="space-y-3 text-lg text-white">
               <p>Wir bringen dich in rund <strong>3 Monaten</strong> zum VBV.</p>
               <p>Die <strong>Online-Teile</strong> sparen Zeit und Wege.</p>
               <p>Die <strong>Präsenz-Teile</strong> machen dich fit für Praxis und Prüfung.</p>
@@ -121,58 +121,58 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Preise */}
-      <section className="section-padding bg-[#F6F6F6]">
+      {/* Preise - Weiße Schrift auf Grau */}
+      <section className="section-padding bg-[#2c2c2c]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-center mb-8">Preise</h2>
+            <h2 className="text-center mb-8 text-white">Preise</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="card-custom text-center">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center">
                 <div className="mb-4">
-                  <div className="text-5xl font-bold text-[#D81C1C] mb-2">CHF 150</div>
-                  <div className="text-gray-600">pro Tag / Person</div>
+                  <div className="text-5xl font-bold text-white mb-2">CHF 150</div>
+                  <div className="text-white/80">pro Tag / Person</div>
                 </div>
-                <h3 className="mb-3">Offene Klassen</h3>
-                <p className="text-gray-600 mb-6">Für Einzelpersonen und kleine Gruppen</p>
+                <h3 className="mb-3 text-white">Offene Klassen</h3>
+                <p className="text-white/70 mb-6">Für Einzelpersonen und kleine Gruppen</p>
                 <a href="#booking" className="btn-primary w-full">
-                  Jetzt buchen
+                  Reservieren
                 </a>
               </div>
-              <div className="card-custom text-center">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center">
                 <div className="mb-4">
-                  <div className="text-5xl font-bold text-[#D81C1C] mb-2">CHF 2'200</div>
-                  <div className="text-gray-600">pro Tag pauschal</div>
+                  <div className="text-5xl font-bold text-white mb-2">CHF 2'200</div>
+                  <div className="text-white/80">pro Tag pauschal</div>
                 </div>
-                <h3 className="mb-3">Exklusivklasse (Firmen)</h3>
-                <p className="text-gray-600 mb-6">Individuell planbar nach eurem Zeitplan</p>
+                <h3 className="mb-3 text-white">Exklusivklasse (Firmen)</h3>
+                <p className="text-white/70 mb-6">Individuell planbar nach eurem Zeitplan</p>
                 <Link to="/kontakt" className="btn-primary w-full">
                   Anfragen
                 </Link>
               </div>
             </div>
-            <p className="text-sm text-gray-500 text-center mt-6">
+            <p className="text-sm text-white/60 text-center mt-6">
               *Prüfungs- und Lehrmittel gemäss VBV separat.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-white">
+      {/* Testimonials - Dunkler Hintergrund */}
+      <section className="section-padding bg-[#3a3a3a]">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Das sagen unsere Teilnehmer</h2>
+          <h2 className="text-center mb-12 text-white">Das sagen unsere Teilnehmer</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-custom">
+              <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
                 <div className="text-[#D81C1C] text-6xl mb-4">"</div>
-                <p className="text-lg text-gray-700 mb-6 italic">
+                <p className="text-lg text-white mb-6 italic">
                   {testimonial.quote}
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                  <div className="w-12 h-12 bg-white/20 rounded-full mr-4"></div>
                   <div>
-                    <p className="font-semibold text-gray-800">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    <p className="font-semibold text-white">{testimonial.author}</p>
+                    <p className="text-sm text-white/70">{testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -181,14 +181,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ - Dunkles Weiß Hintergrund */}
       <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-center mb-12">Häufige Fragen</h2>
             <div className="space-y-4">
               {faqData.map((faq, index) => (
-                <div key={index} className="card-custom">
+                <div key={index} className="card-custom bg-white">
                   <h3 className="mb-3 flex items-start">
                     <Check size={24} className="text-[#D81C1C] mr-3 flex-shrink-0 mt-1" />
                     {faq.question}
@@ -205,7 +205,7 @@ const Home = () => {
       <section id="booking" className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-center mb-4">Platz sichern – unverbindlich reservieren</h2>
+            <h2 className="text-center mb-4">Jetzt reservieren</h2>
             <p className="text-center text-gray-600 mb-8">
               Fülle das Formular aus und wir senden dir den Testzugang sowie den Link zum Bezahlen.
             </p>
