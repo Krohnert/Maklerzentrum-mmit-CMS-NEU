@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        isScrolled ? 'bg-[#F6F6F6] shadow-md' : 'bg-[#F6F6F6]/95 backdrop-blur-sm'
       }`}>
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
@@ -75,7 +75,7 @@ const Navigation = () => {
                 href="https://maklerzentrum-academy.reteach.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#D81C1C] font-medium transition-colors"
+                className="px-6 py-3 bg-white text-[#D81C1C] border-2 border-[#D81C1C] rounded-full font-semibold hover:bg-[#D81C1C] hover:text-white transition-colors"
               >
                 Anmelden
               </a>
@@ -102,9 +102,9 @@ const Navigation = () => {
                   href="https://maklerzentrum-academy.reteach.io/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-[#D81C1C] font-medium transition-colors text-sm"
+                  className="text-[#D81C1C] font-semibold py-2 text-center bg-[#D81C1C]/10 rounded-lg hover:bg-[#D81C1C]/20 transition-colors"
                 >
-                  Anmelden
+                  Anmelden (Login)
                 </a>
                 
                 <div className="h-px bg-gray-200"></div>

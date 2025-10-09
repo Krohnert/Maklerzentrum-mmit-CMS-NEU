@@ -1,73 +1,62 @@
 import React from 'react';
-import { BookOpen, Heart, Home as HomeIcon, Users, Play, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { modules, testimonials, faqData } from '../mockData';
 import BookingForm from '../components/BookingForm';
 
-const iconMap = {
-  BookOpen: BookOpen,
-  Heart: Heart,
-  Home: HomeIcon,
-  Users: Users
-};
-
 const Home = () => {
   return (
     <div className="pb-20 lg:pb-0">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-[#D81C1C] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Keine halben Sachen.
-            </div>
-            <h1 className="mb-6">
-              Zum VBV – planbar. praxisnah. produktiv.
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Start jeden Monat. Online (Microsoft Teams) + Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. <strong>CHF 150/Tag</strong>.
-            </p>
-            <div className="space-y-4 mb-8">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                <strong>Kurz erklärt:</strong><br />
-                Wir bringen dich in rund <strong>3 Monaten</strong> zum VBV.<br />
-                Die <strong>Online-Teile</strong> sparen Zeit und Wege.<br />
-                Die <strong>Präsenz-Teile</strong> machen dich fit für Praxis und Prüfung.
+      {/* Hero Section with Image */}
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=500&fit=crop" 
+            alt="VBV Ausbildung" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container-custom">
+            <div className="max-w-3xl text-white">
+              <div className="inline-block bg-[#D81C1C] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                Keine halben Sachen.
+              </div>
+              <h1 className="mb-6 text-white">
+                Zum VBV – planbar. praxisnah. produktiv.
+              </h1>
+              <p className="text-xl mb-8 text-white/90">
+                Start jeden Monat. Online (Microsoft Teams) + Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. <strong>CHF 150/Tag</strong>.
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#booking" className="btn-primary">
-                Platz sichern
-              </a>
-              <Link to="/kontakt" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C', border: '2px solid #D81C1C' }}>
-                Firmenklasse anfragen
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#booking" className="btn-primary">
+                  Platz sichern
+                </a>
+                <Link to="/kontakt" className="btn-primary" style={{ backgroundColor: 'white', color: '#D81C1C', border: '2px solid white' }}>
+                  Firmenklasse anfragen
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video Section */}
+      {/* Kurz erklärt */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video bg-gray-200 rounded-2xl overflow-hidden shadow-lg relative group">
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
-                <div className="w-20 h-20 bg-[#D81C1C] rounded-full flex items-center justify-center cursor-pointer transform group-hover:scale-110 transition-transform">
-                  <Play size={32} fill="white" color="white" />
-                </div>
-              </div>
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=675&fit=crop" 
-                alt="VBV Ausbildung Video" 
-                className="w-full h-full object-cover"
-              />
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="mb-6">Kurz erklärt</h2>
+            <div className="space-y-3 text-lg text-gray-700">
+              <p>Wir bringen dich in rund <strong>3 Monaten</strong> zum VBV.</p>
+              <p>Die <strong>Online-Teile</strong> sparen Zeit und Wege.</p>
+              <p>Die <strong>Präsenz-Teile</strong> machen dich fit für Praxis und Prüfung.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3 Schritte Reservation */}
+      {/* 3-Schritte-Reservation */}
       <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
@@ -107,26 +96,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Module */}
+      {/* Module - Kompakt in 4 Zeilen */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Die 4 Module – Dein Weg zum VBV</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {modules.map((module, index) => {
-              const Icon = iconMap[module.icon];
-              return (
-                <div key={index} className="card-custom">
-                  <div className="w-14 h-14 bg-[#D81C1C]/10 text-[#D81C1C] rounded-xl flex items-center justify-center mb-4">
-                    <Icon size={28} />
-                  </div>
-                  <h3 className="mb-3">{module.title}</h3>
-                  <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                    {module.format}
-                  </div>
-                  <p className="text-gray-600 text-sm">{module.description}</p>
+          <h2 className="text-center mb-8">Die 4 Module – Dein Weg zum VBV</h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {modules.map((module, index) => (
+              <div key={index} className="flex items-center p-4 bg-[#F6F6F6] rounded-lg hover:bg-gray-100 transition-colors">
+                <div className="w-10 h-10 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                  {index + 1}
                 </div>
-              );
-            })}
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-1">{module.title}</h3>
+                  <p className="text-sm text-gray-600">{module.description}</p>
+                </div>
+                <div className="ml-4">
+                  <span className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border border-gray-300">
+                    {module.format}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
