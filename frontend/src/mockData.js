@@ -146,29 +146,22 @@ export const services = [
 
 export const team = [
   {
-    name: 'Sascha Vögeli',
-    role: 'Leitung Ausbildung',
-    description: 'Über 15 Jahre Erfahrung in der Versicherungsbranche'
+    name: 'Olivier Parenteau',
+    role: 'Geschäftsleitung',
+    description: 'Maklerzentrum Schweiz AG',
+    image: 'https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/3upmlpy0_Stefan.jpeg'
   },
   {
-    name: 'Dr. Marcus Weber',
-    role: 'Dozent Leben',
-    description: 'Spezialist für Vorsorge und Risikomanagement'
+    name: 'Stefan Olivier',
+    role: 'Geschäftsleitung',
+    description: 'Maklerzentrum Schweiz AG',
+    image: 'https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/3upmlpy0_Stefan.jpeg'
   },
   {
-    name: 'Andrea Schneider',
-    role: 'Dozentin Nichtleben',
-    description: 'Expertin für Sach- und Haftpflichtversicherungen'
-  },
-  {
-    name: 'Thomas Müller',
-    role: 'Dozent Krankenzusatz',
-    description: 'Langjährige Praxis in der Krankenversicherung'
-  },
-  {
-    name: 'Laura Bianchi',
-    role: 'Programmkoordination',
-    description: 'Organisiert reibungslose Abläufe und Standorte'
+    name: 'Sascha Voegeli',
+    role: 'Leiter Ausbildung',
+    description: 'B.Sc. ZFH in Business Communications, Versicherungsvermittler VBV. Seit 2016 in der Versicherungsbranche tätig.',
+    image: 'https://customer-assets.emergentagent.com/job_68ead48d-3657-47bf-8173-f1b42021a181/artifacts/wv03xn5t_Sascha%20%282%29.jpeg'
   }
 ];
 
