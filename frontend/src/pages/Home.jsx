@@ -80,8 +80,8 @@ const Home = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
-      {/* Hero Section with Image - 350px desktop, 280px mobile */}
-      <section className="relative h-[280px] md:h-[350px] overflow-hidden">
+      {/* Hero Section with Image - 350px desktop, 360px mobile */}
+      <section className="relative h-[360px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=350&fit=crop" 
@@ -90,23 +90,23 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
         </div>
-        <div className="relative h-full flex items-center py-4">
+        <div className="relative h-full flex items-center py-6">
           <div className="container-custom">
             <div className="max-w-3xl text-white">
-              <p className="text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4">
+              <p className="text-3xl md:text-5xl font-extrabold text-white mb-2 md:mb-4 leading-tight">
                 Keine halben Sachen.
               </p>
-              <h1 className="mb-3 md:mb-4 text-white text-2xl md:text-[40px] font-bold leading-tight">
+              <h1 className="mb-2 md:mb-4 text-white text-xl md:text-[40px] font-bold leading-tight">
                 Zum VBV – planbar. praxisnah. produktiv.
               </h1>
-              <p className="text-base md:text-xl mb-4 md:mb-6 text-white/90">
+              <p className="text-sm md:text-xl mb-4 md:mb-6 text-white/90 leading-snug">
                 Start jeden Monat. Online (Microsoft Teams) + Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. <strong>CHF 150/Tag</strong>.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <a href="#booking" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-2 md:gap-4">
+                <a href="#booking" className="btn-primary text-sm md:text-base py-3 md:py-3.5">
                   Reservieren
                 </a>
-                <Link to="/kontakt" className="btn-primary" style={{ background: 'white', color: '#D81C1C', border: '2px solid white' }}>
+                <Link to="/kontakt" className="btn-primary text-sm md:text-base py-3 md:py-3.5" style={{ background: 'white', color: '#D81C1C', border: '2px solid white' }}>
                   Firmenklasse anfragen
                 </Link>
               </div>
