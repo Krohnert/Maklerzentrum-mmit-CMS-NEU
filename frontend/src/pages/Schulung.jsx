@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { scheduleData, modules, modulesList, locations, cohorts } from '../mockData';
 import { Search } from 'lucide-react';
 
 const Schulung = () => {
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://maklerzentrum.ch/"},
+      {"@type": "ListItem", "position": 2, "name": "Schulung", "item": "https://maklerzentrum.ch/schulung/"}
+    ]
+  };
   const [filterMonth, setFilterMonth] = useState('');
   const [filterModule, setFilterModule] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
