@@ -290,19 +290,34 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ - Heller Hintergrund */}
+      {/* FAQ - Erweitert mit Accordion */}
       <section className="section-padding bg-[#F6F6F6]">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-center mb-12">Häufige Fragen</h2>
-            <div className="space-y-4">
-              {faqData.map((faq, index) => (
-                <div key={index} className="card-custom bg-white border border-[#CCCCCC]">
-                  <h3 className="mb-3 flex items-start">
-                    <Check size={24} className="text-[#D81C1C] mr-3 flex-shrink-0 mt-1" />
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 ml-9">{faq.answer}</p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center mb-4">Häufige Fragen</h2>
+            <p className="text-center text-gray-600 mb-12 text-lg">
+              Alles, was du zur VBV-Ausbildung wissen musst – kurz und klar beantwortet.
+            </p>
+            <div className="space-y-8">
+              {faqData.map((category, catIndex) => (
+                <div key={catIndex}>
+                  <h3 className="text-xl font-bold mb-4 text-[#D81C1C]">{category.category}</h3>
+                  <Accordion type="single" collapsible className="space-y-2">
+                    {category.questions.map((faq, qIndex) => (
+                      <AccordionItem 
+                        key={qIndex} 
+                        value={`item-${catIndex}-${qIndex}`}
+                        className="bg-white rounded-lg border border-[#CCCCCC] px-6"
+                      >
+                        <AccordionTrigger className="text-left hover:no-underline py-4">
+                          <span className="font-semibold text-gray-800">{faq.question}</span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-gray-600 pb-4">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
                 </div>
               ))}
             </div>
