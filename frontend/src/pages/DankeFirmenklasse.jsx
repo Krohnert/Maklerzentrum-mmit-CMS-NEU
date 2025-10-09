@@ -10,8 +10,8 @@ const DankeFirmenklasse = () => {
         <title>Danke – Firmenklasse Anfrage erhalten | Maklerzentrum</title>
         <meta name="robots" content="noindex,follow" />
       </Helmet>
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      {/* Hero Section - 350px desktop, 250px mobile */}
+      <section className="relative h-[250px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1920&h=500&fit=crop" 
