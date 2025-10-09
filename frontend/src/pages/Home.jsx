@@ -80,8 +80,8 @@ const Home = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLdFAQ)}</script>
       </Helmet>
-      {/* Hero Section with Image - 350px desktop, 220px mobile */}
-      <section className="relative h-[220px] md:h-[350px] overflow-hidden">
+      {/* Hero Section with Image - 350px desktop, 280px mobile */}
+      <section className="relative h-[280px] md:h-[350px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=350&fit=crop" 
@@ -90,19 +90,19 @@ const Home = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
         </div>
-        <div className="relative h-full flex items-center">
+        <div className="relative h-full flex items-center py-4">
           <div className="container-custom">
             <div className="max-w-3xl text-white">
-              <p className="text-3xl font-bold text-white mb-6">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4">
                 Keine halben Sachen.
               </p>
-              <h1 className="mb-6 text-white">
+              <h1 className="mb-3 md:mb-4 text-white text-2xl md:text-[40px] font-bold leading-tight">
                 Zum VBV – planbar. praxisnah. produktiv.
               </h1>
-              <p className="text-xl mb-8 text-white/90">
+              <p className="text-base md:text-xl mb-4 md:mb-6 text-white/90">
                 Start jeden Monat. Online (Microsoft Teams) + Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. <strong>CHF 150/Tag</strong>.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <a href="#booking" className="btn-primary">
                   Reservieren
                 </a>
