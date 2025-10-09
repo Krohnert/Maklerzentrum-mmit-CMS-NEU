@@ -172,6 +172,7 @@ const Schulung = () => {
         <meta property="og:description" content="4 Module (online & vor Ort), Termin-Matrix 2026, CHF 150/Tag." />
         <meta property="og:url" content="https://maklerzentrum.ch/schulung/" />
         <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(jsonLdEvents)}</script>
       </Helmet>
       {/* Hero Section - 350px desktop, 250px mobile */}
       <section className="relative h-[250px] md:h-[350px] overflow-hidden">
