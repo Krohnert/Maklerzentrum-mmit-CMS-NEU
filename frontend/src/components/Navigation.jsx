@@ -67,15 +67,18 @@ const Navigation = () => {
             </div>
 
             {/* Desktop CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button onClick={scrollToBooking} className="btn-primary">
+            <div className="hidden lg:flex items-center space-x-3">
+              <button 
+                onClick={scrollToBooking} 
+                className="bg-[#D81C1C] text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#b81717] transition-colors"
+              >
                 Reservieren
               </button>
               <a 
                 href="https://maklerzentrum-academy.reteach.io/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-white text-[#D81C1C] border-2 border-[#D81C1C] rounded-full font-semibold hover:bg-[#D81C1C] hover:text-white transition-colors"
+                className="px-5 py-2 bg-white text-[#D81C1C] border-2 border-[#D81C1C] rounded-full font-semibold text-sm hover:bg-[#D81C1C] hover:text-white transition-colors"
               >
                 Anmelden
               </a>
