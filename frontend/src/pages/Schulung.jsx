@@ -121,25 +121,28 @@ const Schulung = () => {
         />
       </section>
 
-      {/* Module - Kompakt */}
-      <section className="section-padding bg-white">
+      {/* Module - Wie Ablauf gestylt */}
+      <section className="section-padding bg-[#2c2c2c]">
         <div className="container-custom">
-          <h2 className="text-center mb-8">Die 4 Module im Detail</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <h2 className="text-center mb-12 text-white">Die 4 Module im Detail</h2>
+          <div className="max-w-4xl mx-auto">
             {modules.map((module, index) => (
-              <div key={index} className="flex items-center p-4 bg-[#F6F6F6] rounded-lg">
-                <div className="w-10 h-10 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
-                  {index + 1}
+              <div key={index}>
+                <div className="flex items-start py-6">
+                  <div className="w-14 h-14 bg-[#D81C1C] text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-2 text-white">{module.title}</h3>
+                    <p className="text-white/80">{module.description}</p>
+                  </div>
+                  <div className="ml-4">
+                    <span className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-medium text-white border border-white/30">
+                      {module.format}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-1">{module.title}</h3>
-                  <p className="text-sm text-gray-600">{module.description}</p>
-                </div>
-                <div className="ml-4">
-                  <span className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border border-gray-300">
-                    {module.format}
-                  </span>
-                </div>
+                {index < 3 && <div className="h-px bg-white/20"></div>}
               </div>
             ))}
           </div>
