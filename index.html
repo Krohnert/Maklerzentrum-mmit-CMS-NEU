@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maklerzentrum Schweiz AG - VBV Schulungen</title>
+    
+    <!-- Meta Tags für SEO -->
+    <meta name="description" content="Professionelle VBV-Schulungen in der Schweiz. Werden Sie Versicherungsberater mit unseren zertifizierten Kursen in Basel, Bern, Zürich, Lausanne.">
+    <meta name="keywords" content="VBV Schulung, Versicherungsberater, Ausbildung, Schweiz, Basel, Bern, Zürich, Lausanne">
+    <meta name="author" content="Maklerzentrum Schweiz AG">
+    <link rel="canonical" href="https://maklerzentrum.ch/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Maklerzentrum Schweiz AG - VBV Schulungen">
+    <meta property="og:description" content="Professionelle VBV-Schulungen in der Schweiz. Werden Sie Versicherungsberater mit unseren zertifizierten Kursen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maklerzentrum.ch/">
+    <meta property="og:locale" content="de_CH">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D81C1C',
+                        text: '#707070',
+                        border: '#CCCCCC',
+                        surface: '#F6F6F6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    height: {
+                        'hero-sm': '300px',
+                        'hero-md': '400px'
+                    },
+                    padding: {
+                        'safe': 'env(safe-area-inset-bottom)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Security Headers (for production) -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://analytics.tiktok.com https://connect.facebook.net;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://www.google-analytics.com https://analytics.tiktok.com https://www.facebook.com;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self'
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles for enhanced design */
+        :root {
+            --color-primary: #D81C1C;
+            --color-text: #707070;
+            --color-border: #CCCCCC;
+            --color-surface: #F6F6F6;
+            --color-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--color-text);
+            line-height: 1.55;
+            font-weight: 400;
+        }
+
+        /* Button effects */
+        .btn-primary {
+            background: linear-gradient(135deg, #D81C1C, #B91515);
+            box-shadow: 0 4px 14px 0 rgba(216, 28, 28, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(216, 28, 28, 0.35);
+        }
+
+        /* Mobile navigation styles */
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile legal block styles */
+        .mobile-legal-block {
+            border-top: 1px solid #e5e7eb;
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+
+        .mobile-legal-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-legal-toggle:hover {
+            background: #f3f4f6;
+        }
+
+        .mobile-legal-toggle.active {
+            background: #fef2f2;
+            color: var(--color-primary);
+        }
+
+        .mobile-legal-links {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            max-height: 200px;
+        }
+
+        .mobile-legal-links.collapsed {
+            max-height: 0;
+        }
+
+        .mobile-legal-links li {
+            padding: 0.5rem 1rem;
+        }
+
+        .mobile-legal-links a {
+            color: #6b7280;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        .mobile-legal-links a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* Safe area for mobile */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .pb-safe {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px; /* Space for mobile sticky CTA */
+            }
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Navigation -->
+    <nav id="navigation" class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-primary" data-cms="site.brandName">
+                        Maklerzentrum Schweiz AG
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#schulung" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Schulung</a>
+                        <a href="#services" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Über uns</a>
+                        <a href="#kontakt" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Kontakt</a>
+                        <button onclick="scrollToBooking()" class="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors ml-4">
+                            Platz sichern
+                        </button>
+                        <a href="https://maklerzentrum-academy.reteach.io/" target="_blank" rel="noopener" class="text-primary border border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                    <a href="#home" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Home</a>
+                    <a href="#schulung" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Schulung</a>
+                    <a href="#services" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Services</a>
+                    <a href="#about" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Über uns</a>
+                    <a href="#kontakt" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Kontakt</a>
+                    <div class="px-3 py-2 space-y-2">
+                        <button onclick="scrollToBooking()" class="w-full bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                            Platz sichern
+                        </button>
+                        <a href="https://maklerzentrum-academy.reteach.io/" target="_blank" rel="noopener" class="block text-center text-primary border border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Anmelden
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Legal Block (will be populated by CMS) -->
+                    <div class="mobile-legal-block" data-cms-mobile-legal>
+                        <!-- Content will be loaded by CMS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-[360px] md:h-[400px] overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&h=400&fit=crop" 
+                     alt="VBV Ausbildung – Online und Präsenz in Basel, Bern, Zürich, Lausanne, Lugano" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+            </div>
+            <div class="relative h-full flex items-center py-6">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl text-white">
+                        <p class="text-3xl md:text-5xl font-extrabold text-white mb-2 md:mb-4 leading-tight" data-cms="site.claim">
+                            Keine halben Sachen.
+                        </p>
+                        <h1 class="mb-2 md:mb-4 text-white text-xl md:text-[40px] font-bold leading-tight">
+                            Zum VBV – planbar. praxisnah. produktiv.
+                        </h1>
+                        <p class="text-sm md:text-xl mb-4 md:mb-6 text-white/90 leading-snug">
+                            Start jeden Monat. Online (Microsoft Teams) + Präsenz in <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>. <strong>CHF 150/Tag</strong>.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                            <button onclick="scrollToBooking()" class="btn-primary text-sm md:text-base py-3 md:py-3.5 bg-primary text-white px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                                Reservieren
+                            </button>
+                            <a href="#kontakt" class="text-sm md:text-base py-3 md:py-3.5 bg-white text-primary border-2 border-white px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                                Firmenklasse anfragen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Content Sections -->
+        <section class="py-16 bg-white text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8">Ihre VBV-Ausbildung</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Professionelle Versicherungsberater-Ausbildung mit modernsten Methoden.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Online Theorie</h3>
+                        <p class="text-gray-600">Flexible Online-Module via Microsoft Teams</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Präsenz Praxis</h3>
+                        <p class="text-gray-600">Praktische Anwendung vor Ort</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">VBV Zertifikat</h3>
+                        <p class="text-gray-600">Anerkannte Qualifikation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-16 bg-gray-50">
+            <div class="max-w-2xl mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Jetzt Platz reservieren</h2>
+                    <p class="text-lg text-gray-600">
+                        Kostenfrei und unverbindlich – Sie erhalten danach Testzugang und Bezahlen-Link.
+                    </p>
+                </div>
+                
+                <form id="booking-form" class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label for="module" class="block text-sm font-medium text-gray-700 mb-2">Gewünschtes Modul *</label>
+                        <select id="module" name="module" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                            <option value="">Bitte wählen...</option>
+                            <option value="gesamt">Gesamt (alle 4 Module)</option>
+                            <option value="generelle">Generelle Fähigkeiten</option>
+                            <option value="kranken">Krankenzusatzversicherung</option>
+                            <option value="nichtleben">Nichtleben (Sach/Haft)</option>
+                            <option value="leben">Leben (Vorsorge/Risiko)</option>
+                        </select>
+                    </div>
+
+                    <!-- Honeypot field (hidden) -->
+                    <input type="text" name="website_url" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <div class="mt-6">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-2">
+                            <label for="agreeTerms" class="text-sm text-gray-600">
+                                Ich stimme den <a href="/agb.html" class="text-primary hover:underline" target="_blank">AGB</a> und der <a href="/datenschutz.html" class="text-primary hover:underline" target="_blank">Datenschutzerklärung</a> zu. *
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button type="submit" class="btn-primary w-full bg-primary text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors">
+                            Kostenlos reservieren
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4" data-cms="site.brandName">
+                        Maklerzentrum Schweiz AG
+                    </h3>
+                    <div class="text-gray-600 mb-4">
+                        <p data-cms="site.contact.address.street">Elisabethenanlage 11</p>
+                        <p>
+                            <span data-cms="site.contact.address.zip">4051</span>
+                            <span data-cms="site.contact.address.city">Basel</span>
+                        </p>
+                        <p data-cms="site.contact.address.country">Schweiz</p>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-4">Kontakt</h3>
+                    <div class="space-y-3">
+                        <a href="mailto:academy@maklerzentrum.ch" class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                            <span data-cms="site.contact.email">academy@maklerzentrum.ch</span>
+                        </a>
+                        <a href="tel:+41799486986" class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                            <span data-cms="site.contact.phone">079 948 69 86</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Legal Links (will be populated by CMS) -->
+                <div data-cms-footer-group="Rechtliches">
+                    <h3 class="font-semibold text-gray-800 mb-4">Rechtliches</h3>
+                    <div class="space-y-2">
+                        <a href="/impressum.html" class="block text-gray-600 hover:text-primary transition-colors">Impressum</a>
+                        <a href="/datenschutz.html" class="block text-gray-600 hover:text-primary transition-colors">Datenschutz</a>
+                        <a href="#cookies-open" class="block text-gray-600 hover:text-primary transition-colors">Cookie-Einstellungen</a>
+                        <a href="/agb.html" class="block text-gray-600 hover:text-primary transition-colors">AGB</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Claim -->
+            <div class="mt-12 pt-8 border-t border-border text-center">
+                <p class="text-xl font-semibold text-gray-800" data-cms="site.claim">
+                    „Keine halben Sachen."
+                </p>
+                <p class="text-sm text-gray-500 mt-4">
+                    © 2025 <span data-cms="site.brandName">Maklerzentrum Schweiz AG</span>. Alle Rechte vorbehalten.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 pb-safe z-40 md:hidden">
+        <div class="flex gap-2">
+            <button onclick="scrollToBooking()" class="flex-1 min-w-0 bg-primary text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-red-700 transition-colors">
+                Reservieren
+            </button>
+            <a href="tel:+41799486986" class="flex-shrink-0 w-24 bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-200 transition-colors">
+                Telefon
+            </a>
+        </div>
+    </div>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Maklerzentrum Schweiz AG",
+        "url": "https://maklerzentrum.ch",
+        "description": "Professionelle VBV-Schulungen in der Schweiz",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Elisabethenanlage 11",
+            "addressLocality": "Basel",
+            "postalCode": "4051",
+            "addressCountry": "CH"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41-79-948-69-86",
+            "email": "academy@maklerzentrum.ch",
+            "contactType": "customer service",
+            "availableLanguage": ["de", "fr", "it"]
+        }
+    }
+    </script>
+
+    <!-- CMS Integration -->
+    <script type="module" src="/assets/js/cms-adapter.js"></script>
+    <script type="module" src="/assets/js/render.js"></script>
+    <script type="module" src="/assets/js/consent.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script type="module">
+        import { getSite, getNavigation } from '/assets/js/cms-adapter.js';
+        import { renderNavigation, applyTheme, setText } from '/assets/js/render.js';
+        import { logger } from '/assets/js/config.js';
+
+        // Initialize the application
+        async function init() {
+            try {
+                // Load CMS data
+                const [site, navigation] = await Promise.all([
+                    getSite(),
+                    getNavigation()
+                ]);
+
+                // Apply site settings
+                if (site.brandName) {
+                    setText('site.brandName', site.brandName);
+                }
+                if (site.claim) {
+                    setText('site.claim', site.claim);
+                }
+                if (site.contact) {
+                    setText('site.contact.email', site.contact.email);
+                    setText('site.contact.phone', site.contact.phone);
+                    if (site.contact.address) {
+                        setText('site.contact.address.street', site.contact.address.street);
+                        setText('site.contact.address.zip', site.contact.address.zip);
+                        setText('site.contact.address.city', site.contact.address.city);
+                        setText('site.contact.address.country', site.contact.address.country);
+                    }
+                }
+
+                // Apply theme colors
+                if (site.colors) {
+                    applyTheme(site.colors);
+                }
+
+                // Render navigation
+                renderNavigation(navigation);
+
+                // Initialize mobile menu
+                initMobileMenu();
+
+                // Initialize forms
+                initForms();
+
+                logger.info('Application initialized successfully');
+
+            } catch (error) {
+                logger.error('Failed to initialize application:', error);
+            }
+        }
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('show');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('show');
+                    }
+                });
+
+                // Close mobile menu when clicking on links
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('show');
+                    });
+                });
+            }
+        }
+
+        // Form handling
+        function initForms() {
+            const bookingForm = document.getElementById('booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', handleFormSubmit);
+            }
+        }
+
+        // Handle form submission
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Check honeypot field
+            if (formData.get('website_url')) {
+                logger.warn('Bot detected in form submission');
+                return;
+            }
+            
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Wird gesendet...';
+            submitBtn.disabled = true;
+
+            try {
+                // Simulate form submission (replace with actual API call in production)
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                showNotification('Ihre Reservierung wurde erfolgreich eingereicht!', 'success');
+                form.reset();
+                
+                // Redirect to thank you page
+                setTimeout(() => {
+                    window.location.href = '/danke.html';
+                }, 2000);
+                
+                logger.info('Form submitted successfully', { email: data.email });
+
+            } catch (error) {
+                logger.error('Form submission failed:', error);
+                showNotification('Fehler beim Senden. Bitte versuchen Sie es erneut.', 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Scroll to booking function
+        window.scrollToBooking = function() {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+                const offsetTop = bookingSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        // Utility function for notifications
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+            
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
