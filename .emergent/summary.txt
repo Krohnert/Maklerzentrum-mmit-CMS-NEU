@@ -1,45 +1,33 @@
 <analysis>
-The AI engineer's trajectory shows a systematic development process for the Maklerzentrum Schweiz AG website, moving from an initial React/FastAPI setup towards a static HTML5 frontend with a local mock-CMS. Key accomplishments include duplicating the original app, a significant effort in porting core pages to HTML5, and implementing a mock CMS for dynamic content. Initial challenges involved correct routing of HTML5 pages and ensuring static assets were served correctly alongside the React development server. The engineer successfully integrated legal content (Impressum, Datenschutz, AGB) and Swiss German texts, and addressed form submission issues by adding backend endpoints. Most recently, the engineer fixed styling and content for  page dates and is now proceeding with the user's request to convert the About us page entirely to HTML5, addressing the overall goal of a fully HTML5 site.
+The AI engineer systematically transformed the Maklerzentrum Schweiz AG application from a React/FastAPI hybrid to a pure HTML5 frontend, driven by user requests for performance, SEO, and specific content management. The initial phase involved duplicating the app and porting key legal and  pages to static HTML5. A significant early challenge was correcting  page date display, ensuring alignment and complete data. Following this, the engineer addressed a series of 1:1 React-to-HTML5 conversions for core pages (, , , , , ). A recurring issue during this conversion was ensuring proper routing from React to the new static HTML5 pages and updating navigation links, which was critical to eliminate React flashes. The engineer also implemented new features like a contact form on the  page and updated styling for buttons. Most recently, the core React entry point was removed, making the site functionally React-free. The current task involves a major architectural change: moving the extensive FAQ section from the Home page to the  page and updating its content.
 </analysis>
 
 <product_requirements>
-The goal is a fast, mobile-first Swiss German website for Maklerzentrum Schweiz AG to drive VBV course reservations. It requires a sticky header with navigation, Platz sichern CTA, Anmelden link, and a detailed footer. Core pages include Home, Schulung, Services, About Us, Kontakt, Impressum, Datenschutz, AGB, and Danke. Forms (Reservierung, Firmenklasse anfragen) must submit to , with Reservieren buttons on  pre-filling forms. Non-functional requirements cover mobile-first design, SEO (meta, JSON-LD, robots.txt, sitemap), performance, and accessibility. Recent updates demanded CMS-editable legal texts (Impressum, Datenschutz, AGB), legal links in footer/mobile menu, a consent banner, HTTP security headers, form security (reCAPTCHA, rate-limiting, PII-free logging), GEO-SEO features, and page auto-scrolling to the top. All text must be in Schweizer Hochdeutsch (ss instead of ß). The  page date styling (light gray, bold, single line) was a recent fix. The current explicit request is to convert remaining React pages, starting with About us, to pure HTML5.
+The goal is a fast, mobile-first Swiss German website for Maklerzentrum Schweiz AG to drive VBV course reservations. It requires a sticky header with navigation, specific CTAs, and a detailed footer. Core pages (Home, Schulung, Services, About Us, Kontakt, Impressum, Datenschutz, AGB, Danke) must be developed. Forms (Reservierung, Firmenklasse anfragen) must submit to , with pre-filled forms from Reservieren buttons. Non-functional requirements include mobile-first design, SEO (meta, JSON-LD, robots.txt, sitemap), performance, and accessibility. Recent updates demanded CMS-editable legal texts, footer/mobile menu legal links, a consent banner, HTTP security headers, form security (reCAPTCHA, rate-limiting, PII-free logging), GEO-SEO features, and page auto-scrolling to the top. All text must be in Schweizer Hochdeutsch. The  page dates required a specific light gray, bold, single line styling and complete chronological data. The primary ongoing task is the 1:1 conversion of all remaining React pages to pure HTML5, followed by architectural changes like moving the extensive FAQ to the Schulung page.
 </product_requirements>
 
 <key_technical_concepts>
--   **Frontend:** HTML5, JavaScript (vanilla), CSS (Tailwind CSS implied), React (transitional).
+-   **Frontend:** HTML5, JavaScript (vanilla), CSS (Tailwind CSS implied), React (transitional, now almost entirely removed).
 -   **Backend:** FastAPI (Python), MongoDB.
--   **CMS:** Local mock-CMS using JSON files (, ) and JavaScript rendering logic.
+-   **CMS:** Local mock-CMS using JSON files (, ) and JavaScript rendering.
 -   **Deployment/Orchestration:** Supervisor, Kubernetes (ingress rules for /api).
--   **Security/Compliance:** HTTP Security Headers, Consent management, Form security (planned reCAPTCHA/rate-limiting).
+-   **Security/Compliance:** HTTP Security Headers, Consent management, Form security (planned reCAPTCHA/rate-limiting, honeypot).
 </key_technical_concepts>
 
 <code_architecture>
 
-
--   ****: FastAPI backend for API routes.
-    -   **Changes**: Added  and  endpoints for form submissions.
--   ****: Mock CMS data.
-    -   **Changes**: Updated multiple times to include complete and correct Impressum, Datenschutz, and AGB texts from , adapting to Swiss German.
--   ****: New JavaScript file.
-    -   **Summary**: Implements auto-scrolling to the top of the page on navigation events.
--   ****: Configuration for static HTML pages.
-    -   **Changes**: Configured  to use  environment variable.
--   ****: Static HTML5 page.
-    -   **Summary**: Presents course schedules and booking forms.
-    -   **Changes**: Created, integrated CMS content, , and updated with precise date styling (light gray, bold, single line). Contains an inline booking form.
--   **, , **: Static HTML5 legal pages.
-    -   **Summary**: Display respective legal texts dynamically via CMS.
-    -   **Changes**: Created, populated from , integrated .
--   ****: Critical for serving HTML5 pages.
-    -   **Summary**: Contains HTML5 pages (, , , ) and will include , ensuring they are accessible as static assets alongside the React app.
--   ****: Main React router setup.
-    -   **Changes**: Modified to redirect  and  paths to the static  in .
--   ****: React navigation component.
-    -   **Changes**: Updated main navigation links to point directly to the HTML5 versions of the  and legal pages.
--   ****: New HTML5 page.
-    -   **Summary**: Currently being created to replace the React About us page.
-
+-   ****: FastAPI backend. Added , , and  endpoints.
+-   ****: Mock CMS data. Updated for legal texts.
+-   ****: Auto-scrolling on navigation.
+-   ****: Configured .
+-   ****: Static HTML5 page. Dates fixed (aligned, bold, single line, light gray background), logo integrated, and now includes the extensive FAQ section from the Home page.
+-   ****: Static HTML5 page. Converted from React, integrated logo, fixed button styling, and a new contact form added, submitting to .
+-   ****: Static HTML5 page. Converted from React, includes new CTA buttons.
+-   ****: Static HTML5 page. Converted from React, includes hero, contact info, locations, and company inquiry form.
+-   ****: Now the static HTML5 Home page, fully converted from React. Its previous React entry point content in  was replaced with a direct redirect to this HTML5 version. The FAQ section has been removed from this page.
+-   ** and **: Static HTML5 pages. Converted from React, displaying success messages.
+-   ****: Main React router. Modified extensively to redirect all core paths (, , , , , , ) to their respective HTML5 pages in . The React app's direct loading was ultimately removed.
+-   ****: React navigation component. Updated all main navigation links to point to the HTML5 versions of the pages.
 </code_architecture>
 
 <pending_tasks>
@@ -53,11 +41,16 @@ The goal is a fast, mobile-first Swiss German website for Maklerzentrum Schweiz 
 </pending_tasks>
 
 <current_work>
-Immediately preceding this summary, the AI engineer successfully resolved a critical bug on the HTML5  page. The user had reported incorrect styling and content for course dates. The previous colorful badges were replaced with a light gray background for the date boxes, and the dates themselves are now displayed in bold font, ensuring each module's dates appear on a single line as requested. All provided course dates, chronologically grouped by month from December 2025 to June 2026, have been accurately integrated into the  page and copied to . This ensures the HTML5 training page correctly displays the schedule and that the Reservieren buttons function as intended, triggering pre-filled booking forms sent to .
+Immediately prior to this summary, the AI engineer was tasked with a significant architectural refactor: moving the extensive FAQ section from the HTML5 Home page () to the HTML5  page (), to be presented as an accordion. The user provided a comprehensive list of new FAQ questions and answers.
 
-Following this fix, the user explicitly requested to begin the 1:1 conversion of the About us page from its current React implementation () to a pure HTML5 page. The AI engineer has initiated this task by creating the new file , ready for content porting. The website currently operates in a hybrid state: the main page and some navigation are still React, while pages like , , , and  are functioning HTML5 pages served statically from .
+The AI engineer successfully:
+1.  **Analyzed and removed the old FAQ section** from . This involved identifying the specific HTML block for the FAQ and deleting it.
+2.  **Identified the correct placement** on the  page: directly before the Kursanfrage section, as clarified by a user-provided screenshot.
+3.  **Inserted the new, extensive FAQ content (HTML structure)** into  at the specified location. This content includes the new questions and answers in a standard accordion HTML structure.
+
+The final action in the trajectory indicates that the AI engineer is now proceeding to add the necessary JavaScript for the FAQ accordion functionality on the  page to make it interactive. This will ensure the FAQ section functions as expected.
 </current_work>
 
 <optional_next_step>
-Convert the About us page () 1:1 into a pure HTML5 page ().
+Add the JavaScript functionality for the FAQ accordion on the  page.
 </optional_next_step>

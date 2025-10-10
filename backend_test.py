@@ -12,8 +12,8 @@ from typing import Dict, Any, List
 from datetime import datetime
 
 # Configuration
-BACKEND_URL = "https://swiss-broker-portal.preview.emergentagent.com/api"
-STATIC_BASE_URL = "https://swiss-broker-portal.preview.emergentagent.com"
+BACKEND_URL = "https://react2html-makler.preview.emergentagent.com/api"
+STATIC_BASE_URL = "https://react2html-makler.preview.emergentagent.com"
 
 class BackendTester:
     def __init__(self):
