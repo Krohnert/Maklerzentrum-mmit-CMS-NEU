@@ -140,6 +140,19 @@ const Schulung = () => {
   const [filterModule, setFilterModule] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  
+  // Course booking form state
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+    agreeTerms: false
+  });
 
   const filteredSchedule = scheduleData.filter(item => {
     const matchesMonth = !filterMonth || item.cohort === filterMonth;
