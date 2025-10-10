@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Legal pages (indexable)
+Allow: /impressum.html
+Allow: /datenschutz.html
+Allow: /agb.html
+
+# Disallow sensitive areas
+Disallow: /admin/
+Disallow: /admin.html
+Disallow: /assets/js/
+Disallow: /content/
+Disallow: /*.log
+Disallow: /danke.html
+Disallow: /danke-firmenklasse.html
+
+# Sitemap
+Sitemap: https://maklerzentrum.ch/sitemap.xml
