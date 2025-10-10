@@ -91,7 +91,7 @@ function App() {
           <Route path="/schulung" element={<SchulungRedirect />} />
           <Route path="/services" element={<ServicesRedirect />} />
           <Route path="/about" element={<AboutRedirect />} />
-          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/kontakt" element={<KontaktRedirect />} />
           <Route path="/danke" element={<Danke />} />
           <Route path="/danke-firmenklasse" element={<DankeFirmenklasse />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
