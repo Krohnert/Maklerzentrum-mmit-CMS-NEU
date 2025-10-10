@@ -177,6 +177,9 @@
                 }
                 
                 logger.info('Datenschutz content loaded');
+
+                // Initialize navigation with auto-scroll
+                initNavigationHandlers();
                 
             } catch (error) {
                 logger.error('Failed to load privacy content:', error);
