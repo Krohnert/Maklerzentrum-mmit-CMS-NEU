@@ -714,8 +714,8 @@
             submitBtn.disabled = true;
 
             try {
-                // Get backend URL from environment
-                const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
+                // Get backend URL (for HTML5 pages, use the same domain with API prefix)
+                const backendUrl = location.hostname === 'localhost' ? 'http://localhost:8001' : `${location.protocol}//${location.host}`;
                 
                 // Submit to backend API
                 const response = await fetch(`${backendUrl}/api/course-booking`, {
