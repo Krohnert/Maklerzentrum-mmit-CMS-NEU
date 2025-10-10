@@ -25,6 +25,107 @@
       "description": "Professionelle VBV-Schulungen in der Schweiz. Werden Sie Versicherungsberater mit unseren zertifizierten Kursen in Basel, Bern, Zürich, Lausanne.",
       "ogImage": "/assets/images/og-default.jpg"
     },
+    "homeContent": {
+      "hero": {
+        "claim": "Keine halben Sachen.",
+        "title": "Zum VBV – planbar. praxisnah. produktiv.",
+        "subtitle": "Start jeden Monat. Online (Microsoft Teams) + Präsenz in Basel, Bern, Zürich, Lausanne, Lugano. CHF 150/Tag.",
+        "shortExplanation": [
+          "Wir bringen dich in rund 3 Monaten zum VBV.",
+          "Die Online-Teile sparen Zeit und Wege.",
+          "Die Präsenz-Teile machen dich fit für Praxis und Prüfung."
+        ]
+      },
+      "steps": {
+        "title": "So einfach reservierst du deinen Platz – in 3 Schritten.",
+        "items": [
+          {
+            "number": 1,
+            "title": "Kurs & Monat wählen",
+            "description": "wähle den richtigen Kurs (Gesamt oder Modul) und deinen Monat/Kohorte."
+          },
+          {
+            "number": 2,
+            "title": "Deine Daten eingeben", 
+            "description": "fülle das Formular mit deinen Kontaktangaben aus."
+          },
+          {
+            "number": 3,
+            "title": "Unverbindlich reservieren",
+            "description": "Reservation absenden. Wir melden uns telefonisch oder per E-Mail – mit Testzugang und dem Link zum Bezahlen."
+          }
+        ]
+      },
+      "modules": {
+        "title": "Die 4 Module",
+        "items": [
+          {
+            "title": "Generelle Fähigkeiten (online)",
+            "description": "Grundlagen, Recht, Beratung."
+          },
+          {
+            "title": "Krankenzusatzversicherung (online)", 
+            "description": "Produkte, Leistungen, Fälle."
+          },
+          {
+            "title": "Nichtleben (Sach/Haft) (vor Ort)",
+            "description": "Hausrat, Haftpflicht, KMU, Schadenfälle."
+          },
+          {
+            "title": "Leben (Vorsorge/Risiko) (vor Ort)",
+            "description": "Säule 3a/3b, Risiko, Rente, Kundengespräch."
+          }
+        ]
+      },
+      "pricing": {
+        "title": "Preise",
+        "items": [
+          {
+            "price": "CHF 150/Tag",
+            "type": "pro Person",
+            "description": "Offene Klassen"
+          },
+          {
+            "price": "CHF 2'200/Tag",  
+            "type": "pauschal",
+            "description": "Exklusivklasse (Firmen)"
+          }
+        ],
+        "note": "Prüfungs- und Lehrmittel gemäss VBV separat."
+      },
+      "testimonials": [
+        {
+          "quote": "VBV in der Probezeit geschafft – dank Monatsstart und klarer Struktur.",
+          "author": "Leitung Vertrieb, Bern"
+        },
+        {
+          "quote": "Preis/Leistung top. Die Podcasts sparen Zeit.", 
+          "author": "HR-Leiterin, Zürich"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Wie lange?",
+          "answer": "Ca. 3 Monate."
+        },
+        {
+          "question": "Online vs. Präsenz?",
+          "answer": "AFK & KK online; NL & Leben vor Ort."
+        },
+        {
+          "question": "Wo?",
+          "answer": "Basel, Bern, Zürich, Lausanne, Lugano."
+        },
+        {
+          "question": "Modular buchbar?",
+          "answer": "Ja."
+        },
+        {
+          "question": "Firmenklasse?",
+          "answer": "Ja, ab CHF 2'200/Tag."
+        }
+      ]
+    },
     "legal": {
       "imprintHtml": "<h1>Impressum</h1><p><strong>Maklerzentrum Schweiz AG</strong></p><p>Elisabethenanlage 11<br>4051 Basel</p><p>Tel.: +41 (0) 800 822 800<br>E-Mail: <a href='mailto:info@maklerzentrum.ch'>info@maklerzentrum.ch</a></p><p>Sitz des Unternehmens: Basel (BS)<br>Umsatzsteuer-ID: CHE-108.552.367<br>Handelsregister-Nummer: CH-020.3.008.073-2<br>Handelsregisteramt: Kanton Basel-Stadt</p><h2>Disclaimer – Haftungsausschluss</h2><h3>Haftung für Inhalte</h3><p>Die Inhalte unserer Seiten wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich, jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p><h3>Haftung für Links</h3><p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p><h3>Urheberrecht</h3><p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p><h3>Bildnachweise</h3><p>Eigene Bilder, Shutterstock.com</p>",
       
