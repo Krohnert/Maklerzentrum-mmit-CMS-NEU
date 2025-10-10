@@ -617,6 +617,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+@app.on_event("startup")
+async def startup_event():
+    """Initialize CMS on startup"""
+    logger.info("🚀 Starting CMS initialization...")
+    
+    # Seed admin users
+    await cms_auth.seed_admin_users()
+    
+    logger.info("✅ CMS initialized successfully")
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
