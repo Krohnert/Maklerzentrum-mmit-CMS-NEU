@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - Maklerzentrum Schweiz AG</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Datenschutzerklärung der Maklerzentrum Schweiz AG - Informationen über die Verarbeitung personenbezogener Daten gemäß revDSG und DSGVO.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maklerzentrum.ch/datenschutz.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D81C1C',
+                        text: '#707070',
+                        border: '#CCCCCC',
+                        surface: '#F6F6F6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .legal-content h1 { color: #2c2c2c; font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .legal-content h2 { color: #2c2c2c; font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem 0; }
+        .legal-content h3 { color: #2c2c2c; font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem 0; }
+        .legal-content p { margin-bottom: 1rem; line-height: 1.6; }
+        .legal-content ul, .legal-content ol { margin: 1rem 0; padding-left: 1.5rem; }
+        .legal-content li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .legal-content a { color: var(--color-primary); text-decoration: underline; }
+        .legal-content a:hover { text-decoration: none; }
+        .legal-content address { font-style: normal; line-height: 1.6; }
+        .toc { background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .toc ol { margin: 0; }
+        .toc a { text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .privacy-highlight { background: #fef3c7; padding: 1rem; border-radius: 6px; border-left: 4px solid #f59e0b; margin: 1.5rem 0; }
+    </style>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self';
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self'
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-2xl font-bold text-primary">
+                    Maklerzentrum Schweiz AG
+                </a>
+                <nav class="flex items-center space-x-4">
+                    <a href="#cookies-open" class="text-sm bg-primary text-white px-3 py-2 rounded hover:bg-red-700 transition-colors">
+                        Cookie-Einstellungen
+                    </a>
+                    <a href="/" class="text-gray-600 hover:text-primary">← Zurück zur Website</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Privacy Info Box -->
+        <div class="privacy-highlight mb-8">
+            <h3 class="font-semibold mb-2">🔒 Ihr Datenschutz ist uns wichtig</h3>
+            <p class="text-sm mb-3">
+                Diese Datenschutzerklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten. 
+                Sie können Ihre Cookie-Einstellungen jederzeit über den Button oben anpassen.
+            </p>
+            <p class="text-xs text-gray-600">
+                Stand: <span id="privacy-last-updated">10. Oktober 2025</span>
+            </p>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-sm p-8 legal-content">
+            <!-- Content will be loaded by CMS -->
+            <div id="legal-privacy">
+                <h1>Datenschutzerklärung</h1>
+                <p>Inhalte werden geladen...</p>
+            </div>
+        </div>
+        
+        <!-- Contact Box -->
+        <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h3 class="font-semibold text-blue-900 mb-2">📧 Fragen zum Datenschutz?</h3>
+            <p class="text-blue-800 text-sm mb-3">
+                Bei Fragen zu Ihren Rechten oder zur Datenverarbeitung kontaktieren Sie uns gerne.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="mailto:info@maklerzentrum.ch" class="text-blue-600 hover:text-blue-800 font-medium">
+                    ✉ info@maklerzentrum.ch
+                </a>
+                <a href="#cookies-open" class="text-blue-600 hover:text-blue-800 font-medium">
+                    ⚙ Cookie-Einstellungen öffnen
+                </a>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="mt-8 flex justify-between">
+            <a href="/" class="text-primary hover:underline">← Zurück zur Hauptseite</a>
+            <div class="space-x-4">
+                <a href="/impressum.html" class="text-gray-600 hover:text-primary">Impressum</a>
+                <a href="/agb.html" class="text-gray-600 hover:text-primary">AGB</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-16 py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm">
+            <p>&copy; 2025 Maklerzentrum Schweiz AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- CMS Integration -->
+    <script type="module" src="/assets/js/navigation.js"></script>
+    <script type="module">
+        import { getSite } from '/assets/js/cms-adapter.js';
+        import { renderHTML } from '/assets/js/render.js';
+        import { initNavigationHandlers } from '/assets/js/navigation.js';
+        import { sanitize } from '/assets/js/sanitize.js';
+        import { logger } from '/assets/js/config.js';
+        
+        async function loadContent() {
+            try {
+                const site = await getSite();
+                const privacyHTML = site.legal?.privacyHtml || '<h1>Datenschutzerklärung</h1><p>Inhalte nicht verfügbar.</p>';
+                
+                renderHTML('#legal-privacy', privacyHTML);
+                
+                // Update last updated date
+                if (site.legal?.lastUpdated) {
+                    const date = new Date(site.legal.lastUpdated).toLocaleDateString('de-CH');
+                    const element = document.getElementById('privacy-last-updated');
+                    if (element) element.textContent = date;
+                }
+                
+                // Update page title with brand name
+                if (site.brandName) {
+                    document.title = `Datenschutzerklärung - ${site.brandName}`;
+                }
+                
+                logger.info('Datenschutz content loaded');
+
+                // Initialize navigation with auto-scroll
+                initNavigationHandlers();
+                
+            } catch (error) {
+                logger.error('Failed to load privacy content:', error);
+                document.getElementById('legal-privacy').innerHTML = 
+                    '<h1>Datenschutzerklärung</h1><p>Inhalte konnten nicht geladen werden. Bitte versuchen Sie es später erneut.</p>';
+            }
+        }
+        
+        // Load content when page is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadContent);
+        } else {
+            loadContent();
+        }
+    </script>
+    
+    <!-- Consent Management -->
+    <script type="module" src="/assets/js/consent.js"></script>
+</body>
+</html>
