@@ -80,12 +80,33 @@
             "latitude": "47.5596",
             "longitude": "7.5886"
         },
-        "areaServed": ["CH"],
+        "areaServed": [
+            {"@type": "City", "name": "Basel"},
+            {"@type": "City", "name": "Bern"},
+            {"@type": "City", "name": "Zürich"},
+            {"@type": "City", "name": "Lausanne"},
+            {"@type": "City", "name": "Lugano"}
+        ],
         "priceRange": "CHF 150-2200",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "2"
+            "reviewCount": "2",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "VBV Ausbildungsprogramme",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Course",
+                        "name": "VBV Gesamtausbildung"
+                    }
+                }
+            ]
         }
     }
     </script>
