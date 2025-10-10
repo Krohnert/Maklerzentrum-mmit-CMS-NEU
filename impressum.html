@@ -117,9 +117,11 @@
     </footer>
 
     <!-- CMS Integration -->
+    <script type="module" src="/assets/js/navigation.js"></script>
     <script type="module">
         import { getSite } from '/assets/js/cms-adapter.js';
         import { renderHTML } from '/assets/js/render.js';
+        import { initNavigationHandlers } from '/assets/js/navigation.js';
         import { sanitize } from '/assets/js/sanitize.js';
         import { logger } from '/assets/js/config.js';
         
