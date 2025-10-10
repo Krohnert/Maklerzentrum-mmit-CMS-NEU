@@ -24,7 +24,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/schulung" element={<div>{window.location.href = '/schulung.html'}</div>} />
+          <Route path="/schulung" element={<SchulungRedirect />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/kontakt" element={<Kontakt />} />
