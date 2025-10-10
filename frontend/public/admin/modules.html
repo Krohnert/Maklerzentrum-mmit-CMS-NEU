@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module - CMS</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="/admin/dashboard.html" class="text-gray-600 hover:text-gray-900">← Dashboard</a>
+                <h1 class="text-2xl font-bold">Module</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- Locale Switcher -->
+                <select id="locale-select" class="border rounded px-3 py-2">
+                    <option value="de-CH">🇨🇭 Deutsch</option>
+                    <option value="fr-CH">🇫🇷 Français</option>
+                    <option value="it-CH">🇮🇹 Italiano</option>
+                </select>
+                <button id="add-btn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold">+ Neu</button>
+                <button id="logout-btn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Abmelden</button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+            <p class="mt-4 text-gray-600">Lade Module...</p>
+        </div>
+        
+        <div id="content" class="hidden">
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <p class="text-sm text-blue-800">💡 <strong>Tipp:</strong> Ziehen Sie die Module, um die Reihenfolge zu ändern. Änderungen werden automatisch gespeichert.</p>
+            </div>
+            
+            <div id="modules-list" class="space-y-4">
+                <!-- Modules will be rendered here -->
+            </div>
+        </div>
+    </main>
+    
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <h2 id="modal-title" class="text-2xl font-bold mb-6">Modul bearbeiten</h2>
+                
+                <form id="edit-form" class="space-y-4">
+                    <input type="hidden" id="edit-id" />
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Slug *</label>
+                            <input type="text" id="edit-slug" required class="w-full border rounded px-3 py-2" placeholder="afk" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Format</label>
+                            <select id="edit-format" class="w-full border rounded px-3 py-2">
+                                <option value="online">Online</option>
+                                <option value="praesenz">Präsenz</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Titel *</label>
+                        <input type="text" id="edit-title" required class="w-full border rounded px-3 py-2" placeholder="Generelle Fähigkeiten" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Dauer (Tage)</label>
+                        <input type="number" id="edit-duration" min="1" class="w-full border rounded px-3 py-2" value="1" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Bullet-Points (einer pro Zeile)</label>
+                        <textarea id="edit-bullets" rows="5" class="w-full border rounded px-3 py-2" placeholder="Punkt 1&#10;Punkt 2&#10;Punkt 3"></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" id="edit-visible" checked class="mr-2" />
+                        <label>Sichtbar</label>
+                    </div>
+                    
+                    <div class="flex space-x-3 pt-4">
+                        <button type="submit" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded font-semibold">Speichern</button>
+                        <button type="button" id="cancel-btn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 py-3 rounded font-semibold">Abbrechen</button>
+                        <button type="button" id="delete-btn" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded font-semibold">Löschen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = window.location.protocol + '//' + window.location.host;
+        let currentLocale = 'de-CH';
+        let modules = [];
+        let sortable = null;
+        
+        // Auth check
+        (async function() {
+            const res = await fetch(`${API_BASE}/api/admin/me`, { credentials: 'include' });
+            const data = await res.json();
+            if (!data.success) window.location.href = '/admin/index.html';
+        })();
+        
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await fetch(`${API_BASE}/api/admin/logout`, { method: 'POST', credentials: 'include' });
+            window.location.href = '/admin/index.html';
+        });
+        
+        // Locale switcher
+        document.getElementById('locale-select').addEventListener('change', (e) => {
+            currentLocale = e.target.value;
+            loadModules();
+        });
+        
+        // Load modules
+        async function loadModules() {
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('content').classList.add('hidden');
+            
+            const res = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`, { credentials: 'include' });
+            const data = await res.json();
+            
+            if (data.success) {
+                modules = data.modules;
+                renderModules();
+                initSortable();
+            }
+            
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        }
+        
+        // Render modules
+        function renderModules() {
+            const container = document.getElementById('modules-list');
+            container.innerHTML = '';
+            
+            if (modules.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-gray-500">Keine Module vorhanden. Klicken Sie auf "+ Neu".</div>';
+                return;
+            }
+            
+            modules.forEach(mod => {
+                const div = document.createElement('div');
+                div.className = 'bg-white rounded-lg shadow p-6 cursor-move hover:shadow-lg transition';
+                div.dataset.id = mod._id;
+                div.innerHTML = `
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                <h3 class="text-lg font-bold">${mod.title}</h3>
+                                <span class="text-xs bg-gray-200 px-2 py-1 rounded">${mod.slug}</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">${mod.format}</span>
+                                ${mod.visible ? '' : '<span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Versteckt</span>'}
+                            </div>
+                            <p class="text-sm text-gray-600">${mod.durationDays} Tage • ${mod.bullets ? mod.bullets.length : 0} Punkte</p>
+                        </div>
+                        <button class="edit-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm" data-id="${mod._id}">
+                            Bearbeiten
+                        </button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            
+            // Attach edit handlers
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = btn.dataset.id;
+                    openEditModal(modules.find(m => m._id === id));
+                });
+            });
+        }
+        
+        // Init sortable
+        function initSortable() {
+            if (sortable) sortable.destroy();
+            
+            const container = document.getElementById('modules-list');
+            sortable = Sortable.create(container, {
+                animation: 150,
+                handle: '.cursor-move',
+                onEnd: async (evt) => {
+                    const newOrder = Array.from(container.children).map(el => el.dataset.id);
+                    await saveOrder(newOrder);
+                }
+            });
+        }
+        
+        // Save order
+        async function saveOrder(ids) {
+            await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules/reorder`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ module_ids: ids }),
+                credentials: 'include'
+            });
+        }
+        
+        // Open edit modal
+        function openEditModal(module = null) {
+            const modal = document.getElementById('edit-modal');
+            const form = document.getElementById('edit-form');
+            
+            if (module) {
+                document.getElementById('modal-title').textContent = 'Modul bearbeiten';
+                document.getElementById('edit-id').value = module._id;
+                document.getElementById('edit-slug').value = module.slug;
+                document.getElementById('edit-title').value = module.title;
+                document.getElementById('edit-format').value = module.format;
+                document.getElementById('edit-duration').value = module.durationDays;
+                document.getElementById('edit-bullets').value = (module.bullets || []).join('\n');
+                document.getElementById('edit-visible').checked = module.visible;
+                document.getElementById('delete-btn').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-title').textContent = 'Neues Modul';
+                form.reset();
+                document.getElementById('edit-id').value = '';
+                document.getElementById('delete-btn').classList.add('hidden');
+            }
+            
+            modal.classList.remove('hidden');
+        }
+        
+        // Close modal
+        document.getElementById('cancel-btn').addEventListener('click', () => {
+            document.getElementById('edit-modal').classList.add('hidden');
+        });
+        
+        // Add new
+        document.getElementById('add-btn').addEventListener('click', () => openEditModal());
+        
+        // Submit form
+        document.getElementById('edit-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const id = document.getElementById('edit-id').value;
+            const data = {
+                slug: document.getElementById('edit-slug').value,
+                title: document.getElementById('edit-title').value,
+                format: document.getElementById('edit-format').value,
+                durationDays: parseInt(document.getElementById('edit-duration').value),
+                bullets: document.getElementById('edit-bullets').value.split('\n').filter(b => b.trim()),
+                visible: document.getElementById('edit-visible').checked
+            };
+            
+            if (id) {
+                // Update
+                await fetch(`${API_BASE}/api/admin/content/modules/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+            } else {
+                // Create
+                await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+            }
+            
+            document.getElementById('edit-modal').classList.add('hidden');
+            loadModules();
+        });
+        
+        // Delete
+        document.getElementById('delete-btn').addEventListener('click', async () => {
+            if (!confirm('Wirklich löschen?')) return;
+            
+            const id = document.getElementById('edit-id').value;
+            await fetch(`${API_BASE}/api/admin/content/modules/${id}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            });
+            
+            document.getElementById('edit-modal').classList.add('hidden');
+            loadModules();
+        });
+        
+        // Initial load
+        loadModules();
+    </script>
+</body>
+</html>
