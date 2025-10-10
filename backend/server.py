@@ -26,8 +26,22 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# Custom key function for rate limiting behind proxy/ingress
+def get_remote_address_from_headers(request: Request) -> str:
+    """Extract real client IP from proxy headers"""
+    x_forwarded_for = request.headers.get('X-Forwarded-For')
+    if x_forwarded_for:
+        # The X-Forwarded-For may contain multiple IPs, take first one
+        ip = x_forwarded_for.split(',')[0].strip()
+        return ip
+    x_real_ip = request.headers.get('X-Real-IP')
+    if x_real_ip:
+        return x_real_ip
+    # Fallback to direct client IP
+    return request.client.host if request.client else "unknown"
+
 # Create rate limiter
-limiter = Limiter(key_func=get_remote_address)
+limiter = Limiter(key_func=get_remote_address_from_headers)
 
 # Create the main app without a prefix
 app = FastAPI()
