@@ -123,14 +123,15 @@ class BackendTester:
     def test_booking_endpoint(self):
         """Test /api/booking endpoint for main form"""
         try:
-            # Test if booking endpoint exists
+            # Test with the specific data from review request
             booking_data = {
                 "firstName": "Max",
-                "lastName": "Mustermann", 
-                "email": "max.mustermann@example.ch",
-                "phone": "+41 79 123 45 67",
-                "module": "gesamt",
-                "message": "Test booking from backend test suite"
+                "lastName": "Muster",
+                "email": "max.muster@example.com", 
+                "phone": "079 123 45 67",
+                "module": "Gesamt",
+                "message": "Test-Reservierung",
+                "agreeTerms": True
             }
             
             response = self.session.post(f"{BACKEND_URL}/booking", json=booking_data, timeout=10)
@@ -143,12 +144,21 @@ class BackendTester:
                     {"expected_endpoint": "/api/booking", "status_code": 404}
                 )
             elif response.status_code in [200, 201]:
-                self.log_result(
-                    "Booking Endpoint", 
-                    True, 
-                    "Booking endpoint working correctly",
-                    {"status_code": response.status_code, "response": response.json()}
-                )
+                response_data = response.json()
+                if response_data.get('success') and response_data.get('bookingId'):
+                    self.log_result(
+                        "Booking Endpoint", 
+                        True, 
+                        "Booking endpoint working correctly with bookingId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
+                else:
+                    self.log_result(
+                        "Booking Endpoint", 
+                        False, 
+                        "Booking endpoint response missing success/bookingId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
             else:
                 self.log_result(
                     "Booking Endpoint", 
