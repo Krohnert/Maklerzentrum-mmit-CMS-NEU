@@ -283,6 +283,62 @@ class BackendTester:
                 f"Course booking endpoint test failed: {str(e)}"
             )
     
+    def test_error_handling(self):
+        """Test error handling with invalid data and missing fields"""
+        try:
+            # Test missing required fields
+            invalid_data = {
+                "firstName": "Test",
+                # Missing lastName, email, agreeTerms
+            }
+            
+            response = self.session.post(f"{BACKEND_URL}/booking", json=invalid_data, timeout=10)
+            if response.status_code == 422:  # FastAPI validation error
+                self.log_result(
+                    "Error Handling - Missing Fields", 
+                    True, 
+                    "Properly validates missing required fields",
+                    {"status_code": response.status_code}
+                )
+            else:
+                self.log_result(
+                    "Error Handling - Missing Fields", 
+                    False, 
+                    f"Missing field validation not working: HTTP {response.status_code}",
+                    {"status_code": response.status_code, "response": response.text[:200]}
+                )
+            
+            # Test invalid email format
+            invalid_email_data = {
+                "firstName": "Test",
+                "lastName": "User",
+                "email": "invalid-email",
+                "agreeTerms": True
+            }
+            
+            response = self.session.post(f"{BACKEND_URL}/contact", json=invalid_email_data, timeout=10)
+            if response.status_code == 422:  # FastAPI validation error
+                self.log_result(
+                    "Error Handling - Invalid Email", 
+                    True, 
+                    "Properly validates invalid email format",
+                    {"status_code": response.status_code}
+                )
+            else:
+                self.log_result(
+                    "Error Handling - Invalid Email", 
+                    False, 
+                    f"Email validation not working: HTTP {response.status_code}",
+                    {"status_code": response.status_code, "response": response.text[:200]}
+                )
+                
+        except Exception as e:
+            self.log_result(
+                "Error Handling", 
+                False, 
+                f"Error handling test failed: {str(e)}"
+            )
+    
     def test_cms_integration(self):
         """Test CMS integration - static content files"""
         try:
