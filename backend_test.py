@@ -605,7 +605,8 @@ class BackendTester:
         print("\n📝 2. FORM INTEGRATION")
         self.test_booking_endpoint()
         self.test_contact_endpoint()
-        self.test_training_form_endpoints()
+        self.test_course_booking_endpoint()
+        self.test_error_handling()
         
         # 3. CMS integration
         print("\n🗂️ 3. CMS INTEGRATION")
