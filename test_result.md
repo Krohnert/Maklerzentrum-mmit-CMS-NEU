@@ -228,6 +228,18 @@ backend:
           agent: "testing"
           comment: "✅ Honeypot protection implemented and working. All form endpoints validate the 'website_url' honeypot field. When filled by bots, returns {'success': False, 'error': 'Invalid submission'}. Tested successfully - bot submissions are blocked."
 
+  - task: "Form Validation"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Minor: Form validation working for required fields (returns 422 for missing fields like agreeTerms), but email validation could be improved by using EmailStr instead of str type. Core functionality works correctly."
+
 frontend:
   - task: "HTML Pages Accessibility"
     implemented: true
