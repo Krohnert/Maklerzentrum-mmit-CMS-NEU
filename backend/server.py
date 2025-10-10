@@ -32,6 +32,10 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# CMS Services
+cms_storage = CMSStorage(db)
+cms_auth = CMSAuth(db)
+
 # Custom key function for rate limiting behind proxy/ingress
 def get_remote_address_from_headers(request: Request) -> str:
     """Extract real client IP from proxy headers"""
