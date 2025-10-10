@@ -61,9 +61,9 @@ const Navigation = () => {
               <a href="/about.html" className="text-gray-700 hover:text-[#D81C1C] font-medium transition-colors">
                 About us
               </a>
-              <Link to="/kontakt" className="text-gray-700 hover:text-[#D81C1C] font-medium transition-colors">
+              <a href="/kontakt.html" className="text-gray-700 hover:text-[#D81C1C] font-medium transition-colors">
                 Kontakt
-              </Link>
+              </a>
             </div>
 
             {/* Desktop CTA Buttons */}
