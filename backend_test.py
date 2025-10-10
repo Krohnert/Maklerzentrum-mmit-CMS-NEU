@@ -499,99 +499,267 @@ class BackendTester:
                 f"Email functionality test failed: {str(e)}"
             )
     
-    def test_security_features(self):
-        """Test security features"""
+    def test_cors_headers(self):
+        """Test CORS headers verification as per review request"""
         try:
-            # Test CORS configuration
+            # Test CORS with OPTIONS request
             response = self.session.options(f"{BACKEND_URL}/", timeout=10)
             cors_headers = {
                 'Access-Control-Allow-Origin': response.headers.get('Access-Control-Allow-Origin'),
                 'Access-Control-Allow-Methods': response.headers.get('Access-Control-Allow-Methods'),
-                'Access-Control-Allow-Headers': response.headers.get('Access-Control-Allow-Headers')
+                'Access-Control-Allow-Headers': response.headers.get('Access-Control-Allow-Headers'),
+                'Access-Control-Expose-Headers': response.headers.get('Access-Control-Expose-Headers')
             }
             
-            if any(cors_headers.values()):
-                self.log_result(
-                    "CORS Configuration", 
-                    True, 
-                    "CORS headers present",
-                    {"cors_headers": cors_headers}
-                )
-            else:
-                self.log_result(
-                    "CORS Configuration", 
-                    False, 
-                    "No CORS headers found",
-                    {"response_headers": dict(response.headers)}
-                )
-            
-            # Test rate limiting (try multiple rapid requests)
-            rate_limit_responses = []
-            for i in range(5):
-                try:
-                    resp = self.session.get(f"{BACKEND_URL}/", timeout=5)
-                    rate_limit_responses.append(resp.status_code)
-                    time.sleep(0.1)
-                except:
-                    rate_limit_responses.append("timeout")
-            
-            if 429 in rate_limit_responses:
-                self.log_result(
-                    "Rate Limiting", 
-                    True, 
-                    "Rate limiting is active",
-                    {"responses": rate_limit_responses}
-                )
-            else:
-                self.log_result(
-                    "Rate Limiting", 
-                    False, 
-                    "No rate limiting detected",
-                    {"responses": rate_limit_responses, "note": "This may be intentional"}
-                )
-            
-            # Test honeypot protection with complete form data
-            honeypot_data = {
-                "firstName": "Bot",
-                "lastName": "Spam",
-                "email": "bot@spam.com",
-                "phone": "123456789",
-                "module": "Test",
-                "message": "This is a bot submission",
-                "agreeTerms": True,
-                "website_url": "http://spam.com"  # Honeypot field - should be empty
+            # Also test with actual POST request to form endpoint
+            test_data = {
+                "firstName": "CORS",
+                "lastName": "Test",
+                "email": "cors.test@example.com",
+                "agreeTerms": True
+            }
+            post_response = self.session.post(f"{BACKEND_URL}/booking", json=test_data, timeout=10)
+            post_cors_headers = {
+                'Access-Control-Allow-Origin': post_response.headers.get('Access-Control-Allow-Origin'),
+                'Access-Control-Expose-Headers': post_response.headers.get('Access-Control-Expose-Headers')
             }
             
-            response = self.session.post(f"{BACKEND_URL}/booking", json=honeypot_data, timeout=10)
-            if response.status_code == 200:
-                response_data = response.json()
-                if not response_data.get('success') and 'Invalid submission' in response_data.get('error', ''):
-                    self.log_result(
-                        "Honeypot Protection", 
-                        True, 
-                        "Honeypot protection working - blocked bot submission",
-                        {"response": response_data}
-                    )
-                else:
-                    self.log_result(
-                        "Honeypot Protection", 
-                        False, 
-                        "Honeypot protection not working - bot submission accepted",
-                        {"response": response_data}
-                    )
+            if any(cors_headers.values()) or any(post_cors_headers.values()):
+                self.log_result(
+                    "CORS Headers Verification", 
+                    True, 
+                    "CORS headers present in responses",
+                    {"options_headers": cors_headers, "post_headers": post_cors_headers}
+                )
             else:
                 self.log_result(
-                    "Honeypot Protection", 
+                    "CORS Headers Verification", 
                     False, 
-                    f"Cannot test honeypot - endpoint error: HTTP {response.status_code}",
-                    {"status_code": response.status_code}
+                    "No CORS headers found in responses",
+                    {"options_headers": cors_headers, "post_headers": post_cors_headers}
                 )
                 
         except Exception as e:
             self.log_result(
-                "Security Features", 
+                "CORS Headers Verification", 
                 False, 
-                f"Security features test failed: {str(e)}"
+                f"CORS headers test failed: {str(e)}"
+            )
+    
+    def test_rate_limiting(self):
+        """Test rate limiting: 5 requests/minute for all form endpoints"""
+        try:
+            # Test rate limiting on booking endpoint (5 requests/minute)
+            test_data = {
+                "firstName": "Rate",
+                "lastName": "Test",
+                "email": "rate.test@example.com",
+                "agreeTerms": True
+            }
+            
+            responses = []
+            for i in range(7):  # Try 7 requests (should fail on 6th)
+                try:
+                    resp = self.session.post(f"{BACKEND_URL}/booking", json=test_data, timeout=5)
+                    responses.append({
+                        "request": i+1,
+                        "status_code": resp.status_code,
+                        "rate_limit_headers": {
+                            "X-RateLimit-Limit": resp.headers.get('X-RateLimit-Limit'),
+                            "X-RateLimit-Remaining": resp.headers.get('X-RateLimit-Remaining'),
+                            "X-RateLimit-Reset": resp.headers.get('X-RateLimit-Reset')
+                        }
+                    })
+                    if resp.status_code == 429:
+                        break
+                    time.sleep(0.2)  # Small delay between requests
+                except Exception as e:
+                    responses.append({"request": i+1, "error": str(e)})
+            
+            # Check if 6th request was rate limited (429)
+            rate_limited = any(r.get('status_code') == 429 for r in responses)
+            
+            if rate_limited:
+                self.log_result(
+                    "Rate Limiting (5/minute)", 
+                    True, 
+                    "Rate limiting working correctly - 6th request blocked with 429",
+                    {"responses": responses}
+                )
+            else:
+                self.log_result(
+                    "Rate Limiting (5/minute)", 
+                    False, 
+                    "Rate limiting not working - all requests succeeded",
+                    {"responses": responses}
+                )
+                
+        except Exception as e:
+            self.log_result(
+                "Rate Limiting (5/minute)", 
+                False, 
+                f"Rate limiting test failed: {str(e)}"
+            )
+    
+    def test_email_validation(self):
+        """Test enhanced EmailStr validation (Pydantic)"""
+        try:
+            # Test invalid email formats (should fail with 422)
+            invalid_emails = [
+                "invalid-email",
+                "test@",
+                "@example.com",
+                "test..test@example.com",
+                "test@example",
+                ""
+            ]
+            
+            validation_results = []
+            
+            for invalid_email in invalid_emails:
+                test_data = {
+                    "firstName": "Email",
+                    "lastName": "Validation",
+                    "email": invalid_email,
+                    "agreeTerms": True
+                }
+                
+                try:
+                    response = self.session.post(f"{BACKEND_URL}/contact", json=test_data, timeout=5)
+                    validation_results.append({
+                        "email": invalid_email,
+                        "status_code": response.status_code,
+                        "rejected": response.status_code == 422
+                    })
+                except Exception as e:
+                    validation_results.append({
+                        "email": invalid_email,
+                        "error": str(e)
+                    })
+            
+            # Test valid email (should succeed)
+            valid_test_data = {
+                "firstName": "Valid",
+                "lastName": "Email",
+                "email": "valid.email@example.com",
+                "message": "Test valid email",
+                "agreeTerms": True
+            }
+            
+            valid_response = self.session.post(f"{BACKEND_URL}/contact", json=valid_test_data, timeout=5)
+            validation_results.append({
+                "email": "valid.email@example.com",
+                "status_code": valid_response.status_code,
+                "accepted": valid_response.status_code in [200, 201]
+            })
+            
+            # Check results
+            invalid_rejected = sum(1 for r in validation_results[:-1] if r.get('rejected', False))
+            valid_accepted = validation_results[-1].get('accepted', False)
+            
+            if invalid_rejected >= 4 and valid_accepted:  # Most invalid emails rejected, valid accepted
+                self.log_result(
+                    "Enhanced EmailStr Validation", 
+                    True, 
+                    f"Email validation working - {invalid_rejected}/{len(invalid_emails)} invalid emails rejected, valid email accepted",
+                    {"validation_results": validation_results}
+                )
+            else:
+                self.log_result(
+                    "Enhanced EmailStr Validation", 
+                    False, 
+                    f"Email validation issues - {invalid_rejected}/{len(invalid_emails)} invalid emails rejected, valid accepted: {valid_accepted}",
+                    {"validation_results": validation_results}
+                )
+                
+        except Exception as e:
+            self.log_result(
+                "Enhanced EmailStr Validation", 
+                False, 
+                f"Email validation test failed: {str(e)}"
+            )
+    
+    def test_honeypot_protection(self):
+        """Test honeypot protection on all form endpoints"""
+        try:
+            endpoints_to_test = [
+                ("/booking", {
+                    "firstName": "Bot",
+                    "lastName": "Spam",
+                    "email": "bot@spam.com",
+                    "agreeTerms": True,
+                    "website_url": "http://spam.com"  # Honeypot field
+                }),
+                ("/course-booking", {
+                    "firstName": "Bot",
+                    "lastName": "Spam", 
+                    "email": "bot@spam.com",
+                    "courseTitle": "Test Course",
+                    "courseStartDate": "2024-01-01",
+                    "courseLocation": "Test Location",
+                    "courseCohort": "Test Cohort",
+                    "courseModule": "Test Module",
+                    "agreeTerms": True,
+                    "website_url": "http://spam.com"  # Honeypot field
+                }),
+                ("/contact", {
+                    "firstName": "Bot",
+                    "lastName": "Spam",
+                    "email": "bot@spam.com",
+                    "message": "Spam message",
+                    "agreeTerms": True,
+                    "website_url": "http://spam.com"  # Honeypot field
+                })
+            ]
+            
+            honeypot_results = []
+            
+            for endpoint, data in endpoints_to_test:
+                try:
+                    response = self.session.post(f"{BACKEND_URL}{endpoint}", json=data, timeout=10)
+                    if response.status_code == 200:
+                        response_data = response.json()
+                        blocked = not response_data.get('success') and 'Invalid submission' in response_data.get('error', '')
+                        honeypot_results.append({
+                            "endpoint": endpoint,
+                            "blocked": blocked,
+                            "response": response_data
+                        })
+                    else:
+                        honeypot_results.append({
+                            "endpoint": endpoint,
+                            "error": f"HTTP {response.status_code}",
+                            "blocked": False
+                        })
+                except Exception as e:
+                    honeypot_results.append({
+                        "endpoint": endpoint,
+                        "error": str(e),
+                        "blocked": False
+                    })
+            
+            blocked_count = sum(1 for r in honeypot_results if r.get('blocked', False))
+            
+            if blocked_count == len(endpoints_to_test):
+                self.log_result(
+                    "Honeypot Protection", 
+                    True, 
+                    f"Honeypot protection working on all {len(endpoints_to_test)} form endpoints",
+                    {"results": honeypot_results}
+                )
+            else:
+                self.log_result(
+                    "Honeypot Protection", 
+                    False, 
+                    f"Honeypot protection issues - {blocked_count}/{len(endpoints_to_test)} endpoints blocking bots",
+                    {"results": honeypot_results}
+                )
+                
+        except Exception as e:
+            self.log_result(
+                "Honeypot Protection", 
+                False, 
+                f"Honeypot protection test failed: {str(e)}"
             )
     
     def test_html_pages(self):
