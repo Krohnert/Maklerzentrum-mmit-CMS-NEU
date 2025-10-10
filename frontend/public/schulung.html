@@ -75,6 +75,122 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     
+    <!-- Structured Data - Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Maklerzentrum Schweiz AG",
+        "url": "https://maklerzentrum.ch/",
+        "logo": "https://customer-assets.emergentagent.com/job_swiss-broker-portal/artifacts/844b3nrs_Logo_def_normal.jpg",
+        "telephone": "+41799486986",
+        "email": "academy@maklerzentrum.ch",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Elisabethenanlage 11",
+            "postalCode": "4051",
+            "addressLocality": "Basel",
+            "addressCountry": "CH"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.5596",
+            "longitude": "7.5886"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Basel"},
+            {"@type": "City", "name": "Bern"},
+            {"@type": "City", "name": "Zürich"},
+            {"@type": "City", "name": "Lausanne"},
+            {"@type": "City", "name": "Lugano"}
+        ],
+        "priceRange": "CHF 150-2200",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "2"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "VBV Ausbildung zum Versicherungsvermittler",
+        "description": "Professionelle VBV-Ausbildung in 4 Modulen: Generelle Fähigkeiten, Krankenzusatzversicherung, Nichtleben, Leben. Hybrid-Learning: Online (Microsoft Teams) + Präsenz in Basel, Bern, Zürich, Lausanne, Lugano.",
+        "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Maklerzentrum Schweiz AG",
+            "url": "https://maklerzentrum.ch/"
+        },
+        "hasCourseInstance": [
+            {
+                "@type": "CourseInstance",
+                "courseMode": ["online", "blended"],
+                "courseWorkload": "PT90H",
+                "inLanguage": "de-CH",
+                "location": [
+                    {
+                        "@type": "Place",
+                        "name": "Basel",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Basel",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Bern",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Bern",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Zürich",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Zürich",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Lausanne",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Lausanne",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Lugano",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Lugano",
+                            "addressCountry": "CH"
+                        }
+                    }
+                ]
+            }
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "CHF",
+            "availability": "https://schema.org/InStock",
+            "url": "https://maklerzentrum.ch/schulung.html"
+        },
+        "educationalLevel": "Berufsausbildung",
+        "about": "Versicherungsvermittler, VBV-Zertifizierung, Versicherungsberatung"
+    }
+    </script>
+    
     <!-- Custom CSS -->
     <style>
         /* Custom styles for enhanced design */
