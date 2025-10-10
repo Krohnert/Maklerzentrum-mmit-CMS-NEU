@@ -138,6 +138,9 @@
                 }
                 
                 logger.info('Impressum content loaded');
+
+                // Initialize navigation with auto-scroll
+                initNavigationHandlers();
                 
             } catch (error) {
                 logger.error('Failed to load impressum content:', error);
