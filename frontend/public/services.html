@@ -506,7 +506,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript for mobile menu and form -->
     <script type="module" src="/assets/js/navigation.js"></script>
     <script>
         // Mobile menu toggle
@@ -519,6 +519,73 @@
         // Auto-scroll to top on page load
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
+        });
+
+        // Handle form submission
+        document.getElementById('services-contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            // Check honeypot field
+            if (formData.get('website_url')) {
+                console.warn('Bot detected in form submission');
+                return;
+            }
+            
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Wird gesendet...';
+            submitBtn.disabled = true;
+
+            // Get form message element
+            const formMessage = document.getElementById('form-message');
+            formMessage.classList.add('hidden');
+
+            try {
+                // Get backend URL
+                const backendUrl = location.hostname === 'localhost' ? 'http://localhost:8001' : `${location.protocol}//${location.host}`;
+                
+                const response = await fetch(`${backendUrl}/api/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        email: data.email,
+                        phone: data.phone || '',
+                        company: data.company || '',
+                        message: data.message,
+                        agreeTerms: data.agreeTerms === 'on',
+                        source: 'Services-Seite'
+                    })
+                });
+
+                if (response.ok) {
+                    // Success
+                    formMessage.innerHTML = '<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">Vielen Dank! Deine Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei dir.</div>';
+                    formMessage.classList.remove('hidden');
+                    form.reset();
+                    
+                    // Scroll to success message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                formMessage.innerHTML = '<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">Es gab ein Problem beim Senden deiner Anfrage. Bitte versuche es erneut oder rufe uns an: 079 948 69 86</div>';
+                formMessage.classList.remove('hidden');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
