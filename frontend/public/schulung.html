@@ -1947,6 +1947,42 @@
             }, 7000);
         }
 
+        // FAQ Accordion functionality
+        function initFaqAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const trigger = item.querySelector('.faq-trigger');
+                const content = item.querySelector('.faq-content');
+                const icon = trigger.querySelector('svg');
+                
+                trigger.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                    
+                    if (isOpen) {
+                        // Close this item
+                        content.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                        trigger.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Open this item
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                        trigger.setAttribute('aria-expanded', 'true');
+                    }
+                    
+                    logger.info('FAQ item toggled');
+                });
+                
+                // Set initial ARIA attributes
+                trigger.setAttribute('aria-expanded', 'false');
+                trigger.setAttribute('role', 'button');
+                content.setAttribute('role', 'region');
+            });
+            
+            logger.info('FAQ accordion initialized with', faqItems.length, 'items');
+        }
+
         // Make scrollToElement globally available
         window.scrollToElement = scrollToElement;
 
@@ -1968,6 +2004,9 @@
 
                 // Initialize mobile menu
                 initMobileMenu();
+
+                // Initialize FAQ accordion
+                initFaqAccordion();
 
                 // Initialize form
                 const courseForm = document.getElementById('course-booking-form');
