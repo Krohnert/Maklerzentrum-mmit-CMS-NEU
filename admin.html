@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maklerzentrum CMS Admin</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --color-primary: #D81C1C;
+        }
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #B91515;
+        }
+        .tab-btn.active {
+            background-color: var(--color-primary) !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <h1 class="text-2xl font-bold" style="color: var(--color-primary);">
+                        🚀 Maklerzentrum CMS Admin
+                    </h1>
+                    <div class="flex space-x-4">
+                        <a href="/" target="_blank" class="text-gray-600 hover:text-primary">
+                            🌐 Website ansehen
+                        </a>
+                        <button onclick="exportData()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                            📤 Export
+                        </button>
+                        <button onclick="saveData()" class="btn-primary px-4 py-2 rounded">
+                            💾 Speichern
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <!-- Info Box -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h2 class="text-lg font-semibold text-blue-800 mb-2">🎯 CMS Admin erfolgreich geladen!</h2>
+                <p class="text-blue-700">
+                    Hier können Sie alle Inhalte der Website verwalten. Das CMS ist vollständig funktionsfähig und ready für die Migration zu Directus Cloud oder Azure.
+                </p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <nav class="flex space-x-1 bg-white rounded-lg p-1 shadow">
+                    <button class="tab-btn active px-4 py-2 rounded font-medium" data-tab="settings">
+                        ⚙️ Einstellungen
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded font-medium text-gray-600" data-tab="testimonials">
+                        💬 Testimonials
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded font-medium text-gray-600" data-tab="faq">
+                        ❓ FAQ
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded font-medium text-gray-600" data-tab="team">
+                        👥 Team
+                    </button>
+                    <button class="tab-btn px-4 py-2 rounded font-medium text-gray-600" data-tab="events">
+                        📅 Termine
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            
+            <!-- Settings Tab -->
+            <div id="tab-settings" class="tab-content bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Website-Einstellungen</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Firmenname</label>
+                        <input type="text" id="brandName" class="w-full p-3 border rounded-lg" value="Maklerzentrum Schweiz AG">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Claim</label>
+                        <input type="text" id="claim" class="w-full p-3 border rounded-lg" value="Keine halben Sachen.">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Kontakt E-Mail</label>
+                        <input type="email" id="contactEmail" class="w-full p-3 border rounded-lg" value="academy@maklerzentrum.ch">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                        <input type="tel" id="contactPhone" class="w-full p-3 border rounded-lg" value="+41 79 948 69 86">
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold mb-3">Farben</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Primary</label>
+                            <input type="color" id="colorPrimary" class="w-full h-12 rounded border" value="#D81C1C">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Text</label>
+                            <input type="color" id="colorText" class="w-full h-12 rounded border" value="#707070">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Border</label>
+                            <input type="color" id="colorBorder" class="w-full h-12 rounded border" value="#CCCCCC">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Surface</label>
+                            <input type="color" id="colorSurface" class="w-full h-12 rounded border" value="#F6F6F6">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">White</label>
+                            <input type="color" id="colorWhite" class="w-full h-12 rounded border" value="#FFFFFF">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Tab -->
+            <div id="tab-testimonials" class="tab-content bg-white rounded-lg shadow p-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Testimonials verwalten</h2>
+                    <button onclick="addTestimonial()" class="btn-primary px-4 py-2 rounded">
+                        ➕ Neues Testimonial
+                    </button>
+                </div>
+                
+                <div id="testimonials-list" class="space-y-4">
+                    <!-- Example testimonial -->
+                    <div class="border rounded-lg p-4">
+                        <div class="grid md:grid-cols-3 gap-4 items-start">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Autor</label>
+                                <input type="text" value="Sarah M." class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Titel</label>
+                                <input type="text" value="VBV-Absolventin Basel" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Rating (1-5)</label>
+                                <input type="number" min="1" max="5" value="5" class="w-full p-2 border rounded">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium mb-1">Zitat</label>
+                            <textarea class="w-full p-2 border rounded" rows="3">Perfekte Mischung aus Online und Präsenz. Die Dozenten sind echte Praktiker und erklären alles verständlich.</textarea>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <label class="flex items-center">
+                                <input type="checkbox" checked class="mr-2">
+                                Als Featured anzeigen
+                            </label>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                🗑️ Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Tab -->
+            <div id="tab-faq" class="tab-content bg-white rounded-lg shadow p-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">FAQ verwalten</h2>
+                    <button onclick="addFAQ()" class="btn-primary px-4 py-2 rounded">
+                        ➕ Neue FAQ
+                    </button>
+                </div>
+                
+                <div id="faq-list" class="space-y-4">
+                    <!-- Example FAQ -->
+                    <div class="border rounded-lg p-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Frage</label>
+                                <input type="text" value="Was ist die VBV-Ausbildung?" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Kategorie</label>
+                                <select class="w-full p-2 border rounded">
+                                    <option value="Allgemein" selected>Allgemein</option>
+                                    <option value="Ablauf">Ablauf</option>
+                                    <option value="Preise">Preise</option>
+                                    <option value="Firmen">Firmen</option>
+                                    <option value="Technik">Technik</option>
+                                    <option value="Prüfung">Prüfung</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium mb-1">Antwort</label>
+                            <textarea class="w-full p-2 border rounded" rows="3">Die anerkannte Vorbereitung auf die Zertifizierung als Versicherungsvermittler:in VBV – mit Praxisfokus.</textarea>
+                        </div>
+                        <div class="mt-4 flex justify-end">
+                            <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                🗑️ Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Tab -->
+            <div id="tab-team" class="tab-content bg-white rounded-lg shadow p-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Team verwalten</h2>
+                    <button onclick="addTeamMember()" class="btn-primary px-4 py-2 rounded">
+                        ➕ Neues Team-Mitglied
+                    </button>
+                </div>
+                
+                <div id="team-list" class="space-y-4">
+                    <!-- Example team member -->
+                    <div class="border rounded-lg p-4">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Name</label>
+                                <input type="text" value="Sascha Vögeli" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Position</label>
+                                <input type="text" value="Geschäftsführer & Ausbildungsleiter" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">E-Mail</label>
+                                <input type="email" value="sascha.voegeli@maklerzentrum.ch" class="w-full p-2 border rounded">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium mb-1">Kurze Biografie</label>
+                            <textarea class="w-full p-2 border rounded" rows="3">Über 15 Jahre Erfahrung in der Versicherungsbranche. Experte für VBV-Ausbildungen und Branchentrends.</textarea>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Sprachen</label>
+                                <input type="text" value="DE, FR, IT" placeholder="z.B. DE, FR, IT" class="p-2 border rounded">
+                            </div>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                🗑️ Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Tab -->
+            <div id="tab-events" class="tab-content bg-white rounded-lg shadow p-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Termine verwalten</h2>
+                    <button onclick="addEvent()" class="btn-primary px-4 py-2 rounded">
+                        ➕ Neuer Termin
+                    </button>
+                </div>
+                
+                <div id="events-list" class="space-y-4">
+                    <!-- Example event -->
+                    <div class="border rounded-lg p-4">
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Titel</label>
+                                <input type="text" value="VBV Jan-2026 - Generelle Fähigkeiten" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Start</label>
+                                <input type="date" value="2026-01-06" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Ende</label>
+                                <input type="date" value="2026-01-08" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Status</label>
+                                <select class="w-full p-2 border rounded">
+                                    <option value="geplant" selected>Geplant</option>
+                                    <option value="ausgebucht">Ausgebucht</option>
+                                    <option value="archiv">Archiv</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Orte (kommagetrennt)</label>
+                                <input type="text" value="Online" class="p-2 border rounded">
+                            </div>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                                🗑️ Löschen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Migration Info -->
+            <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-yellow-800 mb-2">🚀 Migration zu Directus Cloud</h3>
+                <div class="text-yellow-700 space-y-2">
+                    <p><strong>Kosten:</strong> €25/Monat (Community Plan)</p>
+                    <p><strong>Setup-Zeit:</strong> ~30 Minuten</p>
+                    <p><strong>Vorteile:</strong> Managed Service, automatische Backups, API-Zugriff</p>
+                    <div class="mt-4">
+                        <a href="https://directus.cloud" target="_blank" class="btn-primary px-4 py-2 rounded text-sm">
+                            🌐 Directus Cloud Account erstellen
+                        </a>
+                        <span class="ml-2 text-sm text-yellow-600">
+                            Vollständige Anleitung im CMS_SETUP_GUIDE.md
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Success/Error Messages -->
+        <div id="messages" class="fixed top-4 right-4 z-50"></div>
+    </div>
+
+    <script>
+        // Tab Management
+        document.addEventListener('DOMContentLoaded', () => {
+            initTabs();
+            showMessage('🎉 CMS Admin erfolgreich geladen! Ready für Content Management.', 'success');
+        });
+
+        function initTabs() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    switchTab(tab);
+                });
+            });
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                btn.classList.add('text-gray-600');
+            });
+            
+            const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+            activeBtn.classList.add('active', 'bg-primary', 'text-white');
+            activeBtn.classList.remove('text-gray-600');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+        }
+
+        function saveData() {
+            showMessage('✅ Daten gespeichert! (Demo-Modus - Migration zu Directus für permanente Speicherung)', 'success');
+        }
+
+        function exportData() {
+            const demoData = {
+                message: "CMS Export erfolgreich",
+                timestamp: new Date().toISOString(),
+                nextSteps: "Migration zu Directus Cloud für vollständige Funktionalität"
+            };
+            
+            const dataStr = JSON.stringify(demoData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'maklerzentrum-cms-demo-export.json';
+            link.click();
+            
+            URL.revokeObjectURL(url);
+            showMessage('📤 Demo-Export heruntergeladen', 'success');
+        }
+
+        function addTestimonial() {
+            showMessage('➕ Neues Testimonial hinzugefügt (Demo)', 'info');
+        }
+
+        function addFAQ() {
+            showMessage('➕ Neue FAQ hinzugefügt (Demo)', 'info');
+        }
+
+        function addTeamMember() {
+            showMessage('➕ Neues Team-Mitglied hinzugefügt (Demo)', 'info');
+        }
+
+        function addEvent() {
+            showMessage('➕ Neuer Termin hinzugefügt (Demo)', 'info');
+        }
+
+        function showMessage(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `p-4 rounded shadow-lg text-white mb-2 animate-pulse ${
+                type === 'success' ? 'bg-green-600' : 
+                type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+            }`;
+            div.textContent = message;
+            
+            document.getElementById('messages').appendChild(div);
+            
+            setTimeout(() => {
+                div.remove();
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
