@@ -300,7 +300,8 @@ Buchungs-ID: {course_booking_doc['id']}
 
 # Contact Form Endpoint
 @api_router.post("/contact")
-async def submit_contact_form(form_data: ContactFormData):
+@limiter.limit("5/minute")
+async def submit_contact_form(request: Request, form_data: ContactFormData):
     """Handle general contact forms and company class inquiries"""
     
     # Check honeypot
