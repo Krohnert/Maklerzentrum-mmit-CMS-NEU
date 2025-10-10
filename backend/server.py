@@ -395,6 +395,209 @@ Anfrage-ID: {contact_doc['id']}
         logger.error(f"Error processing contact form: {e}")
         return {"success": False, "error": "Fehler beim Senden der Nachricht"}
 
+# ============================================
+# CMS ADMIN API ENDPOINTS
+# ============================================
+
+# Models for CMS
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
+    remember_me: bool = False
+
+class PasswordResetRequest(BaseModel):
+    old_password: str
+    new_password: str
+
+# Admin Auth Endpoints
+@api_router.post("/admin/login")
+@limiter.limit("10/minute")
+async def admin_login(request: Request, response: Response, login: LoginRequest):
+    """Admin login - returns session cookie"""
+    try:
+        # Authenticate
+        user = await cms_auth.authenticate_user(login.email, login.password)
+        if not user:
+            return {"success": False, "error": "Ungültige Anmeldedaten"}
+        
+        # Create session
+        session_id = await cms_auth.create_session(
+            user["_id"],
+            user["email"],
+            ip_address=request.client.host if request.client else "",
+            user_agent=request.headers.get("user-agent", ""),
+            remember_me=login.remember_me
+        )
+        
+        # Set cookie
+        max_age = (12 * 60 * 60) if login.remember_me else (30 * 60)  # 12h or 30min
+        response.set_cookie(
+            key="cms_session",
+            value=session_id,
+            max_age=max_age,
+            httponly=True,
+            secure=True,  # Set to True in production with HTTPS
+            samesite="lax"
+        )
+        
+        return {
+            "success": True,
+            "user": {
+                "id": user["_id"],
+                "email": user["email"],
+                "role": user["role"],
+                "mustResetPassword": user.get("mustResetPassword", False)
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Login error: {e}")
+        return {"success": False, "error": "Serverfehler"}
+
+@api_router.post("/admin/logout")
+async def admin_logout(response: Response, cms_session: Optional[str] = Cookie(None)):
+    """Admin logout - clear session"""
+    if cms_session:
+        await cms_auth.delete_session(cms_session)
+    
+    response.delete_cookie(key="cms_session")
+    return {"success": True}
+
+@api_router.get("/admin/me")
+async def admin_me(cms_session: Optional[str] = Cookie(None)):
+    """Get current admin user"""
+    if not cms_session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        return {"success": False, "error": "Session abgelaufen"}
+    
+    user = await cms_auth.get_user(session["userId"])
+    if not user:
+        return {"success": False, "error": "Benutzer nicht gefunden"}
+    
+    return {
+        "success": True,
+        "user": {
+            "id": user["_id"],
+            "email": user["email"],
+            "role": user["role"],
+            "mustResetPassword": user.get("mustResetPassword", False),
+            "lastLogin": user.get("lastLogin")
+        }
+    }
+
+@api_router.post("/admin/reset-password")
+async def admin_reset_password(
+    reset: PasswordResetRequest,
+    cms_session: Optional[str] = Cookie(None)
+):
+    """Reset admin password"""
+    if not cms_session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        return {"success": False, "error": "Session abgelaufen"}
+    
+    success = await cms_auth.reset_password(
+        session["userId"],
+        reset.old_password,
+        reset.new_password
+    )
+    
+    if success:
+        return {"success": True, "message": "Passwort erfolgreich geändert"}
+    else:
+        return {"success": False, "error": "Altes Passwort ungültig"}
+
+# Media Endpoints
+@api_router.post("/admin/media/upload")
+@limiter.limit("20/minute")
+async def admin_media_upload(
+    request: Request,
+    file: UploadFile = File(...),
+    alt_text: str = Form(""),
+    cms_session: Optional[str] = Cookie(None)
+):
+    """Upload image to CMS"""
+    # Check auth
+    if not cms_session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        return {"success": False, "error": "Session abgelaufen"}
+    
+    try:
+        # Read file
+        file_data = await file.read()
+        
+        # Upload
+        result = await cms_storage.upload_image(
+            file_data,
+            file.filename,
+            file.content_type,
+            alt_text
+        )
+        
+        return {"success": True, "image": result}
+        
+    except ValueError as e:
+        return {"success": False, "error": str(e)}
+    except Exception as e:
+        logger.error(f"Upload error: {e}")
+        return {"success": False, "error": "Upload fehlgeschlagen"}
+
+@api_router.get("/media/serve/{key}")
+async def serve_media(key: str):
+    """Serve image from GridFS"""
+    result = await cms_storage.get_file(key)
+    if not result:
+        return {"error": "File not found"}
+    
+    data, content_type = result
+    return StreamingResponse(BytesIO(data), media_type=content_type)
+
+@api_router.get("/admin/media")
+async def admin_media_list(
+    skip: int = 0,
+    limit: int = 50,
+    cms_session: Optional[str] = Cookie(None)
+):
+    """List all media"""
+    # Check auth
+    if not cms_session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        return {"success": False, "error": "Session abgelaufen"}
+    
+    media = await cms_storage.list_media(skip, limit)
+    return {"success": True, "media": media}
+
+@api_router.delete("/admin/media/{image_id}")
+async def admin_media_delete(
+    image_id: str,
+    cms_session: Optional[str] = Cookie(None)
+):
+    """Delete image"""
+    # Check auth
+    if not cms_session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        return {"success": False, "error": "Session abgelaufen"}
+    
+    success = await cms_storage.delete_image(image_id)
+    if success:
+        return {"success": True}
+    else:
+        return {"success": False, "error": "Löschen fehlgeschlagen"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
