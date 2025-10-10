@@ -80,6 +80,22 @@ const KontaktRedirect = () => {
   );
 };
 
+// Redirect component for Home route
+const HomeRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = '/index_home.html';
+  }, []);
+  
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D81C1C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Weiterleitung zur Home-Seite...</p>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   return (
     <HelmetProvider>
