@@ -179,10 +179,11 @@ class BackendTester:
             contact_data = {
                 "firstName": "Anna",
                 "lastName": "Beispiel",
-                "email": "anna.beispiel@example.ch", 
-                "phone": "+41 79 987 65 43",
+                "email": "anna.beispiel@example.com", 
+                "phone": "079 987 65 43",
                 "subject": "Firmenklasse Anfrage",
-                "message": "Test contact from backend test suite"
+                "message": "Test contact from backend test suite",
+                "agreeTerms": True
             }
             
             response = self.session.post(f"{BACKEND_URL}/contact", json=contact_data, timeout=10)
@@ -195,12 +196,21 @@ class BackendTester:
                     {"expected_endpoint": "/api/contact", "status_code": 404}
                 )
             elif response.status_code in [200, 201]:
-                self.log_result(
-                    "Contact Endpoint", 
-                    True, 
-                    "Contact endpoint working correctly",
-                    {"status_code": response.status_code, "response": response.json()}
-                )
+                response_data = response.json()
+                if response_data.get('success') and response_data.get('contactId'):
+                    self.log_result(
+                        "Contact Endpoint", 
+                        True, 
+                        "Contact endpoint working correctly with contactId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
+                else:
+                    self.log_result(
+                        "Contact Endpoint", 
+                        False, 
+                        "Contact endpoint response missing success/contactId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
             else:
                 self.log_result(
                     "Contact Endpoint", 
