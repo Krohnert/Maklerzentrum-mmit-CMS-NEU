@@ -714,46 +714,34 @@
             submitBtn.disabled = true;
 
             try {
-                // Create email content for Sascha.Voegeli@maklerzentrum.ch
-                const emailContent = {
-                    to: 'Sascha.Voegeli@maklerzentrum.ch',
-                    subject: `Kursanfrage: ${data.courseTitle}`,
-                    body: `
-Neue Kursanfrage eingegangen:
-
-**Kurs-Details:**
-- Kurs: ${data.courseTitle}
-- Datum: ${data.courseStartDate}${data.courseEndDate ? ' – ' + data.courseEndDate : ''}
-- Ort: ${data.courseLocation}
-- Kohorte: ${data.courseCohort}
-- Modul: ${data.courseModule}
-
-**Teilnehmer-Details:**
-- Name: ${data.firstName} ${data.lastName}
-- E-Mail: ${data.email}
-- Telefon: ${data.phone || 'Nicht angegeben'}
-
-**Nachricht:**
-${data.message || 'Keine zusätzliche Nachricht'}
-
----
-Gesendet über maklerzentrum.ch Schulungsseite
-                    `.trim()
-                };
-
-                // Simulate form submission (replace with actual API call in production)
-                console.log('Email would be sent:', emailContent);
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Get backend URL from environment
+                const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
                 
-                // Show success message
-                showNotification('Deine Kursanfrage wurde erfolgreich eingereicht! Wir melden uns bald bei dir.', 'success');
-                form.reset();
-                document.getElementById('course-info').classList.add('hidden');
-                
-                logger.info('Course booking form submitted successfully', { 
-                    course: data.courseTitle,
-                    email: data.email 
+                // Submit to backend API
+                const response = await fetch(`${backendUrl}/api/course-booking`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
                 });
+
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    showNotification(result.message || 'Deine Kursanfrage wurde erfolgreich eingereicht! Wir melden uns bald bei dir.', 'success');
+                    form.reset();
+                    document.getElementById('course-info').classList.add('hidden');
+                    
+                    logger.info('Course booking form submitted successfully', { 
+                        course: data.courseTitle,
+                        email: data.email,
+                        bookingId: result.bookingId
+                    });
+                } else {
+                    throw new Error(result.error || 'Unbekannter Fehler');
+                }
 
             } catch (error) {
                 logger.error('Course booking form submission failed:', error);
