@@ -1,5 +1,26 @@
-User-agent: *
-Disallow: /danke/
-Disallow: /danke-firmenklasse/
+# robots.txt für Maklerzentrum Schweiz AG
+# Letzte Aktualisierung: 2025-10-10
 
+User-agent: *
+Allow: /
+Disallow: /danke.html
+Disallow: /danke-firmenklasse.html
+Disallow: /api/
+Disallow: /admin
+Disallow: /*.json$
+
+# Crawl-Delay für Rate-Limiting (optional)
+Crawl-delay: 1
+
+# Spezielle Crawler
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
 Sitemap: https://maklerzentrum.ch/sitemap.xml
