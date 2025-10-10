@@ -32,6 +32,7 @@ limiter = Limiter(key_func=get_remote_address)
 # Create the main app without a prefix
 app = FastAPI()
 app.state.limiter = limiter
+app.add_middleware(SlowAPIMiddleware)
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Create a router with the /api prefix
