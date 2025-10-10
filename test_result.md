@@ -284,11 +284,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Booking Form Endpoint"
-    - "Contact Form Endpoint"
-    - "Training/Course Form Endpoints"
-    - "Email Functionality"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
