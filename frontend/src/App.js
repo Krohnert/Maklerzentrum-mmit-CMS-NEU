@@ -96,6 +96,39 @@ const HomeRedirect = () => {
   );
 };
 
+// Redirect component for Danke route
+const DankeRedirect = () => {
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    window.location.href = `/danke.html${params.toString() ? '?' + params.toString() : ''}`;
+  }, []);
+  
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D81C1C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Weiterleitung...</p>
+      </div>
+    </div>
+  );
+};
+
+// Redirect component for DankeFirmenklasse route
+const DankeFirmenklasseRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = '/danke-firmenklasse.html';
+  }, []);
+  
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D81C1C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Weiterleitung...</p>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   return (
     <HelmetProvider>
