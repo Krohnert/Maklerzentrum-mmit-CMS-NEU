@@ -64,6 +64,22 @@ const AboutRedirect = () => {
   );
 };
 
+// Redirect component for Kontakt route
+const KontaktRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = '/kontakt.html';
+  }, []);
+  
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D81C1C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Weiterleitung zur Kontakt-Seite...</p>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   return (
     <HelmetProvider>
