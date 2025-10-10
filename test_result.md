@@ -145,16 +145,19 @@ backend:
           comment: "✅ POST /api/booking endpoint working correctly. Successfully accepts booking data, validates required fields, returns success response with bookingId. Data stored in MongoDB bookings collection. Email logs created for Sascha.Voegeli@maklerzentrum.ch."
 
   - task: "Contact Form Endpoint"
-    implemented: false
-    working: false
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: false
           agent: "testing"
           comment: "CRITICAL: /api/contact endpoint not implemented. Required for contact forms and Firmenklasse inquiries."
+        - working: true
+          agent: "testing"
+          comment: "✅ POST /api/contact endpoint working correctly. Successfully accepts contact data, validates required fields, returns success response with contactId. Data stored in MongoDB contacts collection. Email logs created for Sascha.Voegeli@maklerzentrum.ch."
 
   - task: "Training/Course Form Endpoints"
     implemented: false
