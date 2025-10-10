@@ -22,6 +22,7 @@ from io import BytesIO
 # CMS Modules
 from cms_storage import CMSStorage
 from cms_auth import CMSAuth
+from cms_content import CMSContent
 
 
 ROOT_DIR = Path(__file__).parent
