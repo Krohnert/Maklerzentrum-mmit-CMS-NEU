@@ -1,63 +1,80 @@
 <analysis>
-The previous AI engineer successfully brought the Maklerzentrum Schweiz AG website from initial concept to a deployed, production-ready state. The work involved extensive iterative development, primarily focusing on frontend implementation, design refinement, and critical bug fixes based on continuous user feedback. Key accomplishments include implementing all specified page content, navigation, and forms, enhancing mobile responsiveness across various elements (hero sections, sticky CTA footer), and integrating crucial SEO elements like structured data (FAQ, Event, Review schemas), , and . The engineer also addressed UI/UX issues such as button styling inconsistencies and missing content, finally ensuring the correct favicon and guiding the user through the deployment process.
+The trajectory details a multi-phase development effort for the Maklerzentrum Schweiz AG website. Initially, the AI engineer was tasked with summarizing previous work and continuing development. The first major user request involved duplicating the existing React/FastAPI application () into a new version () to allow parallel development, which was successfully accomplished with separate configurations and supervisor scripts.
+
+Following this, the user requested converting the application to HTML5. The AI engineer successfully translated the core frontend pages, including the home page, forms, and SEO elements, into a static HTML5 structure within a new  directory. This involved manual porting of JSX content and styling.
+
+A subsequent critical request from the user outlined a comprehensive Headless CMS integration strategy using Directus Cloud. Despite an initial attempt to use Docker for Directus (which failed due to the environment), the AI engineer pivoted to implementing a local mock-CMS system within the  directory, complete with mock data, a  rendering logic, and a basic admin interface. This was later relocated to  after the  directory mysteriously disappeared, causing a brief debugging phase.
+
+Most recently, the user provided detailed requirements for legal text management (Impressum, Datenschutz, AGB) via the CMS, consent banner implementation, security enhancements (headers, form security), and GEO-SEO. The AI engineer began by structuring the mock CMS data for legal content and creating the necessary HTML pages and JavaScript modules. The very last user request is to fetch specific Impressum and AGB content from an external URL and implement page auto-scrolling on navigation.
 </analysis>
 
 <product_requirements>
-The goal is a fast, mobile-first German website for Maklerzentrum Schweiz AG to drive VBV course reservations. Branding includes Keine halben Sachen., primary color #D81C1C, and Inter typography. It features a sticky header with navigation (Home, Schulung, Services, About, Kontakt), Platz sichern (to #booking), and an Anmelden link (to ). A detailed footer with contact/legal links is required. Pages include Home (badges, H1, video, 3-step reservation, modules, prices, testimonials, FAQ), Schulung (H1, 3-step reservation, 5-step process, modules, filterable matrix, prices), Services (H1, Leistungsblöcke, CTA), About Us (H1, description, team photos), Kontakt (H1, subline, contact, form notice, hours), and legal/confirmation pages (AGB, Impressum, Datenschutz, Danke, Danke-Firmenklasse). Forms for Reservierung and Firmenklasse anfragen submit to  with autoresponders and redirects. Non-functional requirements emphasize mobile-first design, SEO (meta, JSON-LD, robots.txt, sitemap), performance (WEBP, lazy-load, contrast), accessibility, favicon, and specific button styling (shadows, glanzeffect).
+The overarching goal is a fast, mobile-first German website for Maklerzentrum Schweiz AG to drive VBV course reservations. Key branding elements include Keine halben Sachen., primary color #D81C1C, and Inter typography. Core features involve a sticky header with navigation, Platz sichern CTA, Anmelden link to an external platform, and a detailed footer. Pages include Home (badges, H1, video, 3-step reservation, modules, prices, testimonials, FAQ), Schulung, Services, About Us, Kontakt, and legal/confirmation pages (AGB, Impressum, Datenschutz, Danke). Forms for Reservierung and Firmenklasse anfragen submit to . Non-functional requirements emphasize mobile-first design, SEO (meta, JSON-LD, robots.txt, sitemap), performance, accessibility, favicon, and specific button styling.
+
+Recent additions include duplicating the original React/FastAPI app, converting the frontend to static HTML5, and implementing a mock Headless CMS for dynamic content management. The latest requirements focus on making legal texts (Impressum, Datenschutz, AGB) fully CMS-editable, integrating a consent banner, enhancing security with HTTP headers and secure forms, and implementing GEO-SEO features, while maintaining existing navigation structure.
 </product_requirements>
 
 <key_technical_concepts>
-- **Full-stack Architecture:** React (frontend), FastAPI (backend), MongoDB (database).
-- **UI Framework:** Shadcn UI components with Tailwind CSS for styling.
-- **Routing:** React Router DOM for client-side navigation.
-- **Forms:**  and  for validation.
-- **SEO Management:**  for managing document head and structured data.
+- **Full-stack Architecture (Original App):** React (frontend), FastAPI (backend), MongoDB.
+- **UI/Styling:** Tailwind CSS, Shadcn UI components.
+- **Frontend Development:** React Router DOM, , , .
+- **Static Site Generation:** Manual HTML5 conversion.
+- **Headless CMS (Mock/Target):** Directus Cloud (target), local JSON/JavaScript (mock).
+- **Security & Compliance:** Consent management, DOMPurify for HTML sanitization, HTTP Security Headers.
+- **SEO:** JSON-LD schema (FAQ, Event, Review), , .
 </key_technical_concepts>
 
 <code_architecture>
 
 
-- ****: FastAPI backend with  prefix and CORS; no application logic changes.
-- ****: React entry, manages routing via  and . Uses . Imports , , , .
-- ** & **: Global and component-specific Tailwind CSS styling. Defines custom colors, typography, UI radii, paddings. Includes button shadow/glanzeffects, varied background colors, and critical  for mobile safe-area support. Font sizes for  were adjusted.
-- ****: Stores frontend mock data. Corrected a syntax error and was significantly expanded with a comprehensive list of FAQs, used for the new FAQ accordion.
-- ****: Implements main navigation (desktop & mobile burger menu). Anmelden link to external platform and Reservieren button text were verified as present and correctly styled.
-- ****: Handles the mobile-specific sticky call-to-action bar. Underwent multiple refinements to ensure two buttons (Reservieren and Telefon) are correctly positioned and visible on all mobile screen sizes, utilizing , , fixed widths, reduced padding, and .
-- ** (Home, Schulung, Services, About, Kontakt, Danke, etc.)**: Individual page components.
-    - Hero sections had their heights adjusted for mobile responsiveness (e.g.,  for mobile).
-    - The Kontakt page had a button styling conflict resolved (inline background color removed to show gradient).
-    - The Home page was updated to use an  component for the newly expanded FAQ section from .
-    - SEO:  tags for dynamic meta-data. **Review Schema** was added to  within the Organization schema. **Extensive FAQ JSON-LD schema** was added to . **Event Schema** for 2026 course dates was added to .
-- ****:
-    - ****: Updated to include favicon links.
-    - **, , **: Initially had a generic SVG. Replaced with a generated MZ SVG, then with a user-provided Swiss flag PNG, and an ICO version for broader compatibility.
-- ****: Documents API contracts.
-- ****: Documents SEO strategy.
-- ** & **: Summarize bug fixes.
-- ****: Details future SEO/AI-readiness improvements.
+**Key Files and Their Importance:**
+- ****: FastAPI backend, handles API routes. Remains mostly untouched, except for V2 modifications.
+- ****: Original React frontend (now mostly duplicated in  and largely superseded by HTML5 efforts).
+- ****: The main HTML5 landing page. Has been populated with content from the React Home page, booking form, footer, SEO schema, and is now being integrated with CMS markups for dynamic content.
+- **, , **: New HTML5 pages dedicated to legal texts, designed to render content dynamically from the mock CMS.
+- ****: A newly created local administrative interface for the mock CMS, allowing management of content like testimonials, FAQ, team, and events.
+- ****: Core JavaScript for fetching and rendering content from the local mock CMS into the HTML pages using  attributes.
+- **, , , , **: Modular JavaScript files being developed to support various aspects of the CMS integration, consent management, HTML rendering, and sanitization.
+- ** & **: Local JSON files acting as the mock CMS's data store, particularly for  (including legal texts) and  (footer/mobile legal links).
+- **, **: SEO configuration files, updated to reflect the new HTML5 structure and legal pages.
+- ****: A new file for security contact information, part of the security enhancements.
+- ****: A complete duplicate of the initial  structure, configured to run independently on different ports and use a separate database. This was created to allow for experimental changes without affecting the original.
 </code_architecture>
 
 <pending_tasks>
-- **Backend Forms Integration:** Connect  and  with the FastAPI backend for email sending, removing mock data.
-- **SSR Implementation for SEO:** Address  limitation for full meta-tag injection, potentially requiring Server-Side Rendering (SSR).
-- **External Image Hosting:** Migrate external image URLs (team photos) from  to a dedicated server.
-- **Dynamic Domain URLs:** Replace hardcoded domain URLs () in JSON-LD schemas with environment variables.
-- **Google Search Console & Business Profile Setup:** Configure these for better visibility and local search rankings.
+- **Backend Forms Integration:** Connect  and  with the FastAPI backend for email sending.
+- **SSR Implementation for SEO:** Address  limitation for full meta-tag injection (originally for React app, likely still relevant for dynamic HTML5 content).
+- **External Image Hosting:** Migrate external image URLs (team photos).
+- **Dynamic Domain URLs:** Replace hardcoded domain URLs in JSON-LD schemas.
+- **Google Search Console & Business Profile Setup:** Configure these.
+- **Full Directus Cloud Integration:** Migrate the local mock CMS to Directus Cloud.
+- **Implement reCAPTCHA and Honeypot for Forms:** For security.
+- **Implement Rate Limiting for Forms:** For security.
+- **Implement Form Logging without PII:** For security.
+- **Full GEO-SEO Implementation:** Create dedicated location pages and integrate with CMS.
 </pending_tasks>
 
 <current_work>
-Immediately prior to this summary, the previous AI engineer concluded a comprehensive development cycle that addressed multiple rounds of user feedback and implemented significant SEO/AI-readiness features.
+Immediately prior to this summary, the AI engineer successfully created a functional HTML5 version of the Maklerzentrum website, initially in , which was later recreated/consolidated under  after the directory went missing. This HTML5 version now dynamically loads content using a local mock-CMS system based on JSON files and custom JavaScript (, , etc.). A basic admin interface () was also created to manage this mock content.
 
-The most recent direct user feedback and subsequent fixes revolved around persistent mobile responsiveness issues, specifically concerning the sticky footer's buttons (). Users reported buttons being misaligned or only one visible. The engineer made iterative adjustments to  and  to ensure both Reservieren and Telefon buttons were perfectly visible and aligned on the smallest mobile screens, incorporating safe-area support.
+The most recent user interaction provided detailed requirements for legal and compliance features. This included:
+1.  **CMS Integration for Legal Texts:** , , and  content should be editable via the CMS.
+2.  **Navigation Integration:** Legal links should appear in the footer and a collapsed section of the mobile burger menu, *without* altering the main navigation.
+3.  **Consent Banner:** Implementation of an opt-in consent banner for analytics/marketing cookies.
+4.  **Security Enhancements:** Adding HTTP security headers, securing admin interfaces, and implementing form security (reCAPTCHA, rate-limiting, PII-free logging).
+5.  **SEO/GEO-SEO:** Updating sitemaps/robots, dynamic JSON-LD injection, and potential GEO-specific pages.
 
-Following this, the user inquired about SEO and AI-readiness. The engineer created an  and implemented several Quick Wins:
-1.  **Extended FAQ Content:** Populated  with a comprehensive list of FAQs.
-2.  **FAQ Accordion Integration:** Updated  to display these FAQs using a Shadcn UI  component.
-3.  **Schema.org Enhancements:** Added **Event Schema** for 2026 course dates to  and integrated **Review Schema** into the Organization schema on .
+In response, the AI engineer has begun implementing these features by:
+-   Creating local mock CMS data stores:  and  for legal and navigation data.
+-   Creating modular JavaScript files in  for , , , , and  functionalities.
+-   Generating the legal HTML pages: , , .
+-   Creating security-related files: , and updating/creating  and .
+-   Recreating  to integrate the legal navigation elements and CMS.
 
-Finally, the engineer performed a deployment readiness health check, confirmed the application was ready, and guided the user through the process of deploying the application on Emergent, confirming successful deployment.
+The immediate state is that the basic structure for the legal/compliance system is in place, and the AI engineer is about to integrate actual content into these pages and implement auto-scrolling.
 </current_work>
 
 <optional_next_step>
-Connect the  and  to the backend for email sending.
+Integrate the Impressum and AGB content 1:1 from  into the CMS mock data and implement auto-scrolling to the top on page changes.
 </optional_next_step>
+
