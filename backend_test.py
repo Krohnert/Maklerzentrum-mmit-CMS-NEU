@@ -225,64 +225,62 @@ class BackendTester:
                 f"Contact endpoint test failed: {str(e)}"
             )
     
-    def test_training_form_endpoints(self):
-        """Test training form endpoints from schulung.html"""
+    def test_course_booking_endpoint(self):
+        """Test /api/course-booking endpoint from schulung.html"""
         try:
-            # Test course booking endpoint (from schulung.html form)
+            # Test with the specific data from review request
             course_data = {
-                "firstName": "Peter",
-                "lastName": "Schweizer",
-                "email": "peter.schweizer@example.ch",
-                "phone": "+41 79 555 12 34",
+                "firstName": "Anna",
+                "lastName": "Beispiel",
+                "email": "anna.beispiel@example.com",
+                "phone": "079 987 65 43",
                 "courseTitle": "Leben (Vorsorge/Risiko)",
                 "courseStartDate": "24.03.2026",
                 "courseEndDate": "26.03.2026", 
                 "courseLocation": "Zürich",
                 "courseCohort": "März 2026",
                 "courseModule": "Leben (Vorsorge/Risiko)",
-                "message": "Test course booking from backend test suite"
+                "message": "Test-Kursanfrage",
+                "agreeTerms": True
             }
             
-            # Try different possible endpoints for course booking
-            endpoints_to_test = ["/course-booking", "/training", "/schulung", "/booking"]
+            response = self.session.post(f"{BACKEND_URL}/course-booking", json=course_data, timeout=10)
             
-            found_endpoint = False
-            for endpoint in endpoints_to_test:
-                try:
-                    response = self.session.post(f"{BACKEND_URL}{endpoint}", json=course_data, timeout=10)
-                    if response.status_code != 404:
-                        found_endpoint = True
-                        if response.status_code in [200, 201]:
-                            self.log_result(
-                                "Training Form Endpoint", 
-                                True, 
-                                f"Training form endpoint working at {endpoint}",
-                                {"endpoint": endpoint, "status_code": response.status_code, "response": response.json()}
-                            )
-                        else:
-                            self.log_result(
-                                "Training Form Endpoint", 
-                                False, 
-                                f"Training form endpoint error at {endpoint}: HTTP {response.status_code}",
-                                {"endpoint": endpoint, "status_code": response.status_code, "response": response.text}
-                            )
-                        break
-                except:
-                    continue
-            
-            if not found_endpoint:
+            if response.status_code == 404:
                 self.log_result(
-                    "Training Form Endpoint", 
+                    "Course Booking Endpoint", 
                     False, 
-                    "No training form endpoints found",
-                    {"tested_endpoints": endpoints_to_test}
+                    "Course booking endpoint not implemented (/api/course-booking)",
+                    {"expected_endpoint": "/api/course-booking", "status_code": 404}
                 )
-                
+            elif response.status_code in [200, 201]:
+                response_data = response.json()
+                if response_data.get('success') and response_data.get('bookingId'):
+                    self.log_result(
+                        "Course Booking Endpoint", 
+                        True, 
+                        "Course booking endpoint working correctly with bookingId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
+                else:
+                    self.log_result(
+                        "Course Booking Endpoint", 
+                        False, 
+                        "Course booking endpoint response missing success/bookingId",
+                        {"status_code": response.status_code, "response": response_data}
+                    )
+            else:
+                self.log_result(
+                    "Course Booking Endpoint", 
+                    False, 
+                    f"Course booking endpoint error: HTTP {response.status_code}",
+                    {"status_code": response.status_code, "response": response.text}
+                )
         except Exception as e:
             self.log_result(
-                "Training Form Endpoint", 
+                "Course Booking Endpoint", 
                 False, 
-                f"Training form endpoint test failed: {str(e)}"
+                f"Course booking endpoint test failed: {str(e)}"
             )
     
     def test_cms_integration(self):
