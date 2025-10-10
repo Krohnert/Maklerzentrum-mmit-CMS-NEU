@@ -600,6 +600,83 @@ async def admin_media_delete(
     else:
         return {"success": False, "error": "Löschen fehlgeschlagen"}
 
+# Content Management Endpoints
+@api_router.get("/admin/content/site-global")
+async def get_site_global(cms_session: Optional[str] = Cookie(None)):
+    """Get global site settings"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    data = await cms_content.get_site_global()
+    return {"success": True, "data": data}
+
+@api_router.put("/admin/content/site-global")
+async def update_site_global(data: dict, cms_session: Optional[str] = Cookie(None)):
+    """Update global site settings"""
+    session = await cms_auth.get_session(cms_session) if cms_session else None
+    if not session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.update_site_global(data)
+    return {"success": success}
+
+@api_router.get("/admin/content/{locale}/modules")
+async def list_modules(locale: str, cms_session: Optional[str] = Cookie(None)):
+    """List modules for locale"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    modules = await cms_content.list_modules(locale)
+    return {"success": True, "modules": modules}
+
+@api_router.post("/admin/content/{locale}/modules")
+async def create_module(locale: str, data: dict, cms_session: Optional[str] = Cookie(None)):
+    """Create new module"""
+    session = await cms_auth.get_session(cms_session) if cms_session else None
+    if not session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    module_id = await cms_content.create_module(locale, data, session["email"])
+    return {"success": bool(module_id), "id": module_id}
+
+@api_router.put("/admin/content/modules/{module_id}")
+async def update_module(module_id: str, data: dict, cms_session: Optional[str] = Cookie(None)):
+    """Update module"""
+    session = await cms_auth.get_session(cms_session) if cms_session else None
+    if not session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.update_module(module_id, data, session["email"])
+    return {"success": success}
+
+@api_router.delete("/admin/content/modules/{module_id}")
+async def delete_module(module_id: str, cms_session: Optional[str] = Cookie(None)):
+    """Delete module"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.delete_module(module_id)
+    return {"success": success}
+
+@api_router.put("/admin/content/{locale}/modules/reorder")
+async def reorder_modules(locale: str, ids: dict, cms_session: Optional[str] = Cookie(None)):
+    """Reorder modules"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.reorder_modules(ids.get("module_ids", []))
+    return {"success": success}
+
+# FAQ Endpoints (similar pattern)
+@api_router.get("/admin/content/{locale}/faq")
+async def list_faq(locale: str, cms_session: Optional[str] = Cookie(None)):
+    """List FAQ for locale"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    faq = await cms_content.list_faq(locale)
+    return {"success": True, "faq": faq}
+
 # Include the router in the main app
 app.include_router(api_router)
 
