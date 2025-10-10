@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "main": [
+      { "label": "Home", "url": "#home", "target": "_self" },
+      { "label": "Schulung", "url": "#schulung", "target": "_self" },
+      { "label": "Services", "url": "#services", "target": "_self" },
+      { "label": "Über uns", "url": "#about", "target": "_self" },
+      { "label": "Kontakt", "url": "#kontakt", "target": "_self" }
+    ],
+    "footer_groups": [
+      {
+        "title": "Rechtliches",
+        "links": [
+          { "label": "Impressum", "url": "/impressum.html" },
+          { "label": "Datenschutz", "url": "/datenschutz.html" },
+          { "label": "Cookie-Einstellungen", "url": "#cookies-open" },
+          { "label": "AGB", "url": "/agb.html" }
+        ]
+      }
+    ],
+    "mobile_legal_block": {
+      "title": "Rechtliches",
+      "collapsed": true,
+      "links": [
+        { "label": "Impressum", "url": "/impressum.html" },
+        { "label": "Datenschutz", "url": "/datenschutz.html" },
+        { "label": "Cookie-Einstellungen", "url": "#cookies-open" },
+        { "label": "AGB", "url": "/agb.html" }
+      ]
+    }
+  }
+}
