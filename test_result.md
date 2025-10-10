@@ -205,16 +205,19 @@ backend:
           comment: "✅ CORS headers working correctly. Verified with OPTIONS and POST requests - proper Access-Control headers present including allow-credentials, allow-headers, allow-methods, allow-origin, and expose-headers for rate limiting."
 
   - task: "Rate Limiting"
-    implemented: false
-    working: "NA"
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
-    priority: "low"
+    priority: "high"
     needs_retesting: false
     status_history:
         - working: "NA"
           agent: "testing"
           comment: "Minor: No rate limiting detected. This may be intentional for the current setup."
+        - working: true
+          agent: "testing"
+          comment: "✅ Rate limiting (5 requests/minute) working correctly on all form endpoints (/api/booking, /api/course-booking, /api/contact). Fixed SlowAPIMiddleware configuration and custom key function for Kubernetes ingress proxy. 6th request properly blocked with 429 status code."
 
   - task: "Honeypot Protection"
     implemented: true
