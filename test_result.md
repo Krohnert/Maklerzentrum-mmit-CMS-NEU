@@ -160,16 +160,19 @@ backend:
           comment: "✅ POST /api/contact endpoint working correctly. Successfully accepts contact data, validates required fields, returns success response with contactId. Data stored in MongoDB contacts collection. Email logs created for Sascha.Voegeli@maklerzentrum.ch."
 
   - task: "Training/Course Form Endpoints"
-    implemented: false
-    working: false
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: false
           agent: "testing"
           comment: "CRITICAL: No training form endpoints found. Tested /api/course-booking, /api/training, /api/schulung, /api/booking - all return 404. Schulung.html form cannot submit course reservations."
+        - working: true
+          agent: "testing"
+          comment: "✅ POST /api/course-booking endpoint working correctly. Successfully accepts course booking data with all course-specific fields (courseTitle, courseStartDate, courseEndDate, courseLocation, courseCohort, courseModule), validates required fields, returns success response with bookingId. Data stored in MongoDB course_bookings collection. Email logs created for Sascha.Voegeli@maklerzentrum.ch."
 
   - task: "Email Functionality"
     implemented: false
