@@ -121,6 +121,9 @@
         .course-card {
             transition: all 0.3s ease;
             border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .course-card:hover {
@@ -128,11 +131,20 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
+        /* Fixed height for date boxes to keep all cards aligned */
+        .course-card .date-box {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .course-card .reservieren-btn {
             background: linear-gradient(135deg, #D81C1C, #B91515);
             transition: all 0.3s ease;
             font-weight: 600;
             text-transform: none;
+            margin-top: auto;
         }
 
         .course-card .reservieren-btn:hover {
