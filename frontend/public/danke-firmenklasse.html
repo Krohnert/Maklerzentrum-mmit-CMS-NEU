@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danke – Firmenklasse Anfrage erhalten | Maklerzentrum</title>
+    
+    <meta name="robots" content="noindex,follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D81C1C',
+                        text: '#707070',
+                        border: '#CCCCCC',
+                        surface: '#F6F6F6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --color-primary: #D81C1C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--color-text);
+            line-height: 1.55;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D81C1C, #B91515);
+            box-shadow: 0 4px 14px 0 rgba(216, 28, 28, 0.25);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(216, 28, 28, 0.35);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-custom {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding: 0 2rem;
+            }
+        }
+
+        .card-custom {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Hero Section -->
+    <section class="relative h-[250px] md:h-[350px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img 
+                src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1920&h=500&fit=crop" 
+                alt="Danke" 
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+        </div>
+        <div class="relative h-full flex items-center">
+            <div class="container-custom">
+                <div class="max-w-3xl text-white">
+                    <h1 class="mb-6 text-white text-3xl md:text-5xl font-extrabold leading-tight">
+                        Vielen Dank für deine Anfrage!
+                    </h1>
+                    <p class="text-xl text-white/90">
+                        Wir melden uns kurzfristig mit Terminvorschlägen bei dir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding bg-white min-h-[50vh] flex items-center">
+        <div class="container-custom">
+            <div class="max-w-2xl mx-auto text-center">
+                <!-- Success Icon -->
+                <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-6">Vielen Dank für deine Anfrage!</h2>
+                
+                <!-- Message -->
+                <div class="card-custom mb-8">
+                    <p class="text-xl text-gray-700 mb-4">
+                        Wir haben deine Anfrage für eine <strong>Firmenklasse</strong> erhalten.
+                    </p>
+                    <p class="text-gray-600">
+                        Wir melden uns kurzfristig mit Terminvorschlägen und besprechen alle Details mit dir.
+                    </p>
+                </div>
+
+                <!-- Email Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+                    <p class="text-blue-800">
+                        Eine Bestätigungsmail ist bereits unterwegs zu dir.
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="text-gray-600 mb-8">
+                    <p class="mb-4">Fragen? Wir sind für dich da:</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:academy@maklerzentrum.ch" class="text-primary hover:underline font-medium">
+                            academy@maklerzentrum.ch
+                        </a>
+                        <span class="hidden sm:inline">|</span>
+                        <a href="tel:+41799486986" class="text-primary hover:underline font-medium">
+                            079 948 69 86
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <a href="/index_home.html" class="btn-primary">
+                    Zurück zur Startseite
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll to top on load
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
