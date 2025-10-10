@@ -40,6 +40,47 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Booking/Contact Form Models
+class BookingFormData(BaseModel):
+    firstName: str
+    lastName: str
+    email: str
+    phone: Optional[str] = None
+    module: Optional[str] = None
+    message: Optional[str] = None
+    agreeTerms: bool
+    # Honeypot field
+    website_url: Optional[str] = None
+
+class CourseBookingData(BaseModel):
+    firstName: str
+    lastName: str
+    email: str
+    phone: Optional[str] = None
+    # Course-specific data
+    courseTitle: str
+    courseStartDate: str
+    courseEndDate: Optional[str] = None
+    courseLocation: str
+    courseCohort: str
+    courseModule: str
+    message: Optional[str] = None
+    agreeTerms: bool
+    # Honeypot field
+    website_url: Optional[str] = None
+
+class ContactFormData(BaseModel):
+    firstName: str
+    lastName: str
+    email: str
+    phone: Optional[str] = None
+    company: Optional[str] = None
+    subject: Optional[str] = None
+    message: str
+    agreeTerms: bool
+    # Honeypot field
+    website_url: Optional[str] = None
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
