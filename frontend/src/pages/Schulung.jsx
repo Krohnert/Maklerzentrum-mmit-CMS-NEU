@@ -167,12 +167,81 @@ const Schulung = () => {
   });
 
   const handlePlatzSichern = (item) => {
-    const params = new URLSearchParams({
-      cohort: item.cohort,
-      module: item.module,
-      loc: item.location
-    });
-    window.location.href = `/#booking?${params.toString()}`;
+    setSelectedCourse(item);
+    setShowBookingForm(true);
+    // Scroll to form
+    setTimeout(() => {
+      document.getElementById('course-booking-form')?.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }, 100);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Check honeypot
+    if (formData.website_url) {
+      console.warn('Bot detected');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      
+      const courseBookingData = {
+        ...formData,
+        courseTitle: selectedCourse.module,
+        courseStartDate: selectedCourse.startDate,
+        courseEndDate: selectedCourse.endDate || '',
+        courseLocation: selectedCourse.location,
+        courseCohort: selectedCourse.cohort,
+        courseModule: selectedCourse.module
+      };
+      
+      const response = await fetch(`${backendUrl}/api/course-booking`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(courseBookingData)
+      });
+
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        alert(result.message || 'Deine Kursanfrage wurde erfolgreich eingereicht! Wir melden uns bald bei dir.');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: '',
+          agreeTerms: false
+        });
+        setShowBookingForm(false);
+        setSelectedCourse(null);
+      } else {
+        throw new Error(result.error || 'Unbekannter Fehler');
+      }
+      
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      alert('Fehler beim Senden. Bitte versuche es erneut oder rufe uns an: 079 948 69 86');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
   };
 
   return (
