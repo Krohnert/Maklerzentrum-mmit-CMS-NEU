@@ -155,7 +155,8 @@ def check_honeypot(form_data):
 
 # Booking Form Endpoint
 @api_router.post("/booking")
-async def submit_booking_form(form_data: BookingFormData):
+@limiter.limit("5/minute")
+async def submit_booking_form(request: Request, form_data: BookingFormData):
     """Handle main booking form submissions from index.html"""
     
     # Check honeypot
