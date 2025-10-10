@@ -368,20 +368,84 @@
             </div>
         </section>
 
+        <!-- Anfrage Formular -->
+        <section id="anfrage" class="py-16 bg-white">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Anfrage!</h2>
+                    <p class="text-lg text-gray-600">
+                        Kontaktiere uns für eine unverbindliche Beratung. Wir melden uns innerhalb von 24 Stunden bei dir.
+                    </p>
+                </div>
+                
+                <form id="services-contact-form" class="bg-white p-8 rounded-xl shadow-lg border">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Firma (optional)</label>
+                        <input type="text" id="company" name="company" class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Deine Anfrage *</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary" placeholder="Beschreibe kurz, wie wir dich unterstützen können..."></textarea>
+                    </div>
+
+                    <!-- Honeypot field (hidden) -->
+                    <input type="text" name="website_url" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <div class="mt-6">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-2">
+                            <label for="agreeTerms" class="text-sm text-gray-600">
+                                Ich stimme den <a href="/agb.html" class="text-primary hover:underline" target="_blank">AGB</a> und der <a href="/datenschutz.html" class="text-primary hover:underline" target="_blank">Datenschutzerklärung</a> zu. *
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button type="submit" class="btn-primary w-full py-4 px-6 rounded-lg font-semibold text-lg">
+                            Anfrage senden
+                        </button>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div id="form-message" class="mt-4 hidden"></div>
+                </form>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="py-16 bg-[#F6F6F6]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold mb-6">Interessiert?</h2>
+                    <h2 class="text-3xl font-bold mb-6">Oder ruf uns direkt an</h2>
                     <p class="text-xl text-gray-600 mb-8">
-                        Lass uns über deine Bedürfnisse sprechen. Wir finden die richtige Lösung für dich.
+                        Wir sind für dich da und beantworten gerne deine Fragen.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/#kontakt" class="btn-primary px-8 py-3 rounded-lg font-semibold text-lg">
-                            Beratung anfragen
-                        </a>
-                        <a href="tel:+41799486986" class="inline-block bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-colors">
+                        <a href="tel:+41799486986" class="btn-primary px-8 py-3 rounded-lg font-semibold text-lg">
                             079 948 69 86
+                        </a>
+                        <a href="mailto:academy@maklerzentrum.ch" class="inline-block bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-colors">
+                            academy@maklerzentrum.ch
                         </a>
                     </div>
                 </div>
