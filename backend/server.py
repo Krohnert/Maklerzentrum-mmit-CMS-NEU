@@ -223,7 +223,8 @@ Buchungs-ID: {booking_doc['id']}
 
 # Course Booking Endpoint (for schulung.html)
 @api_router.post("/course-booking")
-async def submit_course_booking(form_data: CourseBookingData):
+@limiter.limit("5/minute")
+async def submit_course_booking(request: Request, form_data: CourseBookingData):
     """Handle course-specific booking forms from schulung.html"""
     
     # Check honeypot
