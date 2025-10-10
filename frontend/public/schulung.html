@@ -331,149 +331,236 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12">Kurstermine 2026</h2>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <!-- Januar 2026 - Leben (Vorsorge/Risiko) -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm">
-                        <div class="mb-4">
-                            <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                24.03.2026 – 26.03.2026
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Leben (Vorsorge/Risiko)</h3>
-                            <p class="text-gray-600 mb-4">Zürich</p>
+                <!-- Monatsgruppen mit echten Terminen -->
+                <div class="space-y-12 max-w-6xl mx-auto">
+                    
+                    <!-- Monatsgruppe Dezember 2025 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Dezember 2025</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <!-- Generelle Fähigkeiten (online) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">08.12.2025, 09.12.2025</p>
+                                        <p class="text-sm text-gray-700 font-bold">15.12.2025, 16.12.2025</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '08.12.2025 - 16.12.2025',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Krankenzusatzversicherung (online) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">12.01.2026, 13.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '12.01.2026 - 13.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Nichtleben (vor Ort) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">15.01.2026, 16.01.2026</p>
+                                        <p class="text-sm text-gray-700 font-bold">22.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '15.01.2026 - 22.01.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Leben (vor Ort) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">29.01.2026, 30.01.2026</p>
+                                        <p class="text-sm text-gray-700 font-bold">05.02.2026, 06.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '29.01.2026 - 06.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
                         </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Leben (Vorsorge/Risiko)',
-                                startDate: '24.03.2026',
-                                endDate: '26.03.2026',
-                                location: 'Zürich',
-                                cohort: 'März 2026',
-                                module: 'Leben (Vorsorge/Risiko)'
-                            })"
-                        >
-                            Reservieren
-                        </button>
                     </div>
 
-                    <!-- April 2026 - Generelle Fähigkeiten -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm">
-                        <div class="mb-4">
-                            <span class="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                07.04.2026 – 09.04.2026
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Generelle Fähigkeiten</h3>
-                            <p class="text-gray-600 mb-4">Microsoft Teams</p>
+                    <!-- Monatsgruppe Januar 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Januar 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">12.01.2026, 13.01.2026</p>
+                                        <p class="text-sm text-gray-700 font-bold">19.01.2026, 20.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '12.01.2026 - 20.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Januar 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">26.01.2026, 27.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '26.01.2026 - 27.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Januar 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">05.02.2026, 06.02.2026</p>
+                                        <p class="text-sm text-gray-700 font-bold">12.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '05.02.2026 - 12.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Januar 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">19.02.2026, 20.02.2026</p>
+                                        <p class="text-sm text-gray-700 font-bold">26.02.2026, 27.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '19.02.2026 - 27.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Januar 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
                         </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Generelle Fähigkeiten',
-                                startDate: '07.04.2026',
-                                endDate: '09.04.2026',
-                                location: 'Microsoft Teams',
-                                cohort: 'April 2026',
-                                module: 'Generelle Fähigkeiten'
-                            })"
-                        >
-                            Reservieren
-                        </button>
                     </div>
 
-                    <!-- April 2026 - Krankenzusatzversicherung -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm">
-                        <div class="mb-4">
-                            <span class="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                14.04.2026 – 15.04.2026
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Krankenzusatzversicherung</h3>
-                            <p class="text-gray-600 mb-4">Microsoft Teams</p>
+                    <!-- Firmenklasse - Immer verfügbar -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Firmenklasse (ganzjährig)</h3>
+                        <div class="max-w-md mx-auto">
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm border-2 border-primary">
+                                <div class="mb-4">
+                                    <div class="bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">Termine auf Anfrage</p>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Firmenklasse – Exklusiv</h4>
+                                    <p class="text-gray-600 mb-2">CHF 2'200/Tag (pauschal)</p>
+                                    <p class="text-gray-600 text-sm">Basel/Bern/Zürich/Lausanne/Lugano oder In-House</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Firmenklasse – schnell, geschlossen, standortnah',
+                                        startDate: 'Termine auf Anfrage',
+                                        location: 'Flexibel - alle Standorte oder In-House',
+                                        cohort: 'Firmenklasse',
+                                        module: 'Alle Module'
+                                    })"
+                                >
+                                    Firmenklasse anfragen
+                                </button>
+                            </div>
                         </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Krankenzusatzversicherung',
-                                startDate: '14.04.2026',
-                                endDate: '15.04.2026',
-                                location: 'Microsoft Teams',
-                                cohort: 'April 2026',
-                                module: 'Krankenzusatzversicherung'
-                            })"
-                        >
-                            Reservieren
-                        </button>
-                    </div>
-
-                    <!-- Mai 2026 - Nichtleben -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm">
-                        <div class="mb-4">
-                            <span class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                12.05.2026 – 14.05.2026
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Nichtleben (Sach/Haft)</h3>
-                            <p class="text-gray-600 mb-4">Basel</p>
-                        </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Nichtleben (Sach/Haft)',
-                                startDate: '12.05.2026',
-                                endDate: '14.05.2026',
-                                location: 'Basel',
-                                cohort: 'Mai 2026',
-                                module: 'Nichtleben (Sach/Haft)'
-                            })"
-                        >
-                            Reservieren
-                        </button>
-                    </div>
-
-                    <!-- Juni 2026 - Leben -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm">
-                        <div class="mb-4">
-                            <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                22.06.2026 – 24.06.2026
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Leben (Vorsorge/Risiko)</h3>
-                            <p class="text-gray-600 mb-4">Bern</p>
-                        </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Leben (Vorsorge/Risiko)',
-                                startDate: '22.06.2026',
-                                endDate: '24.06.2026',
-                                location: 'Bern',
-                                cohort: 'Juni 2026',
-                                module: 'Leben (Vorsorge/Risiko)'
-                            })"
-                        >
-                            Reservieren
-                        </button>
-                    </div>
-
-                    <!-- Juli 2026 - Firmenklasse -->
-                    <div class="course-card bg-white rounded-xl p-6 shadow-sm border-2 border-primary">
-                        <div class="mb-4">
-                            <span class="inline-block bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                Auf Anfrage
-                            </span>
-                            <h3 class="text-xl font-bold mb-2">Firmenklasse</h3>
-                            <p class="text-gray-600 mb-4">CHF 2'200/Tag (pauschal)</p>
-                        </div>
-                        <button 
-                            class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                            onclick="handleCourseReservation({
-                                title: 'Firmenklasse – schnell, geschlossen, standortnah',
-                                startDate: 'Auf Anfrage',
-                                endDate: '',
-                                location: 'Flexibel',
-                                cohort: 'Firmenklasse',
-                                module: 'Firmenklasse'
-                            })"
-                        >
-                            Firmenklasse anfragen
-                        </button>
                     </div>
                 </div>
 
