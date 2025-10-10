@@ -52,7 +52,7 @@ class StatusCheckCreate(BaseModel):
 class BookingFormData(BaseModel):
     firstName: str
     lastName: str
-    email: str
+    email: EmailStr  # Enhanced email validation
     phone: Optional[str] = None
     module: Optional[str] = None
     message: Optional[str] = None
@@ -63,7 +63,7 @@ class BookingFormData(BaseModel):
 class CourseBookingData(BaseModel):
     firstName: str
     lastName: str
-    email: str
+    email: EmailStr  # Enhanced email validation
     phone: Optional[str] = None
     # Course-specific data
     courseTitle: str
@@ -80,7 +80,7 @@ class CourseBookingData(BaseModel):
 class ContactFormData(BaseModel):
     firstName: str
     lastName: str
-    email: str
+    email: EmailStr  # Enhanced email validation
     phone: Optional[str] = None
     company: Optional[str] = None
     subject: Optional[str] = None
