@@ -130,16 +130,19 @@ backend:
           comment: "MongoDB connection working correctly, status endpoints (GET/POST /api/status) functional, data persistence verified"
 
   - task: "Booking Form Endpoint"
-    implemented: false
-    working: false
+    implemented: true
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: false
           agent: "testing"
           comment: "CRITICAL: /api/booking endpoint not implemented. Required for main booking form on index.html and schulung.html. Forms cannot submit data."
+        - working: true
+          agent: "testing"
+          comment: "✅ POST /api/booking endpoint working correctly. Successfully accepts booking data, validates required fields, returns success response with bookingId. Data stored in MongoDB bookings collection. Email logs created for Sascha.Voegeli@maklerzentrum.ch."
 
   - task: "Contact Form Endpoint"
     implemented: false
