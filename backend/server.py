@@ -110,6 +110,254 @@ async def get_status_checks():
     
     return status_checks
 
+# Email utility function
+async def send_email(to_email: str, subject: str, body: str, form_type: str = "booking"):
+    """
+    Send email using SMTP (simulated for now)
+    In production, configure with actual SMTP settings
+    """
+    try:
+        # For now, just log the email content
+        logger.info(f"📧 EMAIL WOULD BE SENT:")
+        logger.info(f"To: {to_email}")
+        logger.info(f"Subject: {subject}")
+        logger.info(f"Type: {form_type}")
+        logger.info(f"Body:\n{body}")
+        logger.info("=" * 50)
+        
+        # In production, implement actual SMTP sending here:
+        # smtp_server = os.environ.get('SMTP_SERVER', 'localhost')
+        # smtp_port = int(os.environ.get('SMTP_PORT', '587'))
+        # smtp_username = os.environ.get('SMTP_USERNAME')
+        # smtp_password = os.environ.get('SMTP_PASSWORD')
+        
+        return True
+    except Exception as e:
+        logger.error(f"Failed to send email: {e}")
+        return False
+
+# Honeypot validation
+def check_honeypot(form_data):
+    """Check if honeypot field is filled (indicates bot)"""
+    honeypot_field = getattr(form_data, 'website_url', None)
+    if honeypot_field and honeypot_field.strip():
+        logger.warning(f"Honeypot field filled: {honeypot_field}")
+        return False
+    return True
+
+# Booking Form Endpoint
+@api_router.post("/booking")
+async def submit_booking_form(form_data: BookingFormData):
+    """Handle main booking form submissions from index.html"""
+    
+    # Check honeypot
+    if not check_honeypot(form_data):
+        return {"success": False, "error": "Invalid submission"}
+    
+    try:
+        # Save to database
+        booking_doc = {
+            "id": str(uuid.uuid4()),
+            "type": "booking",
+            "firstName": form_data.firstName,
+            "lastName": form_data.lastName,
+            "email": form_data.email,
+            "phone": form_data.phone,
+            "module": form_data.module,
+            "message": form_data.message,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "processed": False
+        }
+        
+        await db.bookings.insert_one(booking_doc)
+        
+        # Prepare email content
+        email_subject = f"Neue Platzreservierung: {form_data.firstName} {form_data.lastName}"
+        email_body = f"""
+Neue Platzreservierung eingegangen:
+
+**Teilnehmer-Details:**
+- Name: {form_data.firstName} {form_data.lastName}
+- E-Mail: {form_data.email}
+- Telefon: {form_data.phone or 'Nicht angegeben'}
+
+**Kurs-Details:**
+- Gewünschtes Modul: {form_data.module or 'Nicht spezifiziert'}
+
+**Nachricht:**
+{form_data.message or 'Keine zusätzliche Nachricht'}
+
+---
+Gesendet über maklerzentrum.ch Hauptformular
+Buchungs-ID: {booking_doc['id']}
+        """.strip()
+        
+        # Send email to Sascha
+        email_sent = await send_email(
+            to_email="Sascha.Voegeli@maklerzentrum.ch",
+            subject=email_subject,
+            body=email_body,
+            form_type="booking"
+        )
+        
+        logger.info(f"Booking form submitted: {form_data.email}, Module: {form_data.module}")
+        
+        return {
+            "success": True, 
+            "message": "Ihre Reservierung wurde erfolgreich eingereicht!",
+            "bookingId": booking_doc['id']
+        }
+        
+    except Exception as e:
+        logger.error(f"Error processing booking form: {e}")
+        return {"success": False, "error": "Fehler beim Verarbeiten der Anfrage"}
+
+# Course Booking Endpoint (for schulung.html)
+@api_router.post("/course-booking")
+async def submit_course_booking(form_data: CourseBookingData):
+    """Handle course-specific booking forms from schulung.html"""
+    
+    # Check honeypot
+    if not check_honeypot(form_data):
+        return {"success": False, "error": "Invalid submission"}
+    
+    try:
+        # Save to database
+        course_booking_doc = {
+            "id": str(uuid.uuid4()),
+            "type": "course_booking",
+            "firstName": form_data.firstName,
+            "lastName": form_data.lastName,
+            "email": form_data.email,
+            "phone": form_data.phone,
+            "courseTitle": form_data.courseTitle,
+            "courseStartDate": form_data.courseStartDate,
+            "courseEndDate": form_data.courseEndDate,
+            "courseLocation": form_data.courseLocation,
+            "courseCohort": form_data.courseCohort,
+            "courseModule": form_data.courseModule,
+            "message": form_data.message,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "processed": False
+        }
+        
+        await db.course_bookings.insert_one(course_booking_doc)
+        
+        # Prepare email content for Sascha
+        email_subject = f"Kursanfrage: {form_data.courseTitle} - {form_data.firstName} {form_data.lastName}"
+        email_body = f"""
+Neue Kursanfrage eingegangen:
+
+**Kurs-Details:**
+- Kurs: {form_data.courseTitle}
+- Datum: {form_data.courseStartDate}{' – ' + form_data.courseEndDate if form_data.courseEndDate else ''}
+- Ort: {form_data.courseLocation}
+- Kohorte: {form_data.courseCohort}
+- Modul: {form_data.courseModule}
+
+**Teilnehmer-Details:**
+- Name: {form_data.firstName} {form_data.lastName}
+- E-Mail: {form_data.email}
+- Telefon: {form_data.phone or 'Nicht angegeben'}
+
+**Nachricht:**
+{form_data.message or 'Keine zusätzliche Nachricht'}
+
+---
+Gesendet über maklerzentrum.ch Schulungsseite
+Buchungs-ID: {course_booking_doc['id']}
+        """.strip()
+        
+        # Send email to Sascha
+        email_sent = await send_email(
+            to_email="Sascha.Voegeli@maklerzentrum.ch",
+            subject=email_subject,
+            body=email_body,
+            form_type="course_booking"
+        )
+        
+        logger.info(f"Course booking submitted: {form_data.email}, Course: {form_data.courseTitle}")
+        
+        return {
+            "success": True,
+            "message": "Deine Kursanfrage wurde erfolgreich eingereicht! Wir melden uns bald bei dir.",
+            "bookingId": course_booking_doc['id']
+        }
+        
+    except Exception as e:
+        logger.error(f"Error processing course booking: {e}")
+        return {"success": False, "error": "Fehler beim Verarbeiten der Kursanfrage"}
+
+# Contact Form Endpoint
+@api_router.post("/contact")
+async def submit_contact_form(form_data: ContactFormData):
+    """Handle general contact forms and company class inquiries"""
+    
+    # Check honeypot
+    if not check_honeypot(form_data):
+        return {"success": False, "error": "Invalid submission"}
+    
+    try:
+        # Save to database
+        contact_doc = {
+            "id": str(uuid.uuid4()),
+            "type": "contact",
+            "firstName": form_data.firstName,
+            "lastName": form_data.lastName,
+            "email": form_data.email,
+            "phone": form_data.phone,
+            "company": form_data.company,
+            "subject": form_data.subject,
+            "message": form_data.message,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "processed": False
+        }
+        
+        await db.contacts.insert_one(contact_doc)
+        
+        # Prepare email content
+        email_subject = f"Kontaktanfrage: {form_data.subject or 'Allgemeine Anfrage'}"
+        if form_data.company:
+            email_subject = f"Firmenanfrage: {form_data.company} - {form_data.firstName} {form_data.lastName}"
+        
+        email_body = f"""
+Neue Kontaktanfrage eingegangen:
+
+**Kontakt-Details:**
+- Name: {form_data.firstName} {form_data.lastName}
+- E-Mail: {form_data.email}
+- Telefon: {form_data.phone or 'Nicht angegeben'}
+- Firma: {form_data.company or 'Nicht angegeben'}
+- Betreff: {form_data.subject or 'Nicht angegeben'}
+
+**Nachricht:**
+{form_data.message}
+
+---
+Gesendet über maklerzentrum.ch Kontaktformular
+Anfrage-ID: {contact_doc['id']}
+        """.strip()
+        
+        # Send email to Sascha
+        email_sent = await send_email(
+            to_email="Sascha.Voegeli@maklerzentrum.ch",
+            subject=email_subject,
+            body=email_body,
+            form_type="contact"
+        )
+        
+        logger.info(f"Contact form submitted: {form_data.email}, Subject: {form_data.subject}")
+        
+        return {
+            "success": True,
+            "message": "Ihre Nachricht wurde erfolgreich gesendet! Wir melden uns bald bei Ihnen.",
+            "contactId": contact_doc['id']
+        }
+        
+    except Exception as e:
+        logger.error(f"Error processing contact form: {e}")
+        return {"success": False, "error": "Fehler beim Senden der Nachricht"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
