@@ -494,34 +494,41 @@ class BackendTester:
                     {"responses": rate_limit_responses, "note": "This may be intentional"}
                 )
             
-            # Test honeypot protection (would need form submission with honeypot field)
+            # Test honeypot protection with complete form data
             honeypot_data = {
-                "firstName": "Test",
-                "lastName": "User",
-                "email": "test@example.com",
-                "website_url": "http://spam.com"  # Honeypot field
+                "firstName": "Bot",
+                "lastName": "Spam",
+                "email": "bot@spam.com",
+                "phone": "123456789",
+                "module": "Test",
+                "message": "This is a bot submission",
+                "agreeTerms": True,
+                "website_url": "http://spam.com"  # Honeypot field - should be empty
             }
             
-            # Try to submit with honeypot field to any form endpoint
-            for endpoint in ["/booking", "/contact"]:
-                try:
-                    response = self.session.post(f"{BACKEND_URL}{endpoint}", json=honeypot_data, timeout=10)
-                    if response.status_code == 400 or "honeypot" in response.text.lower():
-                        self.log_result(
-                            "Honeypot Protection", 
-                            True, 
-                            f"Honeypot protection active on {endpoint}",
-                            {"endpoint": endpoint, "status_code": response.status_code}
-                        )
-                        break
-                except:
-                    continue
+            response = self.session.post(f"{BACKEND_URL}/booking", json=honeypot_data, timeout=10)
+            if response.status_code == 200:
+                response_data = response.json()
+                if not response_data.get('success') and 'Invalid submission' in response_data.get('error', ''):
+                    self.log_result(
+                        "Honeypot Protection", 
+                        True, 
+                        "Honeypot protection working - blocked bot submission",
+                        {"response": response_data}
+                    )
+                else:
+                    self.log_result(
+                        "Honeypot Protection", 
+                        False, 
+                        "Honeypot protection not working - bot submission accepted",
+                        {"response": response_data}
+                    )
             else:
                 self.log_result(
                     "Honeypot Protection", 
                     False, 
-                    "Honeypot protection not detected or endpoints not available",
-                    {"note": "Tested with website_url field"}
+                    f"Cannot test honeypot - endpoint error: HTTP {response.status_code}",
+                    {"status_code": response.status_code}
                 )
                 
         except Exception as e:
