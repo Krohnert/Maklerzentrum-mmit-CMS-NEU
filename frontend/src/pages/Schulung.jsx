@@ -542,6 +542,159 @@ const Schulung = () => {
           </div>
         </div>
       </section>
+
+      {/* Course Booking Form (erscheint nach Klick auf Reservieren) */}
+      {showBookingForm && selectedCourse && (
+        <section id="course-booking-form" className="section-padding bg-white border-t-4 border-[#D81C1C]">
+          <div className="container-custom">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold mb-4">Kursanfrage</h2>
+                <p className="text-lg text-gray-600">
+                  Kostenfrei und unverbindlich – Du erhältst danach Testzugang und Bezahlen-Link.
+                </p>
+              </div>
+              
+              <form onSubmit={handleFormSubmit} className="bg-white p-8 rounded-xl shadow-lg border">
+                {/* Kurs-Informationen */}
+                <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <h3 className="font-semibold text-gray-800 mb-2">Gewählter Kurs:</h3>
+                  <div className="text-gray-600">
+                    <p><strong>{selectedCourse.module}</strong></p>
+                    <p>📅 {selectedCourse.startDate} – {selectedCourse.endDate}</p>
+                    <p>📍 {selectedCourse.location}</p>
+                    <p>👥 {selectedCourse.cohort}</p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Vorname *
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D81C1C] focus:ring-2 focus:ring-[#D81C1C]/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Nachname *
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D81C1C] focus:ring-2 focus:ring-[#D81C1C]/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      E-Mail *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D81C1C] focus:ring-2 focus:ring-[#D81C1C]/20"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Telefon
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D81C1C] focus:ring-2 focus:ring-[#D81C1C]/20"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nachricht (optional)
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="3"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D81C1C] focus:ring-2 focus:ring-[#D81C1C]/20"
+                    placeholder="Zusätzliche Informationen oder Fragen..."
+                  />
+                </div>
+
+                {/* Honeypot field (hidden) */}
+                <input 
+                  type="text" 
+                  name="website_url" 
+                  value={formData.website_url || ''}
+                  onChange={handleInputChange}
+                  style={{ display: 'none' }} 
+                  tabIndex="-1" 
+                  autoComplete="off" 
+                />
+                
+                <div className="mt-6">
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="agreeTerms"
+                      name="agreeTerms"
+                      checked={formData.agreeTerms}
+                      onChange={handleInputChange}
+                      required
+                      className="mt-1 mr-2"
+                    />
+                    <label htmlFor="agreeTerms" className="text-sm text-gray-600">
+                      Ich stimme den <a href="/agb.html" className="text-[#D81C1C] hover:underline" target="_blank" rel="noopener">AGB</a> und der <a href="/datenschutz.html" className="text-[#D81C1C] hover:underline" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. *
+                    </label>
+                  </div>
+                </div>
+                
+                <div className="mt-8 flex gap-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-gradient-to-br from-[#D81C1C] to-[#c01818] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-lg transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      boxShadow: isSubmitting ? 'none' : '0 4px 14px rgba(216, 28, 28, 0.25)'
+                    }}
+                  >
+                    {isSubmitting ? 'Wird gesendet...' : 'Kostenlos anfragen'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowBookingForm(false);
+                      setSelectedCourse(null);
+                    }}
+                    className="bg-gray-100 text-gray-700 py-4 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                  >
+                    Abbrechen
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 };
