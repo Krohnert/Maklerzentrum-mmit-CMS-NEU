@@ -125,9 +125,9 @@ const Navigation = () => {
                 <a href="/schulung.html" className="text-gray-700 hover:text-[#D81C1C] font-medium py-2 transition-colors">
                   Schulung
                 </a>
-                <Link to="/services" className="text-gray-700 hover:text-[#D81C1C] font-medium py-2 transition-colors">
+                <a href="/services.html" className="text-gray-700 hover:text-[#D81C1C] font-medium py-2 transition-colors">
                   Services
-                </Link>
+                </a>
                 <Link to="/about" className="text-gray-700 hover:text-[#D81C1C] font-medium py-2 transition-colors">
                   About us
                 </Link>
