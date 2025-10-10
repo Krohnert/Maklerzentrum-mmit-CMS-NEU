@@ -36,6 +36,7 @@ db = client[os.environ['DB_NAME']]
 # CMS Services
 cms_storage = CMSStorage(db)
 cms_auth = CMSAuth(db)
+cms_content = CMSContent(db)
 
 # Custom key function for rate limiting behind proxy/ingress
 def get_remote_address_from_headers(request: Request) -> str:
