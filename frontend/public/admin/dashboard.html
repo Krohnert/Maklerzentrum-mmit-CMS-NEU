@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Dashboard - Maklerzentrum</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">
+                🎯 CMS Dashboard
+            </h1>
+            <div class="flex items-center space-x-4">
+                <span id="user-email" class="text-sm text-gray-600"></span>
+                <button 
+                    id="logout-btn"
+                    class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+                >
+                    Abmelden
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Welcome Message -->
+        <div class="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg shadow-lg p-8 text-white mb-8">
+            <h2 class="text-3xl font-bold mb-2">Willkommen im CMS! 🎉</h2>
+            <p class="text-lg opacity-90">Phase 1 ist fertig – Backend läuft!</p>
+        </div>
+        
+        <!-- Progress Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            
+            <!-- Card 1: Backend -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Backend</h3>
+                </div>
+                <p class="text-gray-600 text-sm">✅ API-Endpoints aktiv</p>
+                <p class="text-gray-600 text-sm">✅ MongoDB GridFS</p>
+                <p class="text-gray-600 text-sm">✅ Admin-Auth</p>
+            </div>
+            
+            <!-- Card 2: Image Upload -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Bilder</h3>
+                </div>
+                <p class="text-gray-600 text-sm">✅ Upload bis 10MB</p>
+                <p class="text-gray-600 text-sm">✅ Auto-Derivate</p>
+                <p class="text-gray-600 text-sm">⏳ UI kommt bald...</p>
+            </div>
+            
+            <!-- Card 3: Content Editor -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Content</h3>
+                </div>
+                <p class="text-gray-600 text-sm">⏳ Seiten-Editor</p>
+                <p class="text-gray-600 text-sm">⏳ i18n (DE/FR/IT)</p>
+                <p class="text-gray-600 text-sm">⏳ Phase 2...</p>
+            </div>
+            
+        </div>
+        
+        <!-- Implementation Status -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-bold mb-6">📊 Implementation Status</h3>
+            
+            <div class="space-y-4">
+                <!-- Phase 1 -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Phase 1: Foundation</span>
+                        <span class="text-green-600 font-semibold">100% ✅</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-green-500 h-3 rounded-full" style="width: 100%"></div>
+                    </div>
+                    <ul class="mt-2 text-sm text-gray-600 ml-4">
+                        <li>✅ MongoDB GridFS Setup</li>
+                        <li>✅ Admin Users (3 geseedet)</li>
+                        <li>✅ Session Management</li>
+                        <li>✅ Login-UI (diese Seite!)</li>
+                    </ul>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Phase 2: Content Management</span>
+                        <span class="text-gray-600 font-semibold">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-blue-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <ul class="mt-2 text-sm text-gray-600 ml-4">
+                        <li>⏳ Page-Editor (Home, Schulung, etc.)</li>
+                        <li>⏳ i18n (DE/FR/IT)</li>
+                        <li>⏳ Media-Library UI</li>
+                    </ul>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Phase 3: Lists & Sorting</span>
+                        <span class="text-gray-600 font-semibold">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-purple-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <ul class="mt-2 text-sm text-gray-600 ml-4">
+                        <li>⏳ Module CRUD + Drag&Drop</li>
+                        <li>⏳ FAQ CRUD + Drag&Drop</li>
+                        <li>⏳ Team CRUD + Drag&Drop</li>
+                        <li>⏳ Events-Editor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="mt-8 bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-bold mb-4">⚡ Coming Soon...</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button disabled class="bg-gray-100 text-gray-400 p-4 rounded-lg text-center cursor-not-allowed">
+                    <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                    </svg>
+                    <span class="text-sm">Seiten</span>
+                </button>
+                <button disabled class="bg-gray-100 text-gray-400 p-4 rounded-lg text-center cursor-not-allowed">
+                    <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-sm">Medien</span>
+                </button>
+                <button disabled class="bg-gray-100 text-gray-400 p-4 rounded-lg text-center cursor-not-allowed">
+                    <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <span class="text-sm">Team</span>
+                </button>
+                <button disabled class="bg-gray-100 text-gray-400 p-4 rounded-lg text-center cursor-not-allowed">
+                    <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-sm">Termine</span>
+                </button>
+            </div>
+        </div>
+        
+    </main>
+    
+    <!-- Script -->
+    <script>
+        const API_BASE = window.location.protocol + '//' + window.location.host;
+        
+        // Check authentication
+        (async function checkAuth() {
+            try {
+                const response = await fetch(`${API_BASE}/api/admin/me`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                
+                if (!data.success || !data.user) {
+                    // Not logged in
+                    window.location.href = '/admin/index.html';
+                    return;
+                }
+                
+                // Show user email
+                document.getElementById('user-email').textContent = data.user.email;
+                
+                console.log('Logged in as:', data.user);
+                
+            } catch (error) {
+                console.error('Auth check failed:', error);
+                window.location.href = '/admin/index.html';
+            }
+        })();
+        
+        // Logout handler
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            try {
+                await fetch(`${API_BASE}/api/admin/logout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                window.location.href = '/admin/index.html';
+            } catch (error) {
+                console.error('Logout failed:', error);
+            }
+        });
+    </script>
+</body>
+</html>
