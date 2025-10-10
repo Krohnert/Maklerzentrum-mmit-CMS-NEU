@@ -841,9 +841,12 @@ class BackendTester:
         print("\n📧 4. EMAIL FUNCTIONALITY")
         self.test_email_functionality()
         
-        # 5. Security
-        print("\n🔒 5. SECURITY")
-        self.test_security_features()
+        # 5. Security (Recent Updates Testing)
+        print("\n🔒 5. SECURITY - RECENT UPDATES")
+        self.test_cors_headers()
+        self.test_rate_limiting()
+        self.test_email_validation()
+        self.test_honeypot_protection()
         
         # 6. HTML pages
         print("\n🌐 6. HTML PAGES")
