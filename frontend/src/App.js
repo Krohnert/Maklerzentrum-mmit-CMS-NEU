@@ -103,7 +103,7 @@ function App() {
         <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeRedirect />} />
           <Route path="/schulung" element={<SchulungRedirect />} />
           <Route path="/services" element={<ServicesRedirect />} />
           <Route path="/about" element={<AboutRedirect />} />
