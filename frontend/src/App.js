@@ -16,6 +16,22 @@ import Datenschutz from './pages/Datenschutz';
 import AGB from './pages/AGB';
 import Impressum from './pages/Impressum';
 
+// Redirect component for Schulung route
+const SchulungRedirect = () => {
+  React.useEffect(() => {
+    window.location.href = '/schulung.html';
+  }, []);
+  
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D81C1C] mx-auto mb-4"></div>
+        <p className="text-gray-600">Weiterleitung zur Schulungsseite...</p>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   return (
     <HelmetProvider>
