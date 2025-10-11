@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBV Schulung Schweiz – Start jeden Monat | Maklerzentrum</title>
+    
+    <!-- Meta Tags für SEO -->
+    <meta name="description" content="4 Module (online & vor Ort), Termin-Matrix 2026, CHF 150/Tag. Reserve jetzt deinen Starttermin und sichere deinen Platz.">
+    <meta name="keywords" content="VBV Schulung, Versicherungsberater, Ausbildung, Schweiz, Basel, Bern, Zürich, Lausanne">
+    <meta name="author" content="Maklerzentrum Schweiz AG">
+    <link rel="canonical" href="https://maklerzentrum.ch/schulung.html">
+    
+    <!-- GEO-specific Meta Tags -->
+    <meta name="geo.region" content="CH">
+    <meta name="geo.placename" content="Basel, Bern, Zürich, Lausanne, Lugano">
+    <meta name="geo.position" content="47.5596;7.5886">
+    <meta name="ICBM" content="47.5596, 7.5886">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VBV Schulung Schweiz – Start jeden Monat | Maklerzentrum">
+    <meta property="og:description" content="4 Module (online & vor Ort), Termin-Matrix 2026, CHF 150/Tag.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maklerzentrum.ch/schulung.html">
+    <meta property="og:locale" content="de_CH">
+    <meta property="og:image" content="https://customer-assets.emergentagent.com/job_swiss-broker-portal/artifacts/844b3nrs_Logo_def_normal.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    
+    <!-- Fonts - Optimized for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-display: swap;
+        }
+    </style>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D81C1C',
+                        text: '#707070',
+                        border: '#CCCCCC',
+                        surface: '#F6F6F6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    height: {
+                        'hero-sm': '300px',
+                        'hero-md': '400px'
+                    },
+                    padding: {
+                        'safe': 'env(safe-area-inset-bottom)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Security Headers (for production) -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self';
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self'
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <!-- Structured Data - Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Maklerzentrum Schweiz AG",
+        "url": "https://maklerzentrum.ch/",
+        "logo": "https://customer-assets.emergentagent.com/job_swiss-broker-portal/artifacts/844b3nrs_Logo_def_normal.jpg",
+        "telephone": "+41799486986",
+        "email": "academy@maklerzentrum.ch",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Elisabethenanlage 11",
+            "postalCode": "4051",
+            "addressLocality": "Basel",
+            "addressCountry": "CH"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.5596",
+            "longitude": "7.5886"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Basel"},
+            {"@type": "City", "name": "Bern"},
+            {"@type": "City", "name": "Zürich"},
+            {"@type": "City", "name": "Lausanne"},
+            {"@type": "City", "name": "Lugano"}
+        ],
+        "priceRange": "CHF 150-2200",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "2"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "VBV Ausbildung zum Versicherungsvermittler",
+        "description": "Professionelle VBV-Ausbildung in 4 Modulen: Generelle Fähigkeiten, Krankenzusatzversicherung, Nichtleben, Leben. Hybrid-Learning: Online (Microsoft Teams) + Präsenz in Basel, Bern, Zürich, Lausanne, Lugano.",
+        "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Maklerzentrum Schweiz AG",
+            "url": "https://maklerzentrum.ch/"
+        },
+        "hasCourseInstance": [
+            {
+                "@type": "CourseInstance",
+                "courseMode": ["online", "blended"],
+                "courseWorkload": "PT90H",
+                "inLanguage": "de-CH",
+                "location": [
+                    {
+                        "@type": "Place",
+                        "name": "Basel",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Basel",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Bern",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Bern",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Zürich",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Zürich",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Lausanne",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Lausanne",
+                            "addressCountry": "CH"
+                        }
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Lugano",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Lugano",
+                            "addressCountry": "CH"
+                        }
+                    }
+                ]
+            }
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "CHF",
+            "availability": "https://schema.org/InStock",
+            "url": "https://maklerzentrum.ch/schulung.html"
+        },
+        "educationalLevel": "Berufsausbildung",
+        "about": "Versicherungsvermittler, VBV-Zertifizierung, Versicherungsberatung"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "VBV Kurstermine 2026",
+        "itemListElement": [
+            {
+                "@type": "Event",
+                "name": "VBV Ausbildung - Monatsgruppe Januar 2026",
+                "startDate": "2026-01-07",
+                "endDate": "2026-04-03",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": [
+                    {
+                        "@type": "VirtualLocation",
+                        "url": "https://teams.microsoft.com"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Basel, Bern, Zürich, Lausanne, Lugano",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        }
+                    }
+                ],
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "Maklerzentrum Schweiz AG",
+                    "url": "https://maklerzentrum.ch/"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://maklerzentrum.ch/schulung.html",
+                    "price": "150",
+                    "priceCurrency": "CHF",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2025-10-01"
+                }
+            },
+            {
+                "@type": "Event",
+                "name": "VBV Ausbildung - Monatsgruppe Februar 2026",
+                "startDate": "2026-02-04",
+                "endDate": "2026-05-08",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": [
+                    {
+                        "@type": "VirtualLocation",
+                        "url": "https://teams.microsoft.com"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Basel, Bern, Zürich, Lausanne, Lugano",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        }
+                    }
+                ],
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "Maklerzentrum Schweiz AG",
+                    "url": "https://maklerzentrum.ch/"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://maklerzentrum.ch/schulung.html",
+                    "price": "150",
+                    "priceCurrency": "CHF",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2025-10-01"
+                }
+            },
+            {
+                "@type": "Event",
+                "name": "VBV Ausbildung - Monatsgruppe März 2026",
+                "startDate": "2026-03-04",
+                "endDate": "2026-05-28",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "location": [
+                    {
+                        "@type": "VirtualLocation",
+                        "url": "https://teams.microsoft.com"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Basel, Bern, Zürich, Lausanne, Lugano",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        }
+                    }
+                ],
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "Maklerzentrum Schweiz AG",
+                    "url": "https://maklerzentrum.ch/"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://maklerzentrum.ch/schulung.html",
+                    "price": "150",
+                    "priceCurrency": "CHF",
+                    "availability": "https://schema.org/InStock",
+                    "validFrom": "2025-10-01"
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://maklerzentrum.ch/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Schulung",
+                "item": "https://maklerzentrum.ch/schulung.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles for enhanced design */
+        :root {
+            --color-primary: #D81C1C;
+            --color-text: #707070;
+            --color-border: #CCCCCC;
+            --color-surface: #F6F6F6;
+            --color-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--color-text);
+            line-height: 1.55;
+            font-weight: 400;
+        }
+
+        /* Button effects */
+        .btn-primary {
+            background: linear-gradient(135deg, #D81C1C, #B91515);
+            box-shadow: 0 4px 14px 0 rgba(216, 28, 28, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(216, 28, 28, 0.35);
+        }
+
+        /* Course card styles */
+        .course-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fixed height for date boxes to keep all cards aligned */
+        .course-card .date-box {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .course-card .reservieren-btn {
+            background: linear-gradient(135deg, #D81C1C, #B91515);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: none;
+            margin-top: auto;
+        }
+
+        .course-card .reservieren-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(216, 28, 28, 0.4);
+        }
+
+        /* Mobile navigation styles */
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px; /* Space for mobile sticky CTA */
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navigation" class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img 
+                            src="https://customer-assets.emergentagent.com/job_swiss-broker-portal/artifacts/844b3nrs_Logo_def_normal.jpg" 
+                            alt="Maklerzentrum Schweiz AG" 
+                            class="h-10 w-auto md:h-12"
+                        />
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="/schulung.html" class="text-primary px-3 py-2 text-sm font-medium border-b-2 border-primary">Schulung</a>
+                        <a href="/#services" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="/#about" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Über uns</a>
+                        <a href="/#kontakt" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Kontakt</a>
+                        <a href="https://maklerzentrum-academy.reteach.io/" target="_blank" rel="noopener" class="text-primary border border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                    <a href="/" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Home</a>
+                    <a href="/schulung.html" class="block text-primary px-3 py-2 text-base font-medium bg-gray-50">Schulung</a>
+                    <a href="/#services" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Services</a>
+                    <a href="/#about" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Über uns</a>
+                    <a href="/#kontakt" class="block text-gray-700 hover:text-primary px-3 py-2 text-base font-medium">Kontakt</a>
+                    <div class="px-3 py-2 space-y-2">
+                        <a href="https://maklerzentrum-academy.reteach.io/" target="_blank" rel="noopener" class="block text-center text-primary border border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[250px] md:h-[350px] overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=500&fit=crop" 
+                     alt="VBV Ausbildung – Online und Präsenz in Basel, Bern, Zürich, Lausanne, Lugano" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+            </div>
+            <div class="relative h-full flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl text-white">
+                        <h1 class="mb-6 text-white text-3xl md:text-5xl font-extrabold leading-tight">
+                            VBV-Ausbildung mit monatlichem Start
+                        </h1>
+                        <p class="text-xl mb-8 text-white/90">
+                            Online (Teams) für Grundlagen. Präsenz für Praxis. Standorte: <strong>Basel, Bern, Zürich, Lausanne, Lugano</strong>.<br />
+                            Ziel: <strong>sicher zum VBV</strong>, in etwa <strong>3 Monaten</strong>.
+                        </p>
+                        <a href="#schedule" class="btn-primary bg-primary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors">
+                            Reservieren
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Schritte -->
+        <section class="py-16 bg-surface">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-8">So einfach reservierst du deinen Platz – in 3 Schritten</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">1</div>
+                            <h3 class="text-lg font-semibold mb-2">Kurs & Monat wählen</h3>
+                            <p class="text-gray-600">Kurs (Gesamt/Modul) und Monat/Kohorte wählen.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">2</div>
+                            <h3 class="text-lg font-semibold mb-2">Deine Daten eingeben</h3>
+                            <p class="text-gray-600">Kontaktangaben ausfüllen.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">3</div>
+                            <h3 class="text-lg font-semibold mb-2">Unverbindlich reservieren</h3>
+                            <p class="text-gray-600">wir senden Testzugang und Bezahlen-Link per E-Mail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ablauf in 5 Schritten -->
+        <section class="py-16 bg-gray-800 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Ablauf in 5 Schritten</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Buchung/Reservation</h3>
+                                <p class="text-white/80">Monat/Kohorte und Module wählen.</p>
+                            </div>
+                        </div>
+                        <div class="h-px bg-white/20"></div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Zugang</h3>
+                                <p class="text-white/80">Lernplattform, Skripte, Podcasts, .ics-Termine.</p>
+                            </div>
+                        </div>
+                        <div class="h-px bg-white/20"></div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Online</h3>
+                                <p class="text-white/80">Generelle Fähigkeiten & Krankenzusatz.</p>
+                            </div>
+                        </div>
+                        <div class="h-px bg-white/20"></div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">4</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Präsenz</h3>
+                                <p class="text-white/80">Nichtleben & Leben standortnah.</p>
+                            </div>
+                        </div>
+                        <div class="h-px bg-white/20"></div>
+                        <div class="flex items-start">
+                            <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mr-6 flex-shrink-0">5</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Prüfung</h3>
+                                <p class="text-white/80">Wir bereiten dich gezielt vor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kurstermine 2026 -->
+        <section id="schedule" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Kurstermine 2026</h2>
+                
+                <!-- Monatsgruppen mit echten Terminen -->
+                <div class="space-y-12 max-w-6xl mx-auto">
+                    
+                    <!-- Monatsgruppe Dezember 2025 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Dezember 2025</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <!-- Generelle Fähigkeiten (online) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">08.12.2025, 09.12.2025, 15.12.2025, 16.12.2025</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '08.12.2025 - 16.12.2025',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Krankenzusatzversicherung (online) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">12.01.2026, 13.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '12.01.2026 - 13.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Nichtleben (vor Ort) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">15.01.2026, 16.01.2026, 22.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '15.01.2026 - 22.01.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <!-- Leben (vor Ort) -->
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">29.01.2026, 30.01.2026, 05.02.2026, 06.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '29.01.2026 - 06.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Dezember 2025',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe Januar 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Januar 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">12.01.2026, 13.01.2026, 19.01.2026, 20.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '12.01.2026 - 20.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Januar 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">26.01.2026, 27.01.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '26.01.2026 - 27.01.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Januar 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">05.02.2026, 06.02.2026, 12.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '05.02.2026 - 12.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Januar 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">19.02.2026, 20.02.2026, 26.02.2026, 27.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '19.02.2026 - 27.02.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Januar 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe Februar 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Februar 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">09.02.2026, 10.02.2026, 11.02.2026, 16.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '09.02.2026 - 16.02.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Februar 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">23.02.2026, 24.02.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '23.02.2026 - 24.02.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Februar 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">05.03.2026, 06.03.2026, 12.03.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '05.03.2026 - 12.03.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Februar 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">19.03.2026, 20.03.2026, 26.03.2026, 27.03.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '19.03.2026 - 27.03.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Februar 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe März 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe März 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">09.03.2026, 10.03.2026, 16.03.2026, 17.03.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '09.03.2026 - 17.03.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'März 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">23.03.2026, 24.03.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '23.03.2026 - 24.03.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'März 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">02.04.2026, 03.04.2026, 09.04.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '02.04.2026 - 09.04.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'März 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">16.04.2026, 17.04.2026, 23.04.2026, 24.04.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '16.04.2026 - 24.04.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'März 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe April 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe April 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">08.04.2026, 13.04.2026, 15.04.2026, 20.04.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '08.04.2026 - 20.04.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'April 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">22.04.2026, 27.04.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '22.04.2026 - 27.04.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'April 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">01.05.2026, 07.05.2026, 08.05.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '01.05.2026 - 08.05.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'April 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">15.05.2026, 21.05.2026, 22.05.2026, 28.05.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '15.05.2026 - 28.05.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'April 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe Mai 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Mai 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">11.05.2026, 12.05.2026, 18.05.2026, 19.05.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '11.05.2026 - 19.05.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Mai 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">26.05.2026, 27.05.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '26.05.2026 - 27.05.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Mai 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">04.06.2026, 05.06.2026, 11.06.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '04.06.2026 - 11.06.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Mai 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">18.06.2026, 19.06.2026, 25.06.2026, 26.06.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '18.06.2026 - 26.06.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Mai 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monatsgruppe Juni 2026 -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Monatsgruppe Juni 2026</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">08.06.2026, 09.06.2026, 10.06.2026, 15.06.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Generelle Fähigkeiten</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Generelle Fähigkeiten (online)',
+                                        startDate: '08.06.2026 - 15.06.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Juni 2026',
+                                        module: 'Generelle Fähigkeiten'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">22.06.2026, 23.06.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Krankenzusatzversicherung</h4>
+                                    <p class="text-gray-600 text-sm">Microsoft Teams</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Krankenzusatzversicherung (online)',
+                                        startDate: '22.06.2026 - 23.06.2026',
+                                        location: 'Microsoft Teams',
+                                        cohort: 'Juni 2026',
+                                        module: 'Krankenzusatzversicherung'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">02.07.2026, 03.07.2026, 09.07.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Nichtleben (Sach/Haft)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Nichtleben (Sach/Haft) - vor Ort',
+                                        startDate: '02.07.2026 - 09.07.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Juni 2026',
+                                        module: 'Nichtleben'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">16.07.2026, 17.07.2026, 23.07.2026, 24.07.2026</p>
+                                    </div>
+                                    <h4 class="text-lg font-bold mb-2">Leben (Vorsorge/Risiko)</h4>
+                                    <p class="text-gray-600 text-sm">Präsenz</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-4 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Leben (Vorsorge/Risiko) - vor Ort',
+                                        startDate: '16.07.2026 - 24.07.2026',
+                                        location: 'Basel/Bern/Zürich/Lausanne/Lugano',
+                                        cohort: 'Juni 2026',
+                                        module: 'Leben (Vorsorge/Risiko)'
+                                    })"
+                                >
+                                    Reservieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Firmenklasse - Immer verfügbar -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Firmenklasse (ganzjährig)</h3>
+                        <div class="max-w-md mx-auto">
+                            <div class="course-card bg-white rounded-xl p-6 shadow-sm border-2 border-primary">
+                                <div class="mb-4">
+                                    <div class="date-box bg-gray-100 px-4 py-2 rounded-lg mb-3">
+                                        <p class="text-sm text-gray-700 font-bold">Termine auf Anfrage</p>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Firmenklasse – Exklusiv</h4>
+                                    <p class="text-gray-600 mb-2">CHF 2'200/Tag (pauschal)</p>
+                                    <p class="text-gray-600 text-sm">Basel/Bern/Zürich/Lausanne/Lugano oder In-House</p>
+                                </div>
+                                <button 
+                                    class="reservieren-btn w-full text-white py-3 px-6 rounded-lg font-semibold transition-all"
+                                    onclick="handleCourseReservation({
+                                        title: 'Firmenklasse – schnell, geschlossen, standortnah',
+                                        startDate: 'Termine auf Anfrage',
+                                        location: 'Flexibel - alle Standorte oder In-House',
+                                        cohort: 'Firmenklasse',
+                                        module: 'Alle Module'
+                                    })"
+                                >
+                                    Firmenklasse anfragen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weitere Termine -->
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-6">
+                        Start in der Regel in der 2. Kalenderwoche. Abschluss meist nach 3 Monaten. Termine pro Monat – Plätze begrenzt.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#booking-form" class="btn-primary bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                            Alle Termine ansehen
+                        </a>
+                        <a href="tel:+41799486986" class="bg-white text-primary border-2 border-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            079 948 69 86
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preise -->
+        <section class="py-16 bg-surface">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-8">Preise</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-8 rounded-xl shadow-sm">
+                            <div class="text-4xl font-bold text-primary mb-2">CHF 150/Tag</div>
+                            <p class="text-gray-600 mb-4">pro Person – Offene Klassen</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-sm">
+                            <div class="text-4xl font-bold text-primary mb-2">CHF 2'200/Tag</div>
+                            <p class="text-gray-600 mb-4">pauschal – Exklusivklasse (Firmen)</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-6">*Prüfungs-/Lehrmittel gemäss VBV separat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-[#F6F6F6]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-4">Häufige Fragen zur VBV-Ausbildung</h2>
+                    <p class="text-center text-gray-600 mb-12 text-lg">
+                        Alles, was du zur VBV-Ausbildung wissen musst – detailliert beantwortet.
+                    </p>
+                    
+                    <!-- FAQ Accordion - CMS Powered -->
+                    <div id="faq-accordion" class="space-y-2" data-cms-faq>
+                        <!-- FAQs werden dynamisch aus CMS geladen -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Für wen ist die VBV-Ausbildung geeignet?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Für Einsteiger, Quereinsteiger und Mitarbeitende in Verkauf, Beratung oder Backoffice, die in der Schweiz Versicherungen vermitteln und den gesetzlich anerkannten Nachweis (VBV) benötigen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 2 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Warum brauche ich die VBV-Zertifizierung?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Seit der Revision des VAG und der Branchenvereinbarung ist der Qualifikationsnachweis Pflicht. Mit VBV erfüllst du die Regulatorik (FINMA-konform) und schaffst Vertrauen im Markt.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 3 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Welche Module gibt es?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    1) Generelle Fähigkeiten, 2) Krankenzusatzversicherung, 3) Nichtleben, 4) Leben.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 4 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie ist das Lernmodell aufgebaut?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Hybrid. Grundlagen online, Praxis vor Ort:<br>
+                                    – Generelle Fähigkeiten → online (Microsoft Teams)<br>
+                                    – Krankenzusatzversicherung → online (Microsoft Teams)<br>
+                                    – Nichtleben → Präsenz (Fallstudien)<br>
+                                    – Leben → Präsenz (Vorbereitung auf mündliche Prüfung)
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 5 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wann starten die Kurse?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Jeden Monat. Jede Kohorte startet in der 2. Kalenderwoche mit «Generelle Fähigkeiten» und schliesst nach rund 3 Monaten ab.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 6 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wo finden Präsenztermine statt?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    In Basel, Bern, Zürich sowie in der Westschweiz Lausanne und im Tessin Lugano. Online-Teile via Microsoft Teams.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 7 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">In welchen Sprachen wird unterrichtet?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Standard in Deutsch; Westschweiz in Französisch, italienische Schweiz in Italienisch (Termine folgen separat).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 8 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie lange dauern die Prüfungen (VBV)?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Richtwerte gemäss VBV:<br>
+                                    – Generelle Fähigkeiten: 30 Min. online (Wissen/Verständnis)<br>
+                                    – Krankenzusatzversicherung: 30 Min. + geleitete Fallarbeit<br>
+                                    – Nichtleben: 60 Min. + geleitete Fallarbeit (Sach/Haftpflicht/Vermögen)<br>
+                                    – Leben: 30 Min. mündlich (vor Ort)
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 9 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Gibt es formale Voraussetzungen?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Keine formalen Schulabschlüsse nötig. Du solltest in der Versicherungsberatung tätig sein oder dies planen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 10 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie hoch sind die Kurskosten?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    CHF 150.– pro Schulungstag und Person. Exklusivschulungen für Unternehmen: CHF 2'200.– pro Tag (pauschal).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 11 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Was ist in den Kosten enthalten?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Unterricht (online/präsenz), Lernplattform (Präsentationen, Skripte, Unterlagen) und Podcasts mit Aufgaben zur Vorbereitung. VBV-Lehrmittel und allfällige Prüfungsgebühren sind exklusive.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 12 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie viele Tage umfasst die gesamte Vorbereitung?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Typischerweise 13 Tage (brutto), je nach Terminplanung der Kohorte.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 13 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie melde ich mich an?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    In 3 Schritten – schnell & unverbindlich:<br>
+                                    1. Kurs wählen (Modul/Kohorte/Ort)<br>
+                                    2. Daten eingeben (Kontakt + gewünschter Startmonat)<br>
+                                    3. Reservation abschliessen → wir kontaktieren dich per Telefon/E-Mail, senden Testzugang und Zahlungslink.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 14 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Ist die Reservation verbindlich?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Nein, die Reservation ist unverbindlich. Der Platz wird mit der Bestätigung/Zahlung fixiert (Details in der Bestätigung/AGB).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 15 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie bezahle ich?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Gemäss Bestätigung per Zahlungslink (z. B. Karte) oder Rechnung. Details erhältst du nach der Reservation per E-Mail.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 16 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Gibt es Firmen-/Exklusivschulungen?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja. CHF 2'200.–/Tag (pauschal), ideal für Teams. Bis ca. 20 Teilnehmende (maximale Klassengrösse). Inhalte/Termine flexibel.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 17 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Kann ich einzelne Module statt der ganzen Ausbildung buchen?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, modular buchbar. Du kannst mit «Generelle Fähigkeiten» starten und weitere Module nach Bedarf planen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 18 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Gibt es eine maximale Teilnehmendenzahl?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, wir arbeiten mit limitierten Klassen (bis ca. 20) für hohe Qualität und aktives Arbeiten in Fallstudien.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 19 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Bekomme ich Lernunterlagen?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, über die Lernplattform (Präsentationen, Skripte, Unterlagen) und Podcast-Units zur gezielten Vorbereitung.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 20 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Erhalte ich ein Teilnahmezertifikat?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, nach Abschluss der gebuchten Module. Für die offizielle VBV-Zertifizierung ist die VBV-Prüfung massgeblich.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 21 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Unterstützt ihr bei der VBV-Prüfungsanmeldung?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, wir informieren zum Ablauf/Fristen. Prüfungsanmeldung und Gebühren erfolgen direkt beim jeweiligen Prüfungsanbieter.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 22 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Gibt es CICERO-Credits?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, ausgewählte Weiterbildungen können CICERO-Credits abdecken. Details je Modul/Termin.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 23 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Was ist eine «Kohorte»?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Eine Ausbildungsgruppe, die gemeinsam in einem Monat startet und den 3-Monats-Ablauf durchläuft.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 24 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie läuft Online-Unterricht technisch?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Über Microsoft Teams. Du erhältst vor Start einen Zugangslink und eine kurze Checkliste (Audio/Video, ruhige Umgebung, stabile Verbindung).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 25 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Was, wenn ich einen Präsenztag verpasse?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Melde dich frühzeitig – wir suchen Alternativen/Make-up-Termine, sofern verfügbar.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 26 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Gibt es Rabatte?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Unternehmens- und Mengenmodelle auf Anfrage. Exklusivschulung ist oft die günstigste Lösung ab mittlerer Teamgrösse.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 27 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie läuft die Stornierung?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Es gelten die AGB und die Angaben in der Anmeldebestätigung. Bitte frühzeitig melden – so können wir Plätze nachbesetzen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 28 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Sind die Inhalte auf die Prüfungen abgestimmt?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja. Die Module folgen den offiziellen VBV-Profilen und bereiten zielgerichtet auf die Prüfungsformate vor (inkl. Fallarbeit/mündlich).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 29 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Welche Vorteile habe ich beim Maklerzentrum?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Monatliche Starts, hybrides Format, Top-Dozierende, Netzwerk mit Teilnehmenden aus Versicherern & Brokern, faire Preise. Kurz: Keine halben Sachen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 30 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Ich habe bereits bezahlt und brauche nur den Lernzugang.</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Nutze den «Anmelden»-Button im Header (Kundenlogin). Bei Problemen hilft der Support.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 31 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Bietet ihr Schulungen ausserhalb VBV an?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Ja, z. B. IAF (Finanzberater/Vorsorgeberater), Versicherungsfachmann mit eidg. FA, Finanzplaner mit eidg. FA sowie CICERO-Weiterbildungen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 32 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie werden meine Daten geschützt?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Wir arbeiten nach revDSG/DSGVO, setzen TLS/HTTPS, Security-Header, Zugriffskontrollen, reCAPTCHA & Rate-Limiting ein und minimieren Daten auf das Notwendige. Details in der Datenschutzerklärung.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 33 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wo finde ich Impressum & Datenschutz?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Im Footer (und mobil im Burger-Menü unten) unter «Rechtliches».
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 34 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie erreiche ich den Support?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Per E-Mail academy@maklerzentrum.ch oder Telefon 0800 822 800 (alternativ: +41 79 948 69 86 zu Randzeiten).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 35 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Ich möchte für mein Unternehmen Plätze reservieren.</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Nutze das Firmen-/Gruppenformular (Exklusivschulung) oder schreibe an academy@maklerzentrum.ch – wir blocken Kontingente und koordinieren Termine/Orte.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 36 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie finde ich den richtigen Startmonat?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    Im Formular gibt es ein prominentes Feld «Gewünschter Monat». Wähle deinen idealen Start – wir bestätigen die verfügbaren Termine.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frage 37 -->
+                        <div class="faq-item bg-white rounded-lg border border-gray-200">
+                            <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-800">Wie schnell bekomme ich Rückmeldung nach der Reservation?</span>
+                                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="p-4 pt-0 text-gray-600">
+                                    In der Regel innert 1–2 Werktagen. Du erhältst Testzugang, Ablaufübersicht und Zahlungsinformationen.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kursanfrage Formular (wird dynamisch befüllt) -->
+        <section id="booking-form" class="py-16 bg-white">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Kursanfrage</h2>
+                    <p class="text-lg text-gray-600">
+                        Kostenfrei und unverbindlich – Du erhältst danach Testzugang und Bezahlen-Link.
+                    </p>
+                </div>
+                
+                <form id="course-booking-form" class="bg-white p-8 rounded-xl shadow-lg border">
+                    <!-- Kurs-Informationen (werden dynamisch befüllt) -->
+                    <div id="course-info" class="mb-6 p-4 bg-gray-50 rounded-lg hidden">
+                        <h3 class="font-semibold text-gray-800 mb-2">Gewählter Kurs:</h3>
+                        <div id="course-details" class="text-gray-600">
+                            <!-- Wird von JavaScript befüllt -->
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden fields für Kursinformationen -->
+                    <input type="hidden" id="courseTitle" name="courseTitle">
+                    <input type="hidden" id="courseStartDate" name="courseStartDate">
+                    <input type="hidden" id="courseEndDate" name="courseEndDate">
+                    <input type="hidden" id="courseLocation" name="courseLocation">
+                    <input type="hidden" id="courseCohort" name="courseCohort">
+                    <input type="hidden" id="courseModule" name="courseModule">
+
+                    <div class="mt-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Nachricht (optional)</label>
+                        <textarea id="message" name="message" rows="3" class="w-full p-3 border rounded-lg focus:outline-none focus:border-primary" placeholder="Zusätzliche Informationen oder Fragen..."></textarea>
+                    </div>
+
+                    <!-- Honeypot field (hidden) -->
+                    <input type="text" name="website_url" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <div class="mt-6">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-2">
+                            <label for="agreeTerms" class="text-sm text-gray-600">
+                                Ich stimme den <a href="/agb.html" class="text-primary hover:underline" target="_blank">AGB</a> und der <a href="/datenschutz.html" class="text-primary hover:underline" target="_blank">Datenschutzerklärung</a> zu. *
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button type="submit" class="btn-primary w-full bg-primary text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors">
+                            Kostenlos anfragen
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4" data-cms="site.brandName">
+                        Maklerzentrum Schweiz AG
+                    </h3>
+                    <div class="text-gray-600 mb-4">
+                        <p>Elisabethenanlage 11</p>
+                        <p>4051 Basel</p>
+                        <p>Schweiz</p>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-4">Kontakt</h3>
+                    <div class="space-y-3">
+                        <a href="mailto:academy@maklerzentrum.ch" class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                            <span>academy@maklerzentrum.ch</span>
+                        </a>
+                        <a href="tel:+41799486986" class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                            <span>079 948 69 86</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Legal Links -->
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-4">Rechtliches</h3>
+                    <div class="space-y-2">
+                        <a href="/impressum.html" class="block text-gray-600 hover:text-primary transition-colors">Impressum</a>
+                        <a href="/datenschutz.html" class="block text-gray-600 hover:text-primary transition-colors">Datenschutz</a>
+                        <a href="#cookies-open" class="block text-gray-600 hover:text-primary transition-colors">Cookie-Einstellungen</a>
+                        <a href="/agb.html" class="block text-gray-600 hover:text-primary transition-colors">AGB</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Claim -->
+            <div class="mt-12 pt-8 border-t border-border text-center">
+                <p class="text-xl font-semibold text-gray-800">
+                    „Keine halben Sachen."
+                </p>
+                <p class="text-sm text-gray-500 mt-4">
+                    © 2025 Maklerzentrum Schweiz AG. Alle Rechte vorbehalten.
+                </p>
+                <!-- CMS Admin Button -->
+                <div class="mt-4">
+                    <a href="/admin/" class="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition shadow-lg hover:shadow-xl">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                        CMS Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 pb-safe z-40 md:hidden">
+        <div class="flex gap-2">
+            <button onclick="scrollToElement('#schedule')" class="flex-1 min-w-0 bg-primary text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-red-700 transition-colors">
+                Kurse ansehen
+            </button>
+            <a href="tel:+41799486986" class="flex-shrink-0 w-24 bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-200 transition-colors">
+                Telefon
+            </a>
+        </div>
+    </div>
+
+    <!-- CMS Integration -->
+    <script type="module" src="/assets/js/cms-adapter.js"></script>
+    <script type="module" src="/assets/js/render.js"></script>
+    <script type="module" src="/assets/js/navigation.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script type="module">
+        import { getSite } from '/assets/js/cms-adapter.js';
+        import { initNavigationHandlers, scrollToElement } from '/assets/js/navigation.js';
+        import { logger } from '/assets/js/config.js';
+
+        // Handle course reservation with pre-filled form
+        window.handleCourseReservation = function(courseData) {
+            // Fill hidden form fields
+            document.getElementById('courseTitle').value = courseData.title;
+            document.getElementById('courseStartDate').value = courseData.startDate;
+            document.getElementById('courseEndDate').value = courseData.endDate || '';
+            document.getElementById('courseLocation').value = courseData.location;
+            document.getElementById('courseCohort').value = courseData.cohort;
+            document.getElementById('courseModule').value = courseData.module;
+
+            // Show course info in form
+            const courseInfo = document.getElementById('course-info');
+            const courseDetails = document.getElementById('course-details');
+            
+            courseDetails.innerHTML = `
+                <p><strong>${courseData.title}</strong></p>
+                <p>📅 ${courseData.startDate}${courseData.endDate ? ' – ' + courseData.endDate : ''}</p>
+                <p>📍 ${courseData.location}</p>
+                <p>👥 ${courseData.cohort}</p>
+            `;
+            
+            courseInfo.classList.remove('hidden');
+            
+            // Scroll to form
+            scrollToElement('#booking-form');
+            
+            logger.info('Course reservation form filled:', courseData);
+        };
+
+        // Handle form submission
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Check honeypot field
+            if (formData.get('website_url')) {
+                logger.warn('Bot detected in form submission');
+                return;
+            }
+            
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Wird gesendet...';
+            submitBtn.disabled = true;
+
+            try {
+                // Get backend URL (for HTML5 pages, use the same domain with API prefix)
+                const backendUrl = location.hostname === 'localhost' ? 'http://localhost:8001' : `${location.protocol}//${location.host}`;
+                
+                // Submit to backend API
+                const response = await fetch(`${backendUrl}/api/course-booking`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    showNotification(result.message || 'Deine Kursanfrage wurde erfolgreich eingereicht! Wir melden uns bald bei dir.', 'success');
+                    form.reset();
+                    document.getElementById('course-info').classList.add('hidden');
+                    
+                    logger.info('Course booking form submitted successfully', { 
+                        course: data.courseTitle,
+                        email: data.email,
+                        bookingId: result.bookingId
+                    });
+                } else {
+                    throw new Error(result.error || 'Unbekannter Fehler');
+                }
+
+            } catch (error) {
+                logger.error('Course booking form submission failed:', error);
+                showNotification('Fehler beim Senden. Bitte versuche es erneut oder rufe uns an: 079 948 69 86', 'error');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('show');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('show');
+                    }
+                });
+
+                // Close mobile menu when clicking on links
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('show');
+                    });
+                });
+            }
+        }
+
+        // Utility function for notifications
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+            
+            notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 7000);
+        }
+
+        // FAQ Accordion functionality
+        function initFaqAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const trigger = item.querySelector('.faq-trigger');
+                const content = item.querySelector('.faq-content');
+                const icon = trigger.querySelector('svg');
+                
+                trigger.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+                    
+                    if (isOpen) {
+                        // Close this item
+                        content.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                        trigger.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Open this item
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                        trigger.setAttribute('aria-expanded', 'true');
+                    }
+                    
+                    logger.info('FAQ item toggled');
+                });
+                
+                // Set initial ARIA attributes
+                trigger.setAttribute('aria-expanded', 'false');
+                trigger.setAttribute('role', 'button');
+                content.setAttribute('role', 'region');
+            });
+            
+            logger.info('FAQ accordion initialized with', faqItems.length, 'items');
+        }
+
+        // Make scrollToElement globally available
+        window.scrollToElement = scrollToElement;
+
+        // Initialize everything
+        async function init() {
+            try {
+                // Load CMS data
+                const site = await getSite();
+
+                // Apply site settings
+                if (site.brandName) {
+                    document.querySelectorAll('[data-cms="site.brandName"]').forEach(el => {
+                        el.textContent = site.brandName;
+                    });
+                }
+
+                // Initialize navigation with auto-scroll
+                initNavigationHandlers();
+
+                // Initialize mobile menu
+                initMobileMenu();
+
+                // Initialize FAQ accordion
+                initFaqAccordion();
+
+                // Initialize form
+                const courseForm = document.getElementById('course-booking-form');
+                if (courseForm) {
+                    courseForm.addEventListener('submit', handleFormSubmit);
+                }
+
+                logger.info('Schulungsseite initialized successfully');
+
+            } catch (error) {
+                logger.error('Failed to initialize Schulungsseite:', error);
+            }
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+    
+    <!-- CMS Content Loader -->
+    <script src="/js/cms-loader.js"></script>
+</body>
+</html>
