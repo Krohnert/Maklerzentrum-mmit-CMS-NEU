@@ -673,7 +673,7 @@ async def reorder_modules(locale: str, ids: dict, cms_session: Optional[str] = C
     success = await cms_content.reorder_modules(ids.get("module_ids", []))
     return {"success": success}
 
-# FAQ Endpoints (similar pattern)
+# FAQ Endpoints
 @api_router.get("/admin/content/{locale}/faq")
 async def list_faq(locale: str, cms_session: Optional[str] = Cookie(None)):
     """List FAQ for locale"""
@@ -682,6 +682,44 @@ async def list_faq(locale: str, cms_session: Optional[str] = Cookie(None)):
     
     faq = await cms_content.list_faq(locale)
     return {"success": True, "faq": faq}
+
+@api_router.post("/admin/content/{locale}/faq")
+async def create_faq(locale: str, data: dict, cms_session: Optional[str] = Cookie(None)):
+    """Create new FAQ"""
+    session = await cms_auth.get_session(cms_session) if cms_session else None
+    if not session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    faq_id = await cms_content.create_faq(locale, data, session["email"])
+    return {"success": bool(faq_id), "id": faq_id}
+
+@api_router.put("/admin/content/faq/{faq_id}")
+async def update_faq(faq_id: str, data: dict, cms_session: Optional[str] = Cookie(None)):
+    """Update FAQ"""
+    session = await cms_auth.get_session(cms_session) if cms_session else None
+    if not session:
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.update_faq(faq_id, data, session["email"])
+    return {"success": success}
+
+@api_router.delete("/admin/content/faq/{faq_id}")
+async def delete_faq(faq_id: str, cms_session: Optional[str] = Cookie(None)):
+    """Delete FAQ"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.delete_faq(faq_id)
+    return {"success": success}
+
+@api_router.put("/admin/content/{locale}/faq/reorder")
+async def reorder_faq(locale: str, ids: dict, cms_session: Optional[str] = Cookie(None)):
+    """Reorder FAQ"""
+    if not cms_session or not await cms_auth.get_session(cms_session):
+        return {"success": False, "error": "Nicht angemeldet"}
+    
+    success = await cms_content.reorder_faq(ids.get("faq_ids", []))
+    return {"success": success}
 
 # Include the router in the main app
 app.include_router(api_router)
