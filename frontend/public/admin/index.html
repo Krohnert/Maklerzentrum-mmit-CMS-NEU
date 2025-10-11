@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Login</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+        
+        <!-- Logo/Header -->
+        <div class="text-center mb-8">
+            <div class="inline-block p-4 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mb-4">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">CMS Login</h1>
+            <p class="text-gray-600">Maklerzentrum Admin</p>
+        </div>
+        
+        <!-- Error Message -->
+        <div id="error-msg" class="hidden mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+            <span id="error-text"></span>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-6">
+            
+            <!-- Email Field -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    required
+                    placeholder="admin@example.com"
+                    style="width: 100%;"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                >
+            </div>
+            
+            <!-- Password Field -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Passwort</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    required
+                    placeholder="••••••••"
+                    style="width: 100%;"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                >
+            </div>
+            
+            <!-- Remember Me -->
+            <div class="flex items-center">
+                <input type="checkbox" id="remember" class="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500">
+                <label for="remember" class="ml-2 block text-sm text-gray-900">
+                    Angemeldet bleiben (12 Stunden)
+                </label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+                type="submit" 
+                id="submit-btn"
+                class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg transition duration-200 flex items-center justify-center"
+            >
+                <span id="btn-text">Anmelden</span>
+                <svg id="btn-spinner" class="hidden animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+        </form>
+        
+        <!-- Test Accounts Info -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <p class="text-center text-sm text-gray-600 mb-2">👤 Test-Accounts:</p>
+            <div class="text-center text-xs text-gray-500 space-y-1">
+                <p>📧 fk@comrocket.de</p>
+                <p>📧 ao@comrocket.de</p>
+                <p>📧 dk@mapi.ch</p>
+                <p class="mt-2">🔑 Passwort: <code class="bg-gray-100 px-2 py-1 rounded">Com_2024!</code></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = window.location.origin;
+        const form = document.getElementById('login-form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const rememberCheckbox = document.getElementById('remember');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+        const errorDiv = document.getElementById('error-msg');
+        const errorText = document.getElementById('error-text');
+        
+        function showError(message) {
+            errorText.textContent = message;
+            errorDiv.classList.remove('hidden');
+        }
+        
+        function hideError() {
+            errorDiv.classList.add('hidden');
+        }
+        
+        // Check if already logged in
+        (async function() {
+            try {
+                const res = await fetch(`${API_BASE}/api/admin/me`, { credentials: 'include' });
+                const data = await res.json();
+                if (data.success && data.user) {
+                    if (data.user.mustResetPassword) {
+                        window.location.href = '/admin/reset-password.html';
+                    } else {
+                        window.location.href = '/admin/dashboard.html';
+                    }
+                }
+            } catch (e) {
+                console.log('Not logged in');
+            }
+        })();
+        
+        // Handle form submit
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideError();
+            
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+            const remember = rememberCheckbox.checked;
+            
+            if (!email || !password) {
+                showError('Bitte alle Felder ausfüllen');
+                return;
+            }
+            
+            // Loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Wird angemeldet...';
+            btnSpinner.classList.remove('hidden');
+            
+            try {
+                const res = await fetch(`${API_BASE}/api/admin/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password, remember_me: remember }),
+                    credentials: 'include'
+                });
+                
+                const data = await res.json();
+                
+                if (data.success && data.user) {
+                    console.log('✅ Login erfolgreich');
+                    if (data.user.mustResetPassword) {
+                        window.location.href = '/admin/reset-password.html';
+                    } else {
+                        window.location.href = '/admin/dashboard.html';
+                    }
+                } else {
+                    showError(data.error || 'Anmeldung fehlgeschlagen');
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Anmelden';
+                    btnSpinner.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showError('Serverfehler. Bitte später erneut versuchen.');
+                submitBtn.disabled = false;
+                btnText.textContent = 'Anmelden';
+                btnSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
