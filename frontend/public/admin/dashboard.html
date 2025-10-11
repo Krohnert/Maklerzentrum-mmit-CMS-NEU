@@ -187,25 +187,43 @@
         // Check authentication
         (async function checkAuth() {
             try {
+                console.log('🔍 Checking auth with API_BASE:', API_BASE);
+                
                 const response = await fetch(`${API_BASE}/api/admin/me`, {
-                    credentials: 'include'
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 });
+                
+                console.log('📡 Response status:', response.status);
+                
+                if (!response.ok) {
+                    console.error('❌ Response not OK:', response.status, response.statusText);
+                    // Wait a bit before redirect to show error
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    window.location.href = '/admin/index.html';
+                    return;
+                }
+                
                 const data = await response.json();
+                console.log('📦 Response data:', data);
                 
                 if (!data.success || !data.user) {
-                    // Not logged in
+                    console.error('❌ Not logged in:', data);
+                    await new Promise(resolve => setTimeout(resolve, 2000));
                     window.location.href = '/admin/index.html';
                     return;
                 }
                 
                 // Show user email
                 document.getElementById('user-email').textContent = data.user.email;
-                
-                console.log('Logged in as:', data.user);
+                console.log('✅ Logged in as:', data.user.email);
                 
             } catch (error) {
-                console.error('Auth check failed:', error);
-                window.location.href = '/admin/index.html';
+                console.error('❌ Auth check error:', error);
+                // Don't redirect immediately on error - might be CORS or network issue
+                alert('Fehler beim Laden des Dashboards. Bitte F12 Console prüfen.');
             }
         })();
         
