@@ -99,7 +99,8 @@
     </div>
     
     <script>
-        const API_BASE = window.location.origin;
+        // Use same origin for API calls
+        const API_BASE = window.location.protocol + '//' + window.location.host;
         const form = document.getElementById('login-form');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
