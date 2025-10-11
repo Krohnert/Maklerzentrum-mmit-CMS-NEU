@@ -433,14 +433,20 @@ async def admin_login(request: Request, response: Response, login: LoginRequest)
         
         # Set cookie
         max_age = (12 * 60 * 60) if login.remember_me else (30 * 60)  # 12h or 30min
+        
+        # Secure only for HTTPS (production)
+        is_secure = request.url.scheme == "https"
+        
         response.set_cookie(
             key="cms_session",
             value=session_id,
             max_age=max_age,
             httponly=True,
-            secure=True,  # Set to True in production with HTTPS
+            secure=is_secure,  # True only for HTTPS
             samesite="lax"
         )
+        
+        logger.info(f"✅ Cookie set (secure={is_secure}) for: {user['email']}")
         
         return {
             "success": True,
