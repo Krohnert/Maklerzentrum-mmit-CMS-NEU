@@ -291,4 +291,77 @@ class CMSContent:
             logger.error(f"Error reordering FAQ: {e}")
             return False
     
-    # Similar methods for Team, Events, etc. would follow the same pattern...
+    # ============================================
+    # TEAM
+    # ============================================
+    
+    async def list_team(self, locale: str) -> List[Dict]:
+        """List all team members for locale"""
+        cursor = self.db.cms_team.find({"locale": locale}).sort("order", 1)
+        return await cursor.to_list(length=100)
+    
+    async def create_team(self, locale: str, data: Dict, user_email: str) -> Optional[str]:
+        """Create new team member"""
+        try:
+            import uuid
+            team_id = str(uuid.uuid4())
+            
+            doc = {
+                "_id": team_id,
+                "locale": locale,
+                "name": data.get("name", ""),
+                "role": data.get("role", ""),
+                "bio": data.get("bio", ""),
+                "image": data.get("image", ""),
+                "buttons": data.get("buttons", []),
+                "order": data.get("order", 999),
+                "visible": data.get("visible", True),
+                "createdAt": datetime.now(timezone.utc).isoformat(),
+                "createdBy": user_email
+            }
+            
+            await self.db.cms_team.insert_one(doc)
+            return team_id
+        except Exception as e:
+            logger.error(f"Error creating team: {e}")
+            return None
+    
+    async def update_team(self, team_id: str, data: Dict, user_email: str) -> bool:
+        """Update team member"""
+        try:
+            await self.db.cms_team.update_one(
+                {"_id": team_id},
+                {
+                    "$set": {
+                        **data,
+                        "updatedAt": datetime.now(timezone.utc).isoformat(),
+                        "updatedBy": user_email
+                    }
+                }
+            )
+            return True
+        except Exception as e:
+            logger.error(f"Error updating team: {e}")
+            return False
+    
+    async def delete_team(self, team_id: str) -> bool:
+        """Delete team member"""
+        try:
+            result = await self.db.cms_team.delete_one({"_id": team_id})
+            return result.deleted_count > 0
+        except Exception as e:
+            logger.error(f"Error deleting team: {e}")
+            return False
+    
+    async def reorder_team(self, team_ids: List[str]) -> bool:
+        """Reorder team members"""
+        try:
+            for index, team_id in enumerate(team_ids):
+                await self.db.cms_team.update_one(
+                    {"_id": team_id},
+                    {"$set": {"order": index}}
+                )
+            return True
+        except Exception as e:
+            logger.error(f"Error reordering team: {e}")
+            return False
