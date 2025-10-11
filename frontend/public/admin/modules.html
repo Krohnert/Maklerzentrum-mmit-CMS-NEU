@@ -102,7 +102,9 @@
     </div>
     
     <script>
-        const API_BASE = window.location.protocol + '//' + window.location.hostname + ':8001';
+        const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? window.location.protocol + '//' + window.location.hostname + ':8001'
+            : window.location.protocol + '//' + window.location.host;
         let currentLocale = 'de-CH';
         let modules = [];
         let sortable = null;
