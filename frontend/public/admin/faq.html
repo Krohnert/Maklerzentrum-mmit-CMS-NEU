@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CMS</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="/admin/dashboard.html" class="text-gray-600 hover:text-gray-900">← Dashboard</a>
+                <h1 class="text-2xl font-bold">FAQ</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <select id="locale-select" class="border rounded px-3 py-2">
+                    <option value="de-CH">🇨🇭 Deutsch</option>
+                    <option value="fr-CH">🇫🇷 Français</option>
+                    <option value="it-CH">🇮🇹 Italiano</option>
+                </select>
+                <button id="add-btn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold">+ Neu</button>
+                <button id="logout-btn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Abmelden</button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+            <p class="mt-4 text-gray-600">Lade FAQ...</p>
+        </div>
+        
+        <div id="content" class="hidden">
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <p class="text-sm text-blue-800">💡 Drag & Drop um Reihenfolge zu ändern</p>
+            </div>
+            
+            <div id="faq-list" class="space-y-4"></div>
+        </div>
+    </main>
+    
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <h2 id="modal-title" class="text-2xl font-bold mb-6">FAQ bearbeiten</h2>
+                
+                <form id="edit-form" class="space-y-4">
+                    <input type="hidden" id="edit-id" />
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Frage *</label>
+                        <input type="text" id="edit-question" required class="w-full border rounded px-3 py-2" placeholder="Was kostet die Ausbildung?" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Antwort * (HTML erlaubt)</label>
+                        <textarea id="edit-answer" required rows="8" class="w-full border rounded px-3 py-2" placeholder="<p>Die Ausbildung kostet...</p>"></textarea>
+                        <p class="text-xs text-gray-500 mt-1">HTML-Tags wie &lt;p&gt;, &lt;strong&gt;, &lt;ul&gt; erlaubt</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Thema</label>
+                            <select id="edit-topic" class="w-full border rounded px-3 py-2">
+                                <option value="allgemein">Allgemein</option>
+                                <option value="kosten">Kosten</option>
+                                <option value="ablauf">Ablauf</option>
+                                <option value="termine">Termine</option>
+                                <option value="pruefung">Prüfung</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center space-x-4 pt-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="edit-featured" class="mr-2" />
+                                Featured
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="edit-visible" checked class="mr-2" />
+                                Sichtbar
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3 pt-4">
+                        <button type="submit" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded font-semibold">Speichern</button>
+                        <button type="button" id="cancel-btn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 py-3 rounded font-semibold">Abbrechen</button>
+                        <button type="button" id="delete-btn" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded font-semibold">Löschen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+            ? window.location.protocol + '//' + window.location.hostname + ':8001'
+            : window.location.protocol + '//' + window.location.host;
+        
+        let currentLocale = 'de-CH';
+        let faqItems = [];
+        let sortable = null;
+        
+        // Auth check
+        (async function() {
+            const res = await fetch(`${API_BASE}/api/admin/me`, { credentials: 'include' });
+            const data = await res.json();
+            if (!data.success) window.location.href = '/admin/index.html';
+        })();
+        
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await fetch(`${API_BASE}/api/admin/logout`, { method: 'POST', credentials: 'include' });
+            window.location.href = '/admin/index.html';
+        });
+        
+        // Locale switcher
+        document.getElementById('locale-select').addEventListener('change', (e) => {
+            currentLocale = e.target.value;
+            loadFAQ();
+        });
+        
+        // Load FAQ
+        async function loadFAQ() {
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('content').classList.add('hidden');
+            
+            const res = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/faq`, { credentials: 'include' });
+            const data = await res.json();
+            
+            if (data.success) {
+                faqItems = data.faq;
+                renderFAQ();
+                initSortable();
+            }
+            
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        }
+        
+        // Render FAQ
+        function renderFAQ() {
+            const container = document.getElementById('faq-list');
+            container.innerHTML = '';
+            
+            if (faqItems.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-gray-500">Keine FAQs vorhanden. Klicken Sie auf "+ Neu".</div>';
+                return;
+            }
+            
+            faqItems.forEach(faq => {
+                const div = document.createElement('div');
+                div.className = 'bg-white rounded-lg shadow p-6 cursor-move hover:shadow-lg transition';
+                div.dataset.id = faq._id;
+                
+                const previewText = faq.answer.replace(/<[^>]*>/g, '').substring(0, 100);
+                
+                div.innerHTML = `
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                <h3 class="text-lg font-bold">${escapeHtml(faq.question)}</h3>
+                                ${faq.featured ? '<span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">★ Featured</span>' : ''}
+                                ${!faq.visible ? '<span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Versteckt</span>' : ''}
+                            </div>
+                            <p class="text-sm text-gray-600">${previewText}...</p>
+                            <span class="text-xs text-gray-400">Thema: ${faq.topic}</span>
+                        </div>
+                        <button class="edit-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm ml-4" data-id="${faq._id}">
+                            Bearbeiten
+                        </button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = btn.dataset.id;
+                    openEditModal(faqItems.find(f => f._id === id));
+                });
+            });
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Init sortable
+        function initSortable() {
+            if (sortable) sortable.destroy();
+            
+            const container = document.getElementById('faq-list');
+            sortable = Sortable.create(container, {
+                animation: 150,
+                handle: '.cursor-move',
+                onEnd: async () => {
+                    const newOrder = Array.from(container.children).map(el => el.dataset.id);
+                    await saveOrder(newOrder);
+                }
+            });
+        }
+        
+        // Save order
+        async function saveOrder(ids) {
+            await fetch(`${API_BASE}/api/admin/content/${currentLocale}/faq/reorder`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ faq_ids: ids }),
+                credentials: 'include'
+            });
+        }
+        
+        // Open modal
+        function openEditModal(faq = null) {
+            const modal = document.getElementById('edit-modal');
+            
+            if (faq) {
+                document.getElementById('modal-title').textContent = 'FAQ bearbeiten';
+                document.getElementById('edit-id').value = faq._id;
+                document.getElementById('edit-question').value = faq.question;
+                document.getElementById('edit-answer').value = faq.answer;
+                document.getElementById('edit-topic').value = faq.topic;
+                document.getElementById('edit-featured').checked = faq.featured;
+                document.getElementById('edit-visible').checked = faq.visible;
+                document.getElementById('delete-btn').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-title').textContent = 'Neue FAQ';
+                document.getElementById('edit-form').reset();
+                document.getElementById('edit-id').value = '';
+                document.getElementById('delete-btn').classList.add('hidden');
+            }
+            
+            modal.classList.remove('hidden');
+        }
+        
+        // Close modal
+        document.getElementById('cancel-btn').addEventListener('click', () => {
+            document.getElementById('edit-modal').classList.add('hidden');
+        });
+        
+        // Add new
+        document.getElementById('add-btn').addEventListener('click', () => openEditModal());
+        
+        // Submit
+        document.getElementById('edit-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const id = document.getElementById('edit-id').value;
+            const data = {
+                question: document.getElementById('edit-question').value,
+                answer: document.getElementById('edit-answer').value,
+                topic: document.getElementById('edit-topic').value,
+                featured: document.getElementById('edit-featured').checked,
+                visible: document.getElementById('edit-visible').checked
+            };
+            
+            if (id) {
+                await fetch(`${API_BASE}/api/admin/content/faq/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+            } else {
+                await fetch(`${API_BASE}/api/admin/content/${currentLocale}/faq`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+            }
+            
+            document.getElementById('edit-modal').classList.add('hidden');
+            loadFAQ();
+        });
+        
+        // Delete
+        document.getElementById('delete-btn').addEventListener('click', async () => {
+            if (!confirm('Wirklich löschen?')) return;
+            
+            const id = document.getElementById('edit-id').value;
+            await fetch(`${API_BASE}/api/admin/content/faq/${id}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            });
+            
+            document.getElementById('edit-modal').classList.add('hidden');
+            loadFAQ();
+        });
+        
+        loadFAQ();
+    </script>
+</body>
+</html>
