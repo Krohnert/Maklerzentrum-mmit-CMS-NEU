@@ -159,6 +159,8 @@
             btnSpinner.classList.remove('hidden');
             
             try {
+                console.log('🔐 Attempting login to:', `${API_BASE}/api/admin/login`);
+                
                 const res = await fetch(`${API_BASE}/api/admin/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -166,24 +168,43 @@
                     credentials: 'include'
                 });
                 
+                console.log('📡 Login response status:', res.status);
+                
+                if (!res.ok) {
+                    console.error('❌ Response not OK:', res.status, res.statusText);
+                    showError(`Server-Fehler: ${res.status} ${res.statusText}`);
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Anmelden';
+                    btnSpinner.classList.add('hidden');
+                    return;
+                }
+                
                 const data = await res.json();
+                console.log('📦 Login response data:', data);
                 
                 if (data.success && data.user) {
-                    console.log('✅ Login erfolgreich');
+                    console.log('✅ Login erfolgreich:', data.user.email);
+                    
+                    // Wait a moment to ensure cookie is set
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
                     if (data.user.mustResetPassword) {
+                        console.log('🔄 Redirect to password reset');
                         window.location.href = '/admin/reset-password.html';
                     } else {
+                        console.log('🔄 Redirect to dashboard');
                         window.location.href = '/admin/dashboard.html';
                     }
                 } else {
+                    console.error('❌ Login failed:', data);
                     showError(data.error || 'Anmeldung fehlgeschlagen');
                     submitBtn.disabled = false;
                     btnText.textContent = 'Anmelden';
                     btnSpinner.classList.add('hidden');
                 }
             } catch (error) {
-                console.error('Login error:', error);
-                showError('Serverfehler. Bitte später erneut versuchen.');
+                console.error('❌ Login error:', error);
+                showError('Serverfehler: ' + error.message);
                 submitBtn.disabled = false;
                 btnText.textContent = 'Anmelden';
                 btnSpinner.classList.add('hidden');
