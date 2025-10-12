@@ -31,21 +31,15 @@ export async function loadFAQs(locale = 'de-CH') {
  */
 export async function loadModules(locale = 'de-CH') {
     try {
-        const response = await fetch(`${API_BASE}/api/admin/content/${locale}/modules`, {
-            credentials: 'include'
-        });
+        // Use public endpoint directly (no auth required)
+        const response = await fetch(`${API_BASE}/api/content/${locale}/modules`);
         
         if (!response.ok) {
-            // Try public endpoint without auth
-            const publicResponse = await fetch(`${API_BASE}/api/content/${locale}/modules`);
-            if (!publicResponse.ok) {
-                throw new Error('Failed to load modules');
-            }
-            const data = await publicResponse.json();
-            return data.modules || [];
+            throw new Error(`Failed to load modules: ${response.status} ${response.statusText}`);
         }
         
         const data = await response.json();
+        console.log('✅ Loaded modules:', data.modules?.length || 0, 'items');
         return data.modules || [];
     } catch (error) {
         console.error('Error loading modules:', error);
