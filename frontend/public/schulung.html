@@ -1715,8 +1715,8 @@
                 // Initialize mobile menu
                 initMobileMenu();
 
-                // Initialize FAQ accordion
-                initFaqAccordion();
+                // Initialize FAQ accordion (after CMS load)
+                // Will be called after FAQs are loaded
 
                 // Initialize form
                 const courseForm = document.getElementById('course-booking-form');
@@ -1740,6 +1740,29 @@
     </script>
     
     <!-- CMS Content Loader -->
-    <script src="/js/cms-loader.js"></script>
+    <script type="module">
+        import { initCMSContent } from '/assets/js/cms-loader.js';
+        
+        // Load CMS content when page loads
+        async function loadCMSData() {
+            await initCMSContent({
+                locale: 'de-CH',
+                loadFAQ: true,
+                loadModules: false,
+                faqContainerId: 'faq-accordion'
+            });
+            
+            // Re-initialize FAQ accordion after content is loaded
+            if (typeof initFaqAccordion === 'function') {
+                initFaqAccordion();
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadCMSData);
+        } else {
+            loadCMSData();
+        }
+    </script>
 </body>
 </html>
