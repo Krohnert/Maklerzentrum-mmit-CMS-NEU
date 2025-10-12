@@ -203,7 +203,7 @@ export async function initCMSContent(options = {}) {
     const {
         locale = 'de-CH',
         loadFAQ = false,
-        loadModules = false,
+        loadModules: shouldLoadModules = false,
         faqContainerId = 'faq-accordion',
         modulesContainerId = 'modules-list'
     } = options;
@@ -216,7 +216,7 @@ export async function initCMSContent(options = {}) {
             renderFAQs(faqs, faqContainerId);
         }
         
-        if (loadModules) {
+        if (shouldLoadModules) {
             const modules = await loadModules(locale);
             renderModules(modules, modulesContainerId);
         }
