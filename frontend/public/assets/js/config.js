@@ -84,6 +84,9 @@ export const CONFIG = {
 export const IS_DEVELOPMENT = CONFIG.DEBUG;
 export const IS_PRODUCTION = !IS_DEVELOPMENT;
 
+// API Base URL for CMS
+export const API_BASE = window.location.origin;
+
 // Logger utility
 export const logger = {
   debug: (...args) => IS_DEVELOPMENT && console.log('[DEBUG]', ...args),
