@@ -777,6 +777,18 @@ async def public_get_modules(locale: str):
         logger.error(f"Error getting public modules: {e}")
         return {"success": False, "error": str(e)}
 
+@api_router.get("/content/{locale}/team")
+async def public_get_team(locale: str):
+    """Public endpoint to get team members (no auth required)"""
+    try:
+        team = await cms_content.list_team(locale)
+        # Filter only visible team members
+        visible_team = [t for t in team if t.get('visible', True)]
+        return {"success": True, "team": visible_team}
+    except Exception as e:
+        logger.error(f"Error getting public team: {e}")
+        return {"success": False, "error": str(e)}
+
 # Include the router in the main app
 app.include_router(api_router)
 
