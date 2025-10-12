@@ -1765,14 +1765,10 @@
             await initCMSContent({
                 locale: 'de-CH',
                 loadFAQ: true,
-                loadModules: false,
-                faqContainerId: 'faq-accordion'
+                loadModules: true,
+                faqContainerId: 'faq-accordion',
+                modulesContainerId: 'modules-list'
             });
-            
-            // Re-initialize FAQ accordion after content is loaded
-            if (typeof initFaqAccordion === 'function') {
-                initFaqAccordion();
-            }
         }
         
         if (document.readyState === 'loading') {
