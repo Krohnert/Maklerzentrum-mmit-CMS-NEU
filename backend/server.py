@@ -727,7 +727,7 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=["http://localhost:3000", "http://localhost:8001", "https://react2html-makler.preview.emergentagent.com"],
+    allow_origins=["http://localhost:3000", "http://localhost:8001", "https://maklerzentrum-cms.preview.emergentagent.com"],
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
     expose_headers=["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"],

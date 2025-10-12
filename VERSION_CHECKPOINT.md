@@ -134,7 +134,7 @@ REACT_APP_BACKEND_URL=<production-url>
 
 ## 🔗 Wichtige URLs
 
-- **Preview:** https://broker-html5.preview.emergentagent.com/
+- **Preview:** https://maklerzentrum-cms.preview.emergentagent.com/
 - **Geplant Prod:** https://academy.maklerzentrum.ch/
 - **Sitemap:** /sitemap.xml
 - **robots.txt:** /robots.txt
