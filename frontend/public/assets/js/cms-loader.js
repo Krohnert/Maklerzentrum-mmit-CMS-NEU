@@ -76,7 +76,7 @@ export function renderFAQs(faqs, containerId = 'faq-accordion') {
         faqItem.innerHTML = `
             <button class="faq-trigger w-full text-left p-4 flex justify-between items-center hover:bg-gray-50 transition-colors" aria-expanded="false" role="button">
                 <span class="font-semibold text-gray-800">${escapeHtml(faq.question)}</span>
-                <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </button>
@@ -90,7 +90,52 @@ export function renderFAQs(faqs, containerId = 'faq-accordion') {
         container.appendChild(faqItem);
     });
     
-    console.log(`✅ Rendered ${visibleFAQs.length} FAQs`);
+    // Initialize accordion functionality
+    initFAQAccordion(container);
+    
+    console.log(`✅ Rendered ${visibleFAQs.length} FAQs with accordion functionality`);
+}
+
+/**
+ * Initialize FAQ Accordion Functionality
+ */
+function initFAQAccordion(container) {
+    const triggers = container.querySelectorAll('.faq-trigger');
+    
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
+            const content = faqItem.querySelector('.faq-content');
+            const icon = this.querySelector('.faq-icon');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQs
+            container.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    const otherContent = item.querySelector('.faq-content');
+                    const otherTrigger = item.querySelector('.faq-trigger');
+                    const otherIcon = item.querySelector('.faq-icon');
+                    
+                    otherContent.style.maxHeight = '0';
+                    otherTrigger.setAttribute('aria-expanded', 'false');
+                    otherIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current FAQ
+            if (isExpanded) {
+                content.style.maxHeight = '0';
+                this.setAttribute('aria-expanded', 'false');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                this.setAttribute('aria-expanded', 'true');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+    
+    console.log(`✅ Initialized ${triggers.length} FAQ accordion triggers`);
 }
 
 /**
