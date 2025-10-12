@@ -721,6 +721,34 @@ async def reorder_faq(locale: str, ids: dict, cms_session: Optional[str] = Cooki
     success = await cms_content.reorder_faq(ids.get("faq_ids", []))
     return {"success": success}
 
+# ============================================
+# PUBLIC API ENDPOINTS (No Auth Required)
+# ============================================
+
+@api_router.get("/content/{locale}/faq")
+async def public_get_faq(locale: str):
+    """Public endpoint to get FAQs (no auth required)"""
+    try:
+        faq = await cms_content.list_faq(locale)
+        # Filter only visible FAQs
+        visible_faq = [f for f in faq if f.get('visible', True)]
+        return {"success": True, "faq": visible_faq}
+    except Exception as e:
+        logger.error(f"Error getting public FAQ: {e}")
+        return {"success": False, "error": str(e)}
+
+@api_router.get("/content/{locale}/modules")
+async def public_get_modules(locale: str):
+    """Public endpoint to get modules (no auth required)"""
+    try:
+        modules = await cms_content.list_modules(locale)
+        # Filter only visible modules
+        visible_modules = [m for m in modules if m.get('visible', True)]
+        return {"success": True, "modules": visible_modules}
+    except Exception as e:
+        logger.error(f"Error getting public modules: {e}")
+        return {"success": False, "error": str(e)}
+
 # Include the router in the main app
 app.include_router(api_router)
 
