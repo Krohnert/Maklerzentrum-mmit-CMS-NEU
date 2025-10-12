@@ -722,6 +722,34 @@ async def reorder_faq(locale: str, ids: dict, cms_session: Optional[str] = Cooki
     return {"success": success}
 
 # ============================================
+# TEAM MANAGEMENT
+# ============================================
+
+@api_router.get("/admin/content/{locale}/team")
+async def get_team(locale: str, session: dict = Depends(verify_admin_session)):
+    """Get all team members for locale"""
+    team = await cms_content.list_team(locale)
+    return {"success": True, "team": team}
+
+@api_router.post("/admin/content/{locale}/team")
+async def create_team(locale: str, data: dict, session: dict = Depends(verify_admin_session)):
+    """Create team member"""
+    team_id = await cms_content.create_team(locale, data, session['email'])
+    return {"success": team_id is not None, "team_id": team_id}
+
+@api_router.delete("/admin/content/{locale}/team/{team_id}")
+async def delete_team(locale: str, team_id: str, session: dict = Depends(verify_admin_session)):
+    """Delete team member"""
+    success = await cms_content.delete_team(team_id)
+    return {"success": success}
+
+@api_router.put("/admin/content/{locale}/team/reorder")
+async def reorder_team(locale: str, ids: dict, session: dict = Depends(verify_admin_session)):
+    """Reorder team members"""
+    success = await cms_content.reorder_team(ids.get("team_ids", []))
+    return {"success": success}
+
+# ============================================
 # PUBLIC API ENDPOINTS (No Auth Required)
 # ============================================
 
