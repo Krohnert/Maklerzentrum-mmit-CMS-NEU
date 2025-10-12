@@ -10,21 +10,15 @@ import { API_BASE } from './config.js';
  */
 export async function loadFAQs(locale = 'de-CH') {
     try {
-        const response = await fetch(`${API_BASE}/api/admin/content/${locale}/faq`, {
-            credentials: 'include'
-        });
+        // Use public endpoint directly (no auth required)
+        const response = await fetch(`${API_BASE}/api/content/${locale}/faq`);
         
         if (!response.ok) {
-            // Try public endpoint without auth
-            const publicResponse = await fetch(`${API_BASE}/api/content/${locale}/faq`);
-            if (!publicResponse.ok) {
-                throw new Error('Failed to load FAQs');
-            }
-            const data = await publicResponse.json();
-            return data.faq || [];
+            throw new Error(`Failed to load FAQs: ${response.status} ${response.statusText}`);
         }
         
         const data = await response.json();
+        console.log('✅ Loaded FAQs:', data.faq?.length || 0, 'items');
         return data.faq || [];
     } catch (error) {
         console.error('Error loading FAQs:', error);
