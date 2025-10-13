@@ -722,6 +722,21 @@ async def reorder_faq(locale: str, ids: dict, cms_session: Optional[str] = Cooki
     return {"success": success}
 
 # ============================================
+# ADMIN AUTHENTICATION
+# ============================================
+
+async def verify_admin_session(cms_session: Optional[str] = Cookie(None)) -> dict:
+    """Dependency to verify admin session"""
+    if not cms_session:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    
+    session = await cms_auth.get_session(cms_session)
+    if not session:
+        raise HTTPException(status_code=401, detail="Invalid or expired session")
+    
+    return session
+
+# ============================================
 # TEAM MANAGEMENT
 # ============================================
 
