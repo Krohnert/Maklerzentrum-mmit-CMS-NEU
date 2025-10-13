@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Library - Maklerzentrum CMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="dashboard.html" class="text-2xl font-bold text-red-600">MZ CMS</a>
+                    <span class="text-gray-400">|</span>
+                    <h1 class="text-xl font-semibold">Media Library</h1>
+                </div>
+                <a href="dashboard.html" class="text-gray-600 hover:text-gray-900">← Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="mb-6">
+            <button id="upload-btn" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">
+                📤 Bild hochladen
+            </button>
+        </div>
+
+        <div id="media-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="text-center py-12 col-span-full text-gray-500">Lade Bilder...</div>
+        </div>
+
+        <!-- Upload Modal -->
+        <div id="upload-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+                <h2 class="text-xl font-bold mb-4">Bild hochladen</h2>
+                <form id="upload-form">
+                    <input type="file" id="file-input" accept="image/*" required class="w-full mb-4">
+                    <div class="flex justify-end space-x-3">
+                        <button type="button" id="cancel-upload" class="px-4 py-2 border rounded">Abbrechen</button>
+                        <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded">Hochladen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const API_BASE = window.location.origin;
+        
+        // Simplified - would need GridFS list endpoint
+        document.getElementById('upload-btn').addEventListener('click', () => {
+            document.getElementById('upload-modal').classList.remove('hidden');
+        });
+
+        document.getElementById('cancel-upload').addEventListener('click', () => {
+            document.getElementById('upload-modal').classList.add('hidden');
+        });
+
+        document.getElementById('upload-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('file-input');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`${API_BASE}/api/admin/upload`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    alert('Bild erfolgreich hochgeladen!');
+                    document.getElementById('upload-modal').classList.add('hidden');
+                } else {
+                    alert('Fehler beim Hochladen');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                alert('Fehler beim Hochladen');
+            }
+        });
+
+        // Media grid would need list endpoint
+        document.getElementById('media-grid').innerHTML = `
+            <div class="col-span-full text-center py-12 text-gray-500">
+                <p>Media Library benötigt GridFS-List-Endpoint.</p>
+                <p class="text-sm mt-2">Upload funktioniert über /api/admin/upload</p>
+            </div>
+        `;
+    </script>
+</body>
+</html>
