@@ -130,20 +130,33 @@
         
         // Load modules
         async function loadModules() {
-            document.getElementById('loading').classList.remove('hidden');
-            document.getElementById('content').classList.add('hidden');
-            
-            const res = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`, { credentials: 'include' });
-            const data = await res.json();
-            
-            if (data.success) {
-                modules = data.modules;
+            try {
+                document.getElementById('loading').classList.remove('hidden');
+                document.getElementById('content').classList.add('hidden');
+                
+                const response = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`, {
+                    credentials: 'include'
+                });
+                
+                if (response.status === 401) {
+                    alert('Session abgelaufen. Bitte neu einloggen.');
+                    window.location.href = 'index.html';
+                    return;
+                }
+                
+                const data = await response.json();
+                modules = data.modules || [];
                 renderModules();
                 initSortable();
+                
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('content').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error loading modules:', error);
+                alert('Fehler beim Laden der Module');
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('content').classList.remove('hidden');
             }
-            
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('content').classList.remove('hidden');
         }
         
         // Render modules
