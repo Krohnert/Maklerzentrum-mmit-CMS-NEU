@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Maklerzentrum CMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="dashboard.html" class="text-2xl font-bold text-red-600">MZ CMS</a>
+                    <span class="text-gray-400">|</span>
+                    <h1 class="text-xl font-semibold">Site Settings</h1>
+                </div>
+                <a href="dashboard.html" class="text-gray-600">← Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="space-y-6">
+            <!-- Global Settings -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-bold mb-4">🌍 Globale Einstellungen</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Site Title</label>
+                        <input type="text" value="Maklerzentrum Schweiz AG" class="w-full px-3 py-2 border rounded" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Domain</label>
+                        <input type="text" value="maklerzentrum.ch" class="w-full px-3 py-2 border rounded" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Kontakt E-Mail</label>
+                        <input type="email" value="info@maklerzentrum.ch" class="w-full px-3 py-2 border rounded" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Telefon</label>
+                        <input type="tel" value="+41 800 822 800" class="w-full px-3 py-2 border rounded" readonly>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mt-4">
+                    💡 Diese Werte sind aktuell in den HTML-Dateien fest kodiert.
+                </p>
+            </div>
+
+            <!-- Localized Settings -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-bold mb-4">🌐 Spracheinstellungen</h2>
+                <div class="flex gap-2 mb-4">
+                    <button class="px-4 py-2 bg-red-600 text-white rounded">DE-CH</button>
+                    <button class="px-4 py-2 bg-gray-200 rounded">FR-CH</button>
+                    <button class="px-4 py-2 bg-gray-200 rounded">IT-CH</button>
+                </div>
+                <p class="text-gray-600">
+                    Aktuell ist nur DE-CH (Deutsch Schweiz) verfügbar. FR und IT werden in einer späteren Phase implementiert.
+                </p>
+            </div>
+
+            <!-- SEO Settings -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-bold mb-4">🔍 SEO-Einstellungen</h2>
+                <p class="text-gray-600">
+                    Meta-Tags, JSON-LD Schema und SEO-Optimierungen sind bereits in den HTML-Seiten implementiert.
+                </p>
+                <div class="mt-4 space-y-2">
+                    <div class="flex items-center">
+                        <span class="text-green-600 mr-2">✅</span>
+                        <span class="text-sm">Meta-Tags (Title, Description, OG)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-600 mr-2">✅</span>
+                        <span class="text-sm">JSON-LD Structured Data</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-600 mr-2">✅</span>
+                        <span class="text-sm">robots.txt & sitemap.xml</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-600 mr-2">✅</span>
+                        <span class="text-sm">Canonical URLs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
