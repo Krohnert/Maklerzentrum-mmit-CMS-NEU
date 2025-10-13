@@ -817,6 +817,18 @@ async def public_get_team(locale: str):
         logger.error(f"Error getting public team: {e}")
         return {"success": False, "error": str(e)}
 
+@api_router.get("/events")
+async def public_get_events():
+    """Public endpoint to get events (no auth required)"""
+    try:
+        events = await cms_content.list_events()
+        # Filter only visible events
+        visible_events = [e for e in events if e.get('visible', True)]
+        return {"success": True, "events": visible_events}
+    except Exception as e:
+        logger.error(f"Error getting public events: {e}")
+        return {"success": False, "error": str(e)}
+
 # Include the router in the main app
 app.include_router(api_router)
 
