@@ -750,6 +750,34 @@ async def reorder_team(locale: str, ids: dict, session: dict = Depends(verify_ad
     return {"success": success}
 
 # ============================================
+# EVENTS MANAGEMENT (Language-neutral)
+# ============================================
+
+@api_router.get("/admin/events")
+async def get_events(session: dict = Depends(verify_admin_session)):
+    """Get all events"""
+    events = await cms_content.list_events()
+    return {"success": True, "events": events}
+
+@api_router.post("/admin/events")
+async def create_event(data: dict, session: dict = Depends(verify_admin_session)):
+    """Create event"""
+    event_id = await cms_content.create_event(data, session['email'])
+    return {"success": event_id is not None, "event_id": event_id}
+
+@api_router.delete("/admin/events/{event_id}")
+async def delete_event(event_id: str, session: dict = Depends(verify_admin_session)):
+    """Delete event"""
+    success = await cms_content.delete_event(event_id)
+    return {"success": success}
+
+@api_router.put("/admin/events/reorder")
+async def reorder_events(ids: dict, session: dict = Depends(verify_admin_session)):
+    """Reorder events"""
+    success = await cms_content.reorder_events(ids.get("event_ids", []))
+    return {"success": success}
+
+# ============================================
 # PUBLIC API ENDPOINTS (No Auth Required)
 # ============================================
 
