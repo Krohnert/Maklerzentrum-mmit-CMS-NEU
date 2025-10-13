@@ -292,6 +292,57 @@ class CMSContent:
             return False
     
     # ============================================
+    # EVENTS (Kurstermine)
+    # ============================================
+    
+    async def list_events(self) -> List[Dict]:
+        """List all events (language-neutral)"""
+        cursor = self.db.cms_events.find({}).sort("order", 1)
+        return await cursor.to_list(length=100)
+    
+    async def create_event(self, data: Dict, user_email: str) -> Optional[str]:
+        """Create new event"""
+        try:
+            event_id = str(uuid.uuid4())
+            doc = {
+                "_id": event_id,
+                "monthGroup": data.get("monthGroup", ""),
+                "items": data.get("items", []),
+                "order": data.get("order", 999),
+                "visible": data.get("visible", True),
+                "createdAt": datetime.now(timezone.utc).isoformat(),
+                "createdBy": user_email
+            }
+            
+            await self.db.cms_events.insert_one(doc)
+            return event_id
+        except Exception as e:
+            logger.error(f"Error creating event: {e}")
+            return None
+    
+    async def delete_event(self, event_id: str) -> bool:
+        """Delete event"""
+        try:
+            result = await self.db.cms_events.delete_one({"_id": event_id})
+            return result.deleted_count > 0
+        except Exception as e:
+            logger.error(f"Error deleting event: {e}")
+            return False
+    
+    async def reorder_events(self, event_ids: List[str]) -> bool:
+        """Reorder events"""
+        try:
+            for index, event_id in enumerate(event_ids):
+                await self.db.cms_events.update_one(
+                    {"_id": event_id},
+                    {"$set": {"order": index}}
+                )
+            return True
+        except Exception as e:
+            logger.error(f"Error reordering events: {e}")
+            return False
+
+    # ============================================
     # TEAM
     # ============================================
     
