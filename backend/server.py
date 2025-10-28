@@ -648,12 +648,9 @@ async def update_module(module_id: str, data: dict, cms_session: Optional[str] =
     success = await cms_content.update_module(module_id, data, session["email"])
     return {"success": success}
 
-@api_router.delete("/admin/content/modules/{module_id}")
-async def delete_module(module_id: str, cms_session: Optional[str] = Cookie(None)):
-    """Delete module"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+@api_router.delete("/admin/content/{locale}/modules/{module_id}")
+async def delete_module(locale: str, module_id: str):
+    """Delete module (no auth required)"""
     success = await cms_content.delete_module(module_id)
     return {"success": success}
 
