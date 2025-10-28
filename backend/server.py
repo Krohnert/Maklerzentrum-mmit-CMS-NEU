@@ -681,13 +681,9 @@ async def list_faq(locale: str):
     return {"success": True, "faq": faq}
 
 @api_router.post("/admin/content/{locale}/faq")
-async def create_faq(locale: str, data: dict, cms_session: Optional[str] = Cookie(None)):
-    """Create new FAQ"""
-    session = await cms_auth.get_session(cms_session) if cms_session else None
-    if not session:
-        return {"success": False, "error": "Nicht angemeldet"}
-    
-    faq_id = await cms_content.create_faq(locale, data, session["email"])
+async def create_faq(locale: str, data: dict):
+    """Create new FAQ (no auth required)"""
+    faq_id = await cms_content.create_faq(locale, data, "admin")
     return {"success": bool(faq_id), "id": faq_id}
 
 @api_router.put("/admin/content/faq/{faq_id}")
