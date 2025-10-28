@@ -62,9 +62,10 @@
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium mb-2">Antwort * (HTML erlaubt)</label>
-                        <textarea id="edit-answer" required rows="8" class="w-full border rounded px-3 py-2" placeholder="<p>Die Ausbildung kostet...</p>"></textarea>
-                        <p class="text-xs text-gray-500 mt-1">HTML-Tags wie &lt;p&gt;, &lt;strong&gt;, &lt;ul&gt; erlaubt</p>
+                        <label class="block text-sm font-medium mb-2">Antwort * (Rich Text Editor)</label>
+                        <div id="quill-editor" style="height: 250px; background: white;"></div>
+                        <textarea id="edit-answer" required style="display: none;"></textarea>
+                        <p class="text-xs text-gray-500 mt-2">💡 Formatierung mit dem Editor - automatisch als HTML gespeichert</p>
                     </div>
                     
                     <div class="grid grid-cols-2 gap-4">
