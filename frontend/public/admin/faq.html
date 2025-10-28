@@ -227,15 +227,48 @@
             });
         }
         
+        // Initialize Quill Editor
+        function initQuill() {
+            if (quillEditor) return;
+            
+            quillEditor = new Quill('#quill-editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['link'],
+                        ['clean']
+                    ]
+                },
+                placeholder: 'Schreiben Sie die Antwort hier...'
+            });
+            
+            // Sync Quill content to hidden textarea
+            quillEditor.on('text-change', function() {
+                document.getElementById('edit-answer').value = quillEditor.root.innerHTML;
+            });
+        }
+        
         // Open modal
         function openEditModal(faq = null) {
             const modal = document.getElementById('edit-modal');
+            
+            // Initialize Quill if not done yet
+            if (!quillEditor) {
+                initQuill();
+            }
             
             if (faq) {
                 document.getElementById('modal-title').textContent = 'FAQ bearbeiten';
                 document.getElementById('edit-id').value = faq._id;
                 document.getElementById('edit-question').value = faq.question;
+                
+                // Set Quill content
+                quillEditor.root.innerHTML = faq.answer;
                 document.getElementById('edit-answer').value = faq.answer;
+                
                 document.getElementById('edit-topic').value = faq.topic;
                 document.getElementById('edit-featured').checked = faq.featured;
                 document.getElementById('edit-visible').checked = faq.visible;
@@ -244,6 +277,10 @@
                 document.getElementById('modal-title').textContent = 'Neue FAQ';
                 document.getElementById('edit-form').reset();
                 document.getElementById('edit-id').value = '';
+                
+                // Clear Quill content
+                quillEditor.setText('');
+                
                 document.getElementById('delete-btn').classList.add('hidden');
             }
             
