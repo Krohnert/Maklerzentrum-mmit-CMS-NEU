@@ -261,12 +261,57 @@
             }
         };
 
+        // Image upload handler
+        document.getElementById('upload-image-btn').addEventListener('click', () => {
+            document.getElementById('team-image-file').click();
+        });
+
+        document.getElementById('team-image-file').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const statusEl = document.getElementById('upload-status');
+            statusEl.textContent = 'Lädt...';
+            statusEl.className = 'text-sm text-blue-600';
+
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                const response = await fetch(`${API_BASE}/api/admin/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const imageUrl = `${API_BASE}${data.url}`;
+                    
+                    document.getElementById('team-image').value = imageUrl;
+                    document.getElementById('image-preview').innerHTML = `
+                        <img src="${imageUrl}" class="w-32 h-32 object-cover rounded-lg border border-gray-300" alt="Preview">
+                    `;
+                    
+                    statusEl.textContent = '✅ Hochgeladen!';
+                    statusEl.className = 'text-sm text-green-600';
+                } else {
+                    throw new Error('Upload fehlgeschlagen');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                statusEl.textContent = '❌ Fehler beim Hochladen';
+                statusEl.className = 'text-sm text-red-600';
+            }
+        });
+
         // Add team button
         document.getElementById('add-team-btn').addEventListener('click', () => {
             document.getElementById('modal-title').textContent = 'Neues Team-Mitglied';
             document.getElementById('team-form').reset();
             document.getElementById('team-id').value = '';
             document.getElementById('team-visible').checked = true;
+            document.getElementById('upload-status').textContent = '';
+            document.getElementById('image-preview').innerHTML = '';
             document.getElementById('team-modal').classList.remove('hidden');
         });
 
