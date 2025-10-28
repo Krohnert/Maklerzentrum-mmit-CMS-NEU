@@ -711,26 +711,26 @@ async def verify_admin_session(cms_session: Optional[str] = Cookie(None)) -> dic
 # ============================================
 
 @api_router.get("/admin/content/{locale}/team")
-async def get_team(locale: str, session: dict = Depends(verify_admin_session)):
-    """Get all team members for locale"""
+async def get_team(locale: str):
+    """Get all team members for locale (no auth required)"""
     team = await cms_content.list_team(locale)
     return {"success": True, "team": team}
 
 @api_router.post("/admin/content/{locale}/team")
-async def create_team(locale: str, data: dict, session: dict = Depends(verify_admin_session)):
-    """Create team member"""
-    team_id = await cms_content.create_team(locale, data, session['email'])
+async def create_team(locale: str, data: dict):
+    """Create team member (no auth required)"""
+    team_id = await cms_content.create_team(locale, data, "admin")
     return {"success": team_id is not None, "team_id": team_id}
 
 @api_router.delete("/admin/content/{locale}/team/{team_id}")
-async def delete_team(locale: str, team_id: str, session: dict = Depends(verify_admin_session)):
-    """Delete team member"""
+async def delete_team(locale: str, team_id: str):
+    """Delete team member (no auth required)"""
     success = await cms_content.delete_team(team_id)
     return {"success": success}
 
 @api_router.put("/admin/content/{locale}/team/reorder")
-async def reorder_team(locale: str, ids: dict, session: dict = Depends(verify_admin_session)):
-    """Reorder team members"""
+async def reorder_team(locale: str, ids: dict):
+    """Reorder team members (no auth required)"""
     success = await cms_content.reorder_team(ids.get("team_ids", []))
     return {"success": success}
 
