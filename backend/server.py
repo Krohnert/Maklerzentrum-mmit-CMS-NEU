@@ -687,13 +687,9 @@ async def create_faq(locale: str, data: dict):
     return {"success": bool(faq_id), "id": faq_id}
 
 @api_router.put("/admin/content/faq/{faq_id}")
-async def update_faq(faq_id: str, data: dict, cms_session: Optional[str] = Cookie(None)):
-    """Update FAQ"""
-    session = await cms_auth.get_session(cms_session) if cms_session else None
-    if not session:
-        return {"success": False, "error": "Nicht angemeldet"}
-    
-    success = await cms_content.update_faq(faq_id, data, session["email"])
+async def update_faq(faq_id: str, data: dict):
+    """Update FAQ (no auth required)"""
+    success = await cms_content.update_faq(faq_id, data, "admin")
     return {"success": success}
 
 @api_router.delete("/admin/content/faq/{faq_id}")
