@@ -237,6 +237,16 @@
             document.getElementById('team-email').value = member.email || '';
             document.getElementById('team-visible').checked = member.visible !== false;
             
+            // Show image preview if exists
+            document.getElementById('upload-status').textContent = '';
+            if (member.image) {
+                document.getElementById('image-preview').innerHTML = `
+                    <img src="${member.image}" class="w-32 h-32 object-cover rounded-lg border border-gray-300" alt="Preview">
+                `;
+            } else {
+                document.getElementById('image-preview').innerHTML = '';
+            }
+            
             document.getElementById('team-modal').classList.remove('hidden');
         };
 
