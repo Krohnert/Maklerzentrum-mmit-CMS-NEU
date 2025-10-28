@@ -675,11 +675,8 @@ async def reorder_modules(locale: str, ids: dict, cms_session: Optional[str] = C
 
 # FAQ Endpoints
 @api_router.get("/admin/content/{locale}/faq")
-async def list_faq(locale: str, cms_session: Optional[str] = Cookie(None)):
-    """List FAQ for locale"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+async def list_faq(locale: str):
+    """List FAQ for locale (no auth required)"""
     faq = await cms_content.list_faq(locale)
     return {"success": True, "faq": faq}
 
