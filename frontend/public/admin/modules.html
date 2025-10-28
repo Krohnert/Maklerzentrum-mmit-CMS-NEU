@@ -134,16 +134,7 @@
                 document.getElementById('loading').classList.remove('hidden');
                 document.getElementById('content').classList.add('hidden');
                 
-                const response = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`, {
-                    credentials: 'include'
-                });
-                
-                if (response.status === 401) {
-                    alert('Session abgelaufen. Bitte neu einloggen.');
-                    window.location.href = 'index.html';
-                    return;
-                }
-                
+                const response = await fetch(`${API_BASE}/api/admin/content/${currentLocale}/modules`);
                 const data = await response.json();
                 modules = data.modules || [];
                 renderModules();
