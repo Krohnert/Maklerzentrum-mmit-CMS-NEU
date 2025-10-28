@@ -111,18 +111,7 @@
         let sortable = null;
         let quillEditor = null;
         
-        // Auth check
-        (async function() {
-            const res = await fetch(`${API_BASE}/api/admin/me`);
-            const data = await res.json();
-            if (!data.success) window.location.href = '/admin/index.html';
-        })();
-        
-        // Logout
-        document.getElementById('logout-btn').addEventListener('click', async () => {
-            await fetch(`${API_BASE}/api/admin/logout`, { method: 'POST', credentials: 'include' });
-            window.location.href = '/admin/index.html';
-        });
+        // No auth check - CMS is public
         
         // Locale switcher
         document.getElementById('locale-select').addEventListener('change', (e) => {
