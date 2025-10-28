@@ -699,11 +699,8 @@ async def delete_faq(faq_id: str):
     return {"success": success}
 
 @api_router.put("/admin/content/{locale}/faq/reorder")
-async def reorder_faq(locale: str, ids: dict, cms_session: Optional[str] = Cookie(None)):
-    """Reorder FAQ"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+async def reorder_faq(locale: str, ids: dict):
+    """Reorder FAQ (no auth required)"""
     success = await cms_content.reorder_faq(ids.get("faq_ids", []))
     return {"success": success}
 
