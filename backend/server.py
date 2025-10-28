@@ -633,14 +633,10 @@ async def get_modules(locale: str):
     return {"success": True, "modules": modules}
 
 @api_router.post("/admin/content/{locale}/modules")
-async def create_module(locale: str, data: dict, cms_session: Optional[str] = Cookie(None)):
-    """Create new module"""
-    session = await cms_auth.get_session(cms_session) if cms_session else None
-    if not session:
-        return {"success": False, "error": "Nicht angemeldet"}
-    
-    module_id = await cms_content.create_module(locale, data, session["email"])
-    return {"success": bool(module_id), "id": module_id}
+async def create_module(locale: str, data: dict):
+    """Create module (no auth required)"""
+    module_id = await cms_content.create_module(locale, data, "admin")
+    return {"success": module_id is not None, "module_id": module_id}
 
 @api_router.put("/admin/content/modules/{module_id}")
 async def update_module(module_id: str, data: dict, cms_session: Optional[str] = Cookie(None)):
