@@ -693,11 +693,8 @@ async def update_faq(faq_id: str, data: dict):
     return {"success": success}
 
 @api_router.delete("/admin/content/faq/{faq_id}")
-async def delete_faq(faq_id: str, cms_session: Optional[str] = Cookie(None)):
-    """Delete FAQ"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+async def delete_faq(faq_id: str):
+    """Delete FAQ (no auth required)"""
     success = await cms_content.delete_faq(faq_id)
     return {"success": success}
 
