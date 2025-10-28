@@ -655,11 +655,8 @@ async def delete_module(locale: str, module_id: str):
     return {"success": success}
 
 @api_router.put("/admin/content/{locale}/modules/reorder")
-async def reorder_modules(locale: str, ids: dict, cms_session: Optional[str] = Cookie(None)):
-    """Reorder modules"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+async def reorder_modules(locale: str, ids: dict):
+    """Reorder modules (no auth required)"""
     success = await cms_content.reorder_modules(ids.get("module_ids", []))
     return {"success": success}
 
