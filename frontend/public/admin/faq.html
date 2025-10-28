@@ -107,7 +107,7 @@
         
         // Auth check
         (async function() {
-            const res = await fetch(`${API_BASE}/api/admin/me`, { credentials: 'include' });
+            const res = await fetch(`${API_BASE}/api/admin/me`);
             const data = await res.json();
             if (!data.success) window.location.href = '/admin/index.html';
         })();

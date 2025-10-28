@@ -125,7 +125,7 @@
         // Check if already logged in
         (async function() {
             try {
-                const res = await fetch(`${API_BASE}/api/admin/me`, { credentials: 'include' });
+                const res = await fetch(`${API_BASE}/api/admin/me`);
                 const data = await res.json();
                 if (data.success && data.user) {
                     if (data.user.mustResetPassword) {
