@@ -627,11 +627,8 @@ async def update_site_global(data: dict, cms_session: Optional[str] = Cookie(Non
     return {"success": success}
 
 @api_router.get("/admin/content/{locale}/modules")
-async def list_modules(locale: str, cms_session: Optional[str] = Cookie(None)):
-    """List modules for locale"""
-    if not cms_session or not await cms_auth.get_session(cms_session):
-        return {"success": False, "error": "Nicht angemeldet"}
-    
+async def get_modules(locale: str):
+    """Get all modules for locale (no auth required)"""
     modules = await cms_content.list_modules(locale)
     return {"success": True, "modules": modules}
 
